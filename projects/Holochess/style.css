@@ -1,0 +1,74 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f0f0f0;
+}
+.status {
+  z-index: 3;
+  top: 38em;
+  position: relative;
+}
+.piece {
+  z-index: 3;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: red;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  place-items: center;
+}
+
+.piece.blue {
+  background-color: blue;
+  z-index: 3; /* Ensure it's above the board */
+}
+
+.highlight {
+  z-index: 3;
+  outline: 2px solid yellow;
+}
+.highlight.invalid {
+  z-index: 3;
+  background-color: rgba(
+    0,
+    0,
+    255,
+    1
+  ); /* Dim blue overlay for invalid spaces */
+  pointer-events: none; /* Prevent interaction with invalid highlights */
+}
+
+.palette {
+  z-index: 0; /* Ensure it's above the board */
+  position: absolute;
+  height: 500px;
+  width: 500px;
+  display: grid;
+  place-items: center;
+  top: 100px;
+}
+
+.palette > * {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: var(--s) solid var(--c, #141414);
+  border-radius: 50%;
+  clip-path: polygon(
+    calc(50% + var(--g) / 2) 50%,
+    calc(50% + var(--g) / 2) 0%,
+    calc(79% - var(--g) / 2) 0%,
+    50% calc(50% - var(--g) / 2)
+  );
+}

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+git add . 
+git commit -m "meddelande"
+git push origin g
+
+Länk
+https://www.geeksforgeeks.org/building-a-dice-game-using-javascript/
+https://sv.wikipedia.org/wiki/Yatzy
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="YATZY">
+    <link rel="shortcut icon" type="image/jpg" href="https://19gawe.ssis.nu/slutprojekt/img/icon.png" />
+    <link rel="stylesheet" href="style.css" />
+    <title>YATZY</title>
+    <!--font-->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <h1 class="rubrik">YATZY</h1>
+
+    <div class="grid-container-two">
+        <div class="grid-item showhim" id="lightmode" onmouseover="mouseOver2()" onmouseout="mouseOut2()">?</div>
+        <div class="switch">
+            <label>
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label></div>
+        <div class="grid-item hide" style="text-align:left; padding-left: 1rem;padding-right: 1rem" id="text">
+            <br><br><br>
+
+            I klassisk Yatzy används 5 tärningar, deltagarantalet är obegränsat och den som har uppnått den högsta
+            poängsumman i slutet vinner.<br><br>
+
+            Spelets gång<br><br>
+            Alla slår varsin tärning. Spelaren som slår högst får börja, sedan roterar man medurs. Varje gång det blir
+            en spelares tur har han rätt till högst 3 tärningskast. För var slag avgör spelaren vilka tärningar denne
+            vill spara till nästa kast och vilka tärningar denne vill kasta om. Efter alla kast förs poängsumman in
+            intill en av rubrikerna. Ordningen på protokollet behöver ej följas.<br><br>
+            Bonus <br>
+            Protokollsrubrikerna får endast användas en gång. Om poängsumma är på 63 poäng eller mer på protokollets
+            övre halva utgår en bonus om 50 poäng. Maximal summa på övre halvan är 105.<br><br>
+
+            Lite info: max betyder att värdet kan ändra<br><br>
+            ETTOR-SEXOR: = antalet av respektive nummer multiplcerat med nummret<br>
+            BONUS: = 50 poäng<br>
+            ETT PAR: = max 12 poäng <br>
+            TVÅ PAR: = max 22 poäng<br>
+            TRETAL: = max 18 poäng<br>
+            FYRTAL: = max 24 poäng<br>
+            LITEN STEGE: få "1", "2", "3", "4", "5" = 15 poäng<br>
+            STOR STEGE: få "2", "3", "4", "5", "6" = 20 poäng<br>
+            KÅK: = max 28 poäng<br>
+            Y A T Z Y: fem = 50 poäng<br>
+            TOTALT: max 374 poäng<br><br>
+        </div>
+        <!--Vänstersida-->
+        <div class="grid-item" id="bruh">
+            <div style="padding-top: 9rem;padding-bottom: 3rem;">
+                <button class="knapp" id="throwdice" onclick="kasta()"> <img id="throwdiceimg" alt="kasta knapp"
+                        src="img/throwdice3-1.png" width="150px" align="center">
+                </button>
+            </div>
+
+            <!--tärningar-->
+            <div class="grid-item">
+                <img alt="tärning1" class="dice" onclick="click_dice(1)" id="dice-1" />
+                <img alt="tärning2" class="dice" onclick="click_dice(2)" id="dice-2" />
+                <img alt="tärning3" class="dice" onclick="click_dice(3)" id="dice-3" />
+                <img alt="tärning4" class="dice" onclick="click_dice(4)" id="dice-4" />
+                <img alt="tärning5" class="dice" onclick="click_dice(5)" id="dice-5" />
+            </div>
+
+        </div>
+        <!--19 rows-->
+        <div class="grid-item" id="bruh2">
+            <table id="myTable">
+                <tr>
+                    <td class="vu">Deltagare</td>
+                    <td class="poäng" id="spelare1" onclick="spelare1_namn()">Spelare 1</td>
+                    <td class="poäng hu" id="spelare2" onclick="spelare2_namn()">Spelare 2</td>
+                </tr>
+                <tr>
+                    <td>Ettor</td>
+                    <td class="poäng" id="ruta-1" onclick="poäng(1)">0</td>
+                    <td class="poäng" id="ruta-19" onclick="poäng(19)">0</td>
+                </tr>
+                <tr>
+                    <td>Tvåor</td>
+                    <td class="poäng" id="ruta-2" onclick="poäng(2)">0</td>
+                    <td class="poäng" id="ruta-20" onclick="poäng(20)">0</td>
+                </tr>
+                <tr>
+                    <td>Treor</td>
+                    <td class="poäng" id="ruta-3" onclick="poäng(3)">0</td>
+                    <td class="poäng" id="ruta-21" onclick="poäng(21)">0</td>
+                </tr>
+                <tr>
+                    <td>Fyror</td>
+                    <td class="poäng" id="ruta-4" onclick="poäng(4)">0</td>
+                    <td class="poäng" id="ruta-22" onclick="poäng(22)">0</td>
+                </tr>
+                <tr>
+                    <td>Femmor</td>
+                    <td class="poäng" id="ruta-5" onclick="poäng(5)">0</td>
+                    <td class="poäng" id="ruta-23" onclick="poäng(23)">0</td>
+                </tr>
+                <tr>
+                    <td>Sexor</td>
+                    <td class="poäng" id="ruta-6" onclick="poäng(6)">0</td>
+                    <td class="poäng" id="ruta-24" onclick="poäng(24)">0</td>
+                </tr>
+                <tr>
+                    <td>Summa</td>
+                    <td class="ruta_selected ruta_disabled" id="ruta-7" onclick="poäng(7)">0</td>
+                    <td class="ruta_selected ruta_disabled" id="ruta-25" onclick="poäng(25)">0</td>
+                </tr>
+                <tr>
+                    <td>Bonus</td>
+                    <td class="ruta_selected ruta_disabled" id="ruta-8" onclick="poäng(8)">0</td>
+                    <td class="ruta_selected ruta_disabled" id="ruta-26" onclick="poäng(26)">0</td>
+                </tr>
+                <tr>
+                    <td>Ett par</td>
+                    <td class="poäng" id="ruta-9" onclick="poäng(9)">0</td>
+                    <td class="poäng" id="ruta-27" onclick="poäng(27)">0</td>
+                </tr>
+                <tr>
+                    <td>Två par</td>
+                    <td class="poäng" id="ruta-10" onclick="poäng(10)">0</td>
+                    <td class="poäng" id="ruta-28" onclick="poäng(28)">0</td>
+                </tr>
+                <tr>
+                    <td>Tretal</td>
+                    <td class="poäng" id="ruta-11" onclick="poäng(11)">0</td>
+                    <td class="poäng" id="ruta-29" onclick="poäng(29)">0</td>
+                </tr>
+                <tr>
+                    <td>Fyrtal</td>
+                    <td class="poäng" id="ruta-12" onclick="poäng(12)">0</td>
+                    <td class="poäng" id="ruta-30" onclick="poäng(30)">0</td>
+                </tr>
+                <tr>
+                    <td>Liten stege</td>
+                    <td class="poäng" id="ruta-13" onclick="poäng(13)">0</td>
+                    <td class="poäng" id="ruta-31" onclick="poäng(31)">0</td>
+                </tr>
+                <tr>
+                    <td>Stor stege</td>
+                    <td class="poäng" id="ruta-14" onclick="poäng(14)">0</td>
+                    <td class="poäng" id="ruta-32" onclick="poäng(32)">0</td>
+                </tr>
+                <tr>
+                    <td>Kåk</td>
+                    <td class="poäng" id="ruta-15" onclick="poäng(15)">0</td>
+                    <td class="poäng" id="ruta-33" onclick="poäng(33)">0</td>
+                </tr>
+                <tr>
+                    <td>Chans</td>
+                    <td class="poäng" id="ruta-16" onclick="poäng(16)">0</td>
+                    <td class="poäng" id="ruta-34" onclick="poäng(34)">0</td>
+                </tr>
+                <tr>
+                    <td>Y A T Z Y</td>
+                    <td class="poäng" id="ruta-17" onclick="poäng(17)">0</td>
+                    <td class="poäng " id="ruta-35" onclick="poäng(35)">0</td>
+                </tr>
+                <tr>
+                    <td class="vn">Totalt</td>
+                    <td class="ruta_selected ruta_disabled" id="ruta-18">0</td>
+                    <td class="hn ruta_selected ruta_disabled" id="ruta-36">0</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+    <script src="script.js" type="text/javascript"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+
+osignerad lång lång faktoriellt(heltal n) {
+    om (n <= 1) {
+        återvända 1;
+    } annan {
+        återvända n * faktoriellt(n - 1);
+    }
+}
+
+heltal huvud() {
+    heltal num;
+    skrivut("Ange ett positivt heltal: ");
+    avsöka("%d", &num);
+
+    om (num < 0) {
+        skrivut("faktoriellt av ett negativt tal finns inte.\n");
+    } annan {
+        skrivut("faktoriellt av %d = %llu\n", num, faktoriellt(num));
+    }
+    
+    återvända 0;
+}

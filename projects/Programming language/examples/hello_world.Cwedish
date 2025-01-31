@@ -1,0 +1,4 @@
+heltal huvud() {
+    skrivut("Hej, Världen!");
+    återvända 0;
+}

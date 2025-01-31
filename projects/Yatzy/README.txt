@@ -1,0 +1,1 @@
+Play 2 player yatzy with this website

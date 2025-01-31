@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Algorithm Visualizer</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="sorting-visualizer">
+        <h1>Sorting Algorithm Visualizer</h1>
+        <p>Select a sorting algorithm and watch it sort the bars.</p>
+        <div class="sorting-buttons">
+          <button onclick="generateBars()">New Array</button>
+          <div class="tooltip">
+            <button onclick="startSorting(bubbleSort)">Bubble</button>
+            <span class="tooltiptext"
+              >Bubble Sort: Simple, compares adjacent items and swaps them to
+              sort.</span
+            >
+          </div>
+          <div class="tooltip">
+            <button onclick="startSorting(selectionSort)">Selection</button>
+            <span class="tooltiptext"
+              >Selection Sort: Selects smallest element each pass and moves it
+              to sorted part.</span
+            >
+          </div>
+          <div class="tooltip">
+            <button onclick="startSorting(insertionSort)">Insertion</button>
+            <span class="tooltiptext"
+              >Insertion Sort: Sorting algorithm that builds the final sorted
+              array one item at a time by comparisons.</span
+            >
+          </div>
+          <div class="tooltip">
+            <button onclick="startSorting(shellSort)">Shell</button>
+            <span class="tooltiptext"
+              >Shell Sort: Sorts with gaps, gradually reducing them for
+              efficiency.</span
+            >
+          </div>
+          <div class="tooltip">
+            <button onclick="startSorting(mergeSortWrapper)">Merge</button>
+            <span class="tooltiptext"
+              >Merge Sort: Divide-and-conquer algorithm, recursively merging
+              sorted halves.</span
+            >
+          </div>
+          <div class="tooltip">
+            <button onclick="startSorting(heapSort)">Heap</button>
+            <span class="tooltiptext"
+              >Heap Sort: Uses a binary heap structure to efficiently
+              sort.</span
+            >
+          </div>
+          <div class="tooltip">
+            <button onclick="startSorting(quickSortWrapper)">Quick</button>
+            <span class="tooltiptext"
+              >Quick Sort: Partitions array and recursively sorts each
+              side.</span
+            >
+          </div>
+        </div>
+        <div class="controls">
+          <label for="barCountSlider">Number of Bars: </label>
+          <span id="barCountValue"> 50</span>
+          <input
+            type="range"
+            id="barCountSlider"
+            min="10"
+            max="100"
+            value="50"
+          />
+
+          <label for="speedSlider">Speed:</label>
+          <input type="range" id="speedSlider" min="1" max="100" value="50" />
+        </div>
+
+        <div id="bars-container"></div>
+      </div>
+
+      <div class="pathfinding-visualizer">
+        <h1>Pathfinding Algorithm Visualizer</h1>
+        <p>
+          Set start, end points then draw walls and select a pathfinding
+          algorithm.
+        </p>
+        <div class="controls">
+          <button onclick="resetGrid()">Reset Grid</button>
+          <button onclick="generateMaze()">Generate Maze</button>
+          <div class="tooltip">
+            <button onclick="startPathfinding(bfs)">BFS</button>
+            <span class="tooltiptext"
+              >Breadth-First Search: Explores nodes layer-by-layer to find the
+              shortest path in unweighted graphs.</span
+            >
+          </div>
+          <div class="tooltip">
+            <button
+              onclick="startPathfinding(dijkstra)"
+              aria-label="Start Dijkstra's algorithm"
+            >
+              Dijkstra's
+            </button>
+            <span class="tooltiptext"
+              >Dijkstra's Algorithm: Finds the shortest path in weighted graphs
+              by exploring nodes with the smallest cumulative cost first.</span
+            >
+          </div>
+          <div class="tooltip">
+            <button
+              onclick="startPathfinding(aStar)"
+              aria-label="Start A* algorithm"
+            >
+              A*
+            </button>
+            <span class="tooltiptext"
+              >A* Algorithm: Uses heuristic to find the shortest path
+              efficiently in weighted graphs.</span
+            >
+          </div>
+          <div class="tooltip">
+            <button
+              onclick="startPathfinding(dfs)"
+              aria-label="Start DFS algorithm"
+            >
+              DFS
+            </button>
+            <span class="tooltiptext"
+              >Depth-First Search: Explores as far as possible down one path
+              before backtracking. May not find the shortest path.</span
+            >
+          </div>
+          <div class="tooltip">
+            <button
+              onclick="startPathfinding(gbfs)"
+              aria-label="Start GBFS algorithm"
+            >
+              GBFS
+            </button>
+            <span class="tooltiptext"
+              >Greedy Best-First Search: Uses heuristic to explore towards the
+              goal but doesn't guarantee shortest path.</span
+            >
+          </div>
+        </div>
+        <div class="controls">
+          <label for="tileCountSlider">Grid Size:</label>
+          <span id="tileCountValue">20</span>
+          <input
+            type="range"
+            id="tileCountSlider"
+            min="10"
+            max="50"
+            value="20"
+            onchange="updateGrid()"
+          />
+
+          <label for="speedSlider2">Speed:</label>
+          <input type="range" id="speedSlider2" min="5" max="100" value="50" />
+        </div>
+        <p id="status">Select start and end points to begin.</p>
+        <div id="grid"></div>
+      </div>
+    </div>
+
+    <script src="sorting.js"></script>
+    <script src="pathfinding.js" type="module"></script>
+  </body>
+</html>

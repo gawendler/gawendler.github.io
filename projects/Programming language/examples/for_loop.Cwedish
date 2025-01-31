@@ -1,0 +1,7 @@
+heltal huvud() {
+    osignerad i;
+    för (i = 0; i < 10; i = i + 1) {
+        skrivut("Nummer: %u\n", i);
+    }
+    återvända 0;
+}

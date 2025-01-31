@@ -1,0 +1,16 @@
+heltal huvud() {
+    heltal i;
+    för (i = 1; i <= 100; i = i + 1) {
+        om ( (i % 15) == 0 ) {
+            skrivut("FizzBuzz");
+        } annan om ( (i % 3) == 0 ) {
+            skrivut("Fizz");
+        } annan om ( (i % 5) == 0 ) {
+            skrivut("Buzz");
+        } annan {
+            skrivut("%d", i);
+        }
+        skrivut("\n");
+    }
+    återvända 0;
+}

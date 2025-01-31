@@ -1,0 +1,18 @@
+heltal huvud() {
+    heltal val = 2;
+    växla (val) {
+        fall 1:
+            skrivut("Du valde 1");
+            bryta;
+        fall 2:
+            skrivut("Du valde 2");
+            bryta;
+        fall 3:
+            skrivut("Du valde 3");
+            bryta;
+        standard:
+            skrivut("Du valde något annat");
+            bryta;
+    }
+    återvända 0;
+}

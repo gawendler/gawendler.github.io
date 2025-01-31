@@ -1,0 +1,267 @@
+:root {
+    font-size: 16px;
+    font-family: 'Open Sans';
+    --text-primary: white;
+    --text-secondary: #7C8186;
+    --text-text: white;
+    --bg-primary: #202225;
+    --bg-secondary: #2F3136;
+    --bg-hover: #40444B;
+    --bg-hover-knapp: #40444B;
+    --bg-slider: #454950;
+    --bg-ruta_disabled: #32353B;
+    --transition-speed: 0.4s;
+}
+
+
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    text-align: center;
+    font-weight: 300;
+}
+
+.grid-container-two {
+    margin: auto;
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-left: 20%;
+    margin-right: 20%;
+    border-radius: 1rem;
+    background-color: var(--bg-secondary);
+}
+
+.grid-item {
+    margin: auto;
+}
+
+.rubrik {
+    font-size: 3rem;
+    font-weight: 1;
+    color: #72767D;
+}
+
+.poäng {
+    cursor: pointer;
+    color: var(--text-primary);
+}
+
+.poäng:hover {
+    background-color: var(--bg-ruta_disabled);
+    color: var(--text-secondary);
+}
+
+.not_current_spelare {
+    color: var(--text-secondary);
+}
+
+.ruta_selected {
+    pointer-events: none;
+    color: var(--text-secondary);
+}
+
+.ruta_disabled {
+    pointer-events: none;
+    background-color: var(--bg-ruta_disabled);
+    color: var(--text-secondary);
+}
+
+.knapp {
+    margin: auto;
+    align-items: center;
+
+    position: relative;
+    display: block;
+    text-align: center;
+    height: 10rem;
+    width: 10rem;
+    border: 0px solid var(--text-primary);
+    font-weight: 300;
+    color: var(--text-secondary);
+    border-radius: 1rem;
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+    background: var(--bg-secondary);
+}
+
+.knapp:hover {
+    background: var(--bg-hover-knapp);
+    color: var(--text-primary);
+}
+
+
+.knapp_disable {
+    pointer-events: none;
+    opacity: 0.2;
+}
+
+
+.dice {
+    cursor: pointer;
+    height: 6rem;
+    width: 6rem;
+    border: 1px solid var(--bg-secondary);
+    border-radius: 1rem;
+}
+
+.dice:hover {
+    height: 6rem;
+    width: 6rem;
+    filter: brightness(50%);
+}
+
+.dice_selected {
+    height: 6rem;
+    width: 6rem;
+    border: 1px solid var(--text-primary);
+    border-radius: 1rem;
+    filter: brightness(20%);
+}
+
+/* bilder i kasta knappen*/
+table {
+    color: var(--text-primary);
+    text-align: left;
+    border-radius: 0.8rem;
+}
+
+td {
+    background-color: var(--bg-hover);
+    padding-left: 0.4rem;
+    text-align: left;
+    width: 9rem;
+    height: 1.4rem;
+}
+
+/* hörnen på tabellen*/
+.vu {
+    border-top-left-radius: 0.8rem;
+}
+
+.hu {
+    border-top-right-radius: 0.8rem;
+}
+
+.vn {
+    border-bottom-left-radius: 0.8rem;
+}
+
+.hn {
+    border-bottom-right-radius: 0.8rem;
+}
+
+.show {
+    display: block;
+    color: var(--text-text);
+}
+
+.hide {
+    display: none;
+}
+
+
+#text {
+    position: absolute;
+    z-index: -20;
+    background-color: var(--bg-secondary);
+    border-radius: 1rem;
+    width: 60%;
+}
+
+
+.showhim {
+    position: absolute;
+    width: 3rem;
+    margin: auto;
+    text-align: center;
+    background-color: var(--bg-secondary);
+    cursor: pointer;
+    border-top-left-radius: 0.8rem;
+    border-bottom-right-radius: 0.8rem;
+    font-size: 35px;
+    color: var(--text-secondary);
+}
+
+.showhim:hover {
+    background-color: var(--bg-hover);
+    color: var(--text-primary);
+}
+
+.switch {
+    margin-top: 10px;
+    position: absolute;
+    left: 35%;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--bg-primary);
+    -webkit-transition: var(--transition-speed);
+    transition: var(--transition-speed);
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--bg-hover);
+    -webkit-transition: var(--transition-speed);
+    transition: var(--transition-speed);
+}
+
+input:checked+.slider {
+    background-color: white;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px var(--bg-primary);
+
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+    background-color: black;
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.light-mode {
+    --text-primary: black;
+    --text-secondary: white;
+    --text-text: white;
+    --bg-primary: white;
+    --bg-secondary: black;
+    --bg-hover: white;
+    --bg-hover-knapp: #40444B;
+    --bg-slider: white;
+    --bg-ruta_disabled: black;
+}

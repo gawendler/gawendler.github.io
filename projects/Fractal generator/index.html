@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="fraktal generator" />
+    <title>Fraktal Generator</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      type="image/jpg"
+      href="https://19gawe.ssis.nu/img/fractal.png"
+    />
+    <!--Script för hemsida
+    p5.js is a JavaScript library for creative coding, with a focus on making coding 
+    accessible and inclusive for artists, designers, educators, beginners, and anyone 
+    else! p5.js is free and open-source because we believe software, and the tools to 
+    learn it, should be accessible to everyone.
+  -->
+    <script src="p5.min.js" type="text/javascript"></script>
+  </head>
+
+  <body id="move">
+    <div id="bruh" class="kontroller">
+      <h1>Fractal Generator</h1>
+      <p>This fractal generator uses the Lindenmayer system.</p>
+      <div class="grid-item">
+        <p>Axiom: <span id="axiom-out"></span></p>
+        <p>
+          Rules: <span id="rules1-out"></span>=<span id="rules2-out"></span>
+        </p>
+      </div>
+      <div class="grid-container1">
+        <div class="grid-item">
+          <input class="input" type="text" placeholder="Axiom" id="axiom" />
+          <textarea
+            class="input"
+            name="Text1"
+            cols="20"
+            rows="2"
+            id="rules2"
+            placeholder="Rules"
+          ></textarea>
+        </div>
+      </div>
+      <div class="grid-item">
+        <k class="knapp" id="spara">Save</k>
+      </div>
+      <!--EXEMPEL-->
+      
+      <div class="slider-container">
+        <label>
+          <k onmousedown="return false" onselectstart="return false"
+            >Angle:<span id="vinkel-out"></span>&deg;</k
+          >
+          <input type="range" min="0" max="360" class="slider" id="vinkel" />
+        </label>
+      </div>
+      <div class="slider-container">
+        <label>
+          <k onmousedown="return false" onselectstart="return false"
+            >Depth: <span id="generation-out"></span
+          ></k>
+          <input type="range" min="0" max="5" class="slider" id="djupknapp" />
+        </label>
+      </div>
+
+      <div class="dropdown-content">
+        <div class="grid-item">
+          <k class="knapp" id="infoknapp">Info</k>
+        </div>
+        <div class="grid-item">
+          <k class="knapp" id="resetknapp" onclick="reset();">Reset</k>
+        </div>
+        <div class="grid-item">
+          <k class="knapp" id="colorknapp">Color:<span id="färg_n"></span></k>
+        </div>
+        <div class="grid-item">
+          <k class="knapp" id="randomknapp" onclick="random();">Random</k>
+        </div>
+        <div class="grid-item">
+          <k class="knapp" id="animeraknapp" onclick="animera();">Animate</k>
+        </div>
+      </div>
+      <p>Examples:</p>
+      <div class="dropdown-content">
+        <div class="grid-item">
+          <k class="knapp" id="Board">Board</k>
+        </div>
+        <div class="grid-item">
+          <k class="knapp" id="Crystal">Crystal</k>
+        </div>
+        <div class="grid-item">
+          <k class="knapp" id="Dragon Curve">Dragon Curve</k>
+        </div>
+        <div class="grid-item">
+          <k class="knapp" id="Hexagonal Gosper">Gosper curve</k>
+        </div>
+        <div class="grid-item">
+          <k class="knapp" id="Kochcurve">Koch curve</k>
+        </div>
+        <div class="grid-item">
+          <k class="knapp" id="Krishna Anklets">Krishna Anklets</k>
+        </div>
+        <div class="grid-item">
+          <k class="knapp" id="Lévy curve">Lévy curve</k>
+        </div>
+        <div class="grid-item">
+          <k class="knapp" id="L-System Bushes 1">L-System Bushes 1</k>
+        </div>
+        <div class="grid-item">
+          <k class="knapp" id="L-System Bushes 2">L-System Bushes 2</k>
+        </div>
+        <div class="grid-item">
+          <k class="knapp" id="Peano Curve">Peano Curve</k>
+        </div>
+        <div class="grid-item">
+          <k class="knapp" id="Quadratic Snowflake">Quadratic Snowflake </k>
+        </div>
+        <div class="grid-item">
+          <k class="knapp" id="Rings">Rings</k>
+        </div>
+        <div class="grid-item">
+          <k class="knapp" id="Sierpinski Arrowhead">Sierpinski Arrowhead</k>
+        </div>
+        <div class="grid-item">
+          <k class="knapp" id="Sierpinskisquare">Sierpinski Square</k>
+        </div>
+        <div class="grid-item">
+          <k class="knapp" id="Sierpinski Triangle">Sierpinski Triangle</k>
+        </div>
+        <div class="grid-item">
+          <k class="knapp" id="Snowflake">Snowflake</k>
+        </div>
+        <div class="grid-item">
+          <k class="knapp" id="Tiles">Tiles</k>
+        </div>
+        <div class="grid-item">
+          <k class="knapp" id="Triangle">Triangle</k>
+        </div>
+      </div>
+      <div
+        onmousedown="return false"
+        onselectstart="return false"
+        class="grid-container1"
+      >
+        <div class="grid-item">
+          <k class="knappgöm" id="gömknapp"></k>
+        </div>
+      </div>
+
+      <!--slider vinkel-->
+      <iframe class="göminfo" id="göminfo" src="README.txt"></iframe>
+    </div>
+    <!--Script-->
+    <script src="script.js"></script>
+  </body>
+</html>
