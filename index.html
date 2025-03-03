@@ -1,429 +1,661 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gabriel Wendler Portfolio</title>
+    <!-- Add Tailwind CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/x-icon" href="/img/babyyoda.gif" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gabriel Wendler Portfolio</title>
-  <!-- Add Tailwind CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-  <link rel="icon" type="image/x-icon" href="/img/babyyoda.gif" />
-</head>
-
-<body class="bg-gray-200 text-gray-800 font-sans antialiased" style="font-family: 'Roboto'">
-  <!-- About Section -->
-  <div class="max-w-2xl mx-auto text-center pt-8 pb-4" id="about">
-    <h1 class="text-3xl font-bold mb-2">Gabriel Wendler</h1>
-    <p class="text-mm">
-      I'm a computer science student passionate about software development.
-    </p>
-  </div>
-  <!-- Education Section -->
-  <div class="max-w-2xl mx-auto text-center p-0" id="education">
-    <h2 class="text-2xl font-semibold mb-1">Education</h2>
-    <p class="text-mm">
-      Stockholm university, DSV, Computer Science, Bachelor's degree
-      (2024-2027)
-    </p>
-  </div>
-  <!-- Skills Section -->
-  <div class="max-w-2xl mx-auto text-center p-4" id="skills">
-    <h2 class="text-2xl font-semibold mb-1">Skills</h2>
-    <p class="text-mm">
-      HTML, CSS, Tailwind CSS, Javascript, Python, C#, C, Java, Git, Firebase,
-      Unity, Socket.io, Node.js, Excel, Word, PowerPoint, Diagrams.net, Figma
-    </p>
-  </div>
-  <!-- Contact Section -->
-  <div class="max-w-2xl mx-auto text-center pt-0" id="contact">
-    <h2 class="text-2xl font-semibold mb-1">Contact</h2>
-    <p class="text-lg">
-      <a href="https://www.linkedin.com/in/gawendler/" class="text-blue-400 hover:underline">My Linkedin page</a>
-    </p>
-    <p class="text-lg">
-      <a href="https://github.com/gawendler" class="text-blue-400 hover:underline">My GitHub page</a>
-    </p>
-  </div>
-  <!-- Projects Section -->
-  <div class="max-w-5xl mx-auto p-4" id="projects">
-    <h2 class="text-2xl font-semibold mb-4 text-center">Projects</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
-      <!-- Fractal Generator Project -->
-      <div class="bg-gray-800 text-white rounded-lg shadow-lg p-2 cursor-pointer hover:bg-gray-900 transition relative"
-        onclick="location.href='/projects/Fractal generator';" onmouseover="showButtons(this)"
-        onmouseout="hideButtons(this)">
-        <h3 class="text-xl font-bold mb-2 text-center">Fractal generator</h3>
-        <div class="slideshow-container max-w-screen-md mx-auto relative mt-2">
-          <!-- Slide 1 -->
-          <div class="mySlides1 fade hidden">
-            <img src="img/fractal4.png" alt="Algorithm visualizer image 1"
-              class="w-full h-90 object-cover rounded-md mb-4" />
+  <body
+    class="bg-gray-200 text-gray-800 font-sans antialiased"
+    style="font-family: 'Roboto'"
+  >
+    <!-- About Section -->
+    <div class="max-w-2xl mx-auto text-center pt-8 pb-4" id="about">
+      <h1 class="text-3xl font-bold mb-2">Gabriel Wendler</h1>
+      <p class="text-mm">
+        I'm a computer science student passionate about software development.
+      </p>
+    </div>
+    <!-- Education Section -->
+    <div class="max-w-2xl mx-auto text-center p-0" id="education">
+      <h2 class="text-2xl font-semibold mb-1">Education</h2>
+      <p class="text-mm">
+        Stockholm university, DSV, Computer Science, Bachelor's degree
+        (2024-2027)
+      </p>
+    </div>
+    <!-- Skills Section -->
+    <div class="max-w-2xl mx-auto text-center p-4" id="skills">
+      <h2 class="text-2xl font-semibold mb-1">Skills</h2>
+      <p class="text-mm">
+        HTML, CSS, Tailwind CSS, Javascript, Python, C#, Java, Git, Unity,
+        Excel, Word, PowerPoint, Diagrams.net, Figma
+      </p>
+    </div>
+    <!-- Contact Section -->
+    <div class="max-w-2xl mx-auto text-center pt-0" id="contact">
+      <h2 class="text-2xl font-semibold mb-1">Contact</h2>
+      <p class="text-lg">
+        <a
+          href="https://www.linkedin.com/in/gawendler/"
+          class="text-blue-400 hover:underline"
+          >My Linkedin page</a
+        >
+      </p>
+      <p class="text-lg">
+        <a
+          href="https://github.com/gawendler"
+          class="text-blue-400 hover:underline"
+          >My GitHub page</a
+        >
+      </p>
+    </div>
+    <!-- Projects Section -->
+    <div class="max-w-5xl mx-auto p-4" id="projects">
+      <h2 class="text-2xl font-semibold mb-4 text-center">Projects</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
+        <!-- Fractal Generator Project -->
+        <div
+          class="bg-gray-800 text-white rounded-lg shadow-lg p-2 cursor-pointer hover:bg-gray-900 transition relative"
+          onclick="location.href='/projects/Fractal generator';"
+          onmouseover="showButtons(this)"
+          onmouseout="hideButtons(this)"
+        >
+          <h3 class="text-xl font-bold mb-2 text-center">Fractal generator</h3>
+          <div
+            class="slideshow-container max-w-screen-md mx-auto relative mt-2"
+          >
+            <!-- Slide 1 -->
+            <div class="mySlides1 fade hidden">
+              <img
+                src="img/fractal4.png"
+                alt="Algorithm visualizer image 1"
+                class="w-full h-90 object-cover rounded-md mb-4"
+              />
+            </div>
+            <div class="mySlides1 fade hidden">
+              <img
+                src="img/fractal2.png"
+                alt="Algorithm visualizer image 2"
+                class="w-full h-90 object-cover rounded-md mb-4"
+              />
+            </div>
+            <div class="mySlides1 fade hidden">
+              <img
+                src="img/fractal3.png"
+                alt="Algorithm visualizer image 2"
+                class="w-full h-90 object-cover rounded-md mb-4"
+              />
+            </div>
+            <div class="mySlides1 fade hidden">
+              <img
+                src="img/fractal1.png"
+                alt="Algorithm visualizer image 2"
+                class="w-full h-90 object-cover rounded-md mb-4"
+              />
+            </div>
+            <!-- Navigation buttons -->
+            <button
+              class="prev absolute top-1/2 left-0 transform -translate-y-1/2 px-4 py-2 text-white font-bold bg-gray-900 bg-opacity-60 rounded-r hover:bg-gray-900 hidden"
+              onclick=" event.stopPropagation(); plusSlides(-1, 0)"
+            >
+              ❮
+            </button>
+            <button
+              class="next absolute top-1/2 right-0 transform -translate-y-1/2 px-4 py-2 text-white font-bold bg-gray-900 bg-opacity-60 rounded-l hover:bg-gray-900 hidden"
+              onclick=" event.stopPropagation(); plusSlides(1, 0)"
+            >
+              ❯
+            </button>
           </div>
-          <div class="mySlides1 fade hidden">
-            <img src="img/fractal2.png" alt="Algorithm visualizer image 2"
-              class="w-full h-90 object-cover rounded-md mb-4" />
+          <p class="text-sm mb-4 text-justify">
+            Fraktal Generator is an interactive web app that generates beautiful
+            fractals using L-systems. Users can explore and customize fractal
+            patterns by adjusting the axiom, rules, angles, and recursion depth.
+            With a user-friendly interface powered by p5.js, it’s ideal for
+            creative coding, math, and visual arts enthusiasts.
+          </p>
+          <a
+            bg-
+            href="https://github.com/gawendler/Fraktalgenerator"
+            class="text-blue-400 hover:underline"
+            >GitHub Repository</a
+          >
+          <div class="mt-4 grid grid-cols-4 gap-2">
+            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
+              >HTML</span
+            >
+            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
+              >CSS</span
+            >
+            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
+              >Javascript</span
+            >
+            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
+              >P5.js</span
+            >
           </div>
-          <div class="mySlides1 fade hidden">
-            <img src="img/fractal3.png" alt="Algorithm visualizer image 2"
-              class="w-full h-90 object-cover rounded-md mb-4" />
-          </div>
-          <div class="mySlides1 fade hidden">
-            <img src="img/fractal1.png" alt="Algorithm visualizer image 2"
-              class="w-full h-90 object-cover rounded-md mb-4" />
-          </div>
-          <!-- Navigation buttons -->
-          <button
-            class="prev absolute top-1/2 left-0 transform -translate-y-1/2 px-4 py-2 text-white font-bold bg-gray-900 bg-opacity-60 rounded-r hover:bg-gray-900 hidden"
-            onclick=" event.stopPropagation(); plusSlides(-1, 0)">
-            ❮
-          </button>
-          <button
-            class="next absolute top-1/2 right-0 transform -translate-y-1/2 px-4 py-2 text-white font-bold bg-gray-900 bg-opacity-60 rounded-l hover:bg-gray-900 hidden"
-            onclick=" event.stopPropagation(); plusSlides(1, 0)">
-            ❯
-          </button>
         </div>
-        <p class="text-sm mb-4 text-justify">
-          Fraktal Generator is an interactive web app that generates beautiful
-          fractals using L-systems. Users can explore and customize fractal
-          patterns by adjusting the axiom, rules, angles, and recursion depth.
-          With a user-friendly interface powered by p5.js, it’s ideal for
-          creative coding, math, and visual arts enthusiasts.
-        </p>
-        <a href="https://github.com/gawendler/Fraktalgenerator" class="text-blue-400 hover:underline">GitHub
-          Repository</a>
-        <div class="mt-4 grid grid-cols-4 gap-2">
-          <span class="bg-gray-900 text-white py-1 px-2 rounded text-center">HTML</span>
-          <span class="bg-gray-900 text-white py-1 px-2 rounded text-center">CSS</span>
-          <span class="bg-gray-900 text-white py-1 px-2 rounded text-center">Javascript</span>
-          <span class="bg-gray-900 text-white py-1 px-2 rounded text-center">P5.js</span>
-        </div>
-      </div>
+        <div
+          class="bg-gray-800 text-white rounded-lg shadow-lg p-2 cursor-pointer hover:bg-gray-900 transition relative"
+          onclick="location.href='/projects/Yatzy';"
+          onmouseover="showButtons(this)"
+          onmouseout="hideButtons(this)"
+        >
+          <h3 class="text-xl font-bold mb-2 text-center">Yatzy</h3>
 
-      <div class="bg-gray-800 text-white rounded-lg shadow-lg p-2 cursor-pointer hover:bg-gray-900 transition relative"
-        onclick="location.href='';" onmouseover="showButtons(this)" onmouseout="hideButtons(this)">
-        <h3 class="text-xl font-bold mb-2 text-center">AI Doodle Jump</h3>
-        <div class="slideshow-container max-w-screen-md mx-auto relative mt-2">
-          <!-- Slide 1 -->
-          <div class="mySlides8 fade hidden">
-            <img src="img/doodle1.png" alt="Algorithm visualizer image 1"
-              class="w-full h-90 object-cover rounded-md mb-4" />
+          <div
+            class="slideshow-container max-w-screen-md mx-auto relative mt-2"
+          >
+            <!-- Slide 1 -->
+            <div class="mySlides5 fade hidden">
+              <img
+                src="img/yatzy1.png"
+                alt="Algorithm visualizer image 1"
+                class="w-full h-90 object-cover rounded-md mb-4"
+              />
+            </div>
+            <div class="mySlides5 fade hidden">
+              <img
+                src="img/yatzy2.png"
+                alt="Algorithm visualizer image 2"
+                class="w-full h-90 object-cover rounded-md mb-4"
+              />
+            </div>
+            <!-- Navigation buttons -->
+            <button
+              class="prev absolute top-1/2 left-0 transform -translate-y-1/2 px-4 py-2 text-white font-bold bg-gray-900 bg-opacity-60 rounded-r hover:bg-gray-900 hidden"
+              onclick=" event.stopPropagation(); plusSlides(-1, 4)"
+            >
+              ❮
+            </button>
+            <button
+              class="next absolute top-1/2 right-0 transform -translate-y-1/2 px-4 py-2 text-white font-bold bg-gray-900 bg-opacity-60 rounded-l hover:bg-gray-900 hidden"
+              onclick=" event.stopPropagation(); plusSlides(1, 4)"
+            >
+              ❯
+            </button>
           </div>
-          <div class="mySlides8 fade hidden">
-            <img src="img/doodle2.png" alt="Algorithm visualizer image 2"
-              class="w-full h-90 object-cover rounded-md mb-4" />
-          </div>
-          <div class="mySlides8 fade hidden">
-            <img src="img/doodle3.png" alt="Algorithm visualizer image 2"
-              class="w-full h-90 object-cover rounded-md mb-4" />
-          </div>
-          <div class="mySlides8 fade hidden">
-            <img src="img/doodle4.png" alt="Algorithm visualizer image 2"
-              class="w-full h-90 object-cover rounded-md mb-4" />
-          </div>
-          <!-- Navigation buttons -->
-          <button
-            class="prev absolute top-1/2 left-0 transform -translate-y-1/2 px-4 py-2 text-white font-bold bg-gray-900 bg-opacity-60 rounded-r hover:bg-gray-900 hidden"
-            onclick=" event.stopPropagation(); plusSlides(-1, 7)">
-            ❮
-          </button>
-          <button
-            class="next absolute top-1/2 right-0 transform -translate-y-1/2 px-4 py-2 text-white font-bold bg-gray-900 bg-opacity-60 rounded-l hover:bg-gray-900 hidden"
-            onclick=" event.stopPropagation(); plusSlides(1, 7)">
-            ❯
-          </button>
-        </div>
 
-        <p class="text-sm mb-4 text-justify">
-          This project is an AI Doodle Jump game simulation using NEAT
-          (NeuroEvolution of Augmenting Topologies). The AI evolves over
-          multiple generations to optimize the movement of an agent (player)
-          that jumps on platforms to maximize its score.
-        </p>
-        <a href="https://github.com/gawendler/AI-Doodle-Jump" class="text-blue-400 hover:underline">GitHub
-          Repository</a>
-        <div class="mt-4 grid grid-cols-4 gap-2">
-          <span class="bg-gray-900 text-white py-1 px-2 rounded text-center">Python</span>
-          <span class="bg-gray-900 text-white py-1 px-2 rounded text-center">Pygame</span>
-          <span class="bg-gray-900 text-white py-1 px-2 rounded text-center">Neat</span>
-          <span class="bg-gray-900 text-white py-1 px-2 rounded text-center">Matplotlib</span>
-          <span class="bg-gray-900 text-white py-1 px-2 rounded text-center">Numpy</span>
+          <p class="text-sm mb-4 text-justify">
+            This Yatzy Game is an interactive, browser-based implementation of
+            the classic dice game, Yatzy. Players roll dice and attempt to score
+            points by creating specific dice combinations. The game is designed
+            to be easy to use, with simple controls and visual feedback, making
+            it a fun way to play Yatzy with friends or by yourself.
+          </p>
+          <a
+            href="https://github.com/gawendler/Yatzy"
+            class="text-blue-400 hover:underline"
+            >GitHub Repository</a
+          >
+          <div class="mt-4 grid grid-cols-4 gap-2">
+            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
+              >HTML</span
+            ><span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
+              >CSS</span
+            >
+            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
+              >Javascript</span
+            >
+          </div>
         </div>
-      </div>
+        <!-- Personal Website Project -->
+        <div
+          class="bg-gray-800 text-white rounded-lg shadow-lg p-2 cursor-pointer hover:bg-gray-900 transition relative"
+          onclick="location.href='';"
+          onmouseover="showButtons(this)"
+          onmouseout="hideButtons(this)"
+        >
+          <h3 class="text-xl font-bold mb-2 text-center">Personal Website</h3>
+          <div
+            class="slideshow-container max-w-screen-md mx-auto relative mt-2"
+          >
+            <!-- Slide 1 -->
+            <div class="mySlides3 fade hidden">
+              <img
+                src="img/personal1.png"
+                alt="Algorithm visualizer image 1"
+                class="w-full h-90 object-cover rounded-md mb-4"
+              />
+            </div>
+            <div class="mySlides3 fade hidden">
+              <img
+                src="img/personal1.png"
+                alt="Algorithm visualizer image 2"
+                class="w-full h-90 object-cover rounded-md mb-4"
+              />
+            </div>
+            <!-- Navigation buttons -->
+            <button
+              class="prev absolute top-1/2 left-0 transform -translate-y-1/2 px-4 py-2 text-white font-bold bg-gray-900 bg-opacity-60 rounded-r hover:bg-gray-900 hidden"
+              onclick=" event.stopPropagation(); plusSlides(-1, 2)"
+            >
+              ❮
+            </button>
+            <button
+              class="next absolute top-1/2 right-0 transform -translate-y-1/2 px-4 py-2 text-white font-bold bg-gray-900 bg-opacity-60 rounded-l hover:bg-gray-900 hidden"
+              onclick=" event.stopPropagation(); plusSlides(1, 2)"
+            >
+              ❯
+            </button>
+          </div>
 
-      <!-- Algorithm Visualizer Project -->
-      <div class="bg-gray-800 text-white rounded-lg shadow-lg p-2 cursor-pointer hover:bg-gray-900 transition relative"
-        onclick="location.href='/projects/Algorithm visualizer';" onmouseover="showButtons(this)"
-        onmouseout="hideButtons(this)">
-        <h3 class="text-xl font-bold mb-2 text-center">
-          Algorithm visualizer
-        </h3>
-        <!-- Slideshow container -->
-        <div class="slideshow-container max-w-screen-md mx-auto relative mt-2">
-          <!-- Slide 1 -->
-          <div class="mySlides2 fade hidden">
-            <img src="img/algoritm1.png" alt="Algorithm visualizer image 1"
-              class="w-full h-90 object-cover rounded-md mb-4" />
-          </div>
-          <div class="mySlides2 fade hidden">
-            <img src="img/algoritm2.png" alt="Algorithm visualizer image 2"
-              class="w-full h-90 object-cover rounded-md mb-4" />
-          </div>
-          <!-- Navigation buttons -->
-          <button
-            class="prev absolute top-1/2 left-0 transform -translate-y-1/2 px-4 py-2 text-white font-bold bg-gray-900 bg-opacity-60 rounded-r hover:bg-gray-900 hidden"
-            onclick=" event.stopPropagation(); plusSlides(-1, 1)">
-            ❮
-          </button>
-          <button
-            class="next absolute top-1/2 right-0 transform -translate-y-1/2 px-4 py-2 text-white font-bold bg-gray-900 bg-opacity-60 rounded-l hover:bg-gray-900 hidden"
-            onclick=" event.stopPropagation(); plusSlides(1, 1)">
-            ❯
-          </button>
-        </div>
+          <p class="text-sm mb-4 text-justify">
+            This website. A personal portfolio website, showcasing my background
+            in computer science, my skills, and projects. Built with HTML, CSS,
+            JavaScript, and Tailwind CSS, the website features a clean and
+            responsive design, powered by Tailwind CSS, to provide a modern
+            browsing experience.
+          </p>
+          <a
+            href="https://github.com/gawendler/gawendler.github.io"
+            class="text-blue-400 hover:underline"
+            >GitHub Repository</a
+          >
+          <div class="mt-4 grid grid-cols-4 gap-2">
+            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
+              >HTML</span
+            ><span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
+              >Tailwind CSS</span
+            >
+            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
+              >Javascript</span
+            >
 
-        <p class="text-sm mb-4 text-justify">
-          Algorithm Visualizer is a web app for visualizing sorting and
-          pathfinding algorithms in an interactive, educational environment.
-          Users can observe popular algorithms as they sort data or navigate
-          mazes, making it a valuable for learning. It supports customizable
-          array sizes, sorting speeds and grid configurations.
-        </p>
-        <a href="https://github.com/gawendler/Algorithm-visualizer" class="text-blue-400 hover:underline">GitHub
-          Repository</a>
-        <div class="mt-4 grid grid-cols-4 gap-2">
-          <span class="bg-gray-900 text-white py-1 px-2 rounded text-center">HTML</span>
-          <span class="bg-gray-900 text-white py-1 px-2 rounded text-center">CSS</span>
-          <span class="bg-gray-900 text-white py-1 px-2 rounded text-center">Javascript</span>
-        </div>
-      </div>
-      <div class="bg-gray-800 text-white rounded-lg shadow-lg p-2 cursor-pointer hover:bg-gray-900 transition relative"
-        onclick="location.href='/projects/Yatzy';" onmouseover="showButtons(this)" onmouseout="hideButtons(this)">
-        <h3 class="text-xl font-bold mb-2 text-center">Yatzy</h3>
-
-        <div class="slideshow-container max-w-screen-md mx-auto relative mt-2">
-          <!-- Slide 1 -->
-          <div class="mySlides5 fade hidden">
-            <img src="img/yatzy1.png" alt="Algorithm visualizer image 1"
-              class="w-full h-90 object-cover rounded-md mb-4" />
+            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
+              >React.js</span
+            >
           </div>
-          <div class="mySlides5 fade hidden">
-            <img src="img/yatzy2.png" alt="Algorithm visualizer image 2"
-              class="w-full h-90 object-cover rounded-md mb-4" />
-          </div>
-          <!-- Navigation buttons -->
-          <button
-            class="prev absolute top-1/2 left-0 transform -translate-y-1/2 px-4 py-2 text-white font-bold bg-gray-900 bg-opacity-60 rounded-r hover:bg-gray-900 hidden"
-            onclick=" event.stopPropagation(); plusSlides(-1, 4)">
-            ❮
-          </button>
-          <button
-            class="next absolute top-1/2 right-0 transform -translate-y-1/2 px-4 py-2 text-white font-bold bg-gray-900 bg-opacity-60 rounded-l hover:bg-gray-900 hidden"
-            onclick=" event.stopPropagation(); plusSlides(1, 4)">
-            ❯
-          </button>
-        </div>
-
-        <p class="text-sm mb-4 text-justify">
-          This Yatzy Game is an interactive, browser-based implementation of
-          the classic dice game, Yatzy. Players roll dice and attempt to score
-          points by creating specific dice combinations. The game is designed
-          to be easy to use, with simple controls and visual feedback, making
-          it a fun way to play Yatzy with friends or by yourself.
-        </p>
-        <a href="https://github.com/gawendler/Yatzy" class="text-blue-400 hover:underline">GitHub Repository</a>
-        <div class="mt-4 grid grid-cols-4 gap-2">
-          <span class="bg-gray-900 text-white py-1 px-2 rounded text-center">HTML</span><span
-            class="bg-gray-900 text-white py-1 px-2 rounded text-center">CSS</span>
-          <span class="bg-gray-900 text-white py-1 px-2 rounded text-center">Javascript</span>
-        </div>
-      </div>
-      <!-- Personal Website Project -->
-      <div class="bg-gray-800 text-white rounded-lg shadow-lg p-2 cursor-pointer hover:bg-gray-900 transition relative"
-        onclick="location.href='';" onmouseover="showButtons(this)" onmouseout="hideButtons(this)">
-        <h3 class="text-xl font-bold mb-2 text-center">Personal Website</h3>
-        <div class="slideshow-container max-w-screen-md mx-auto relative mt-2">
-          <!-- Slide 1 -->
-          <div class="mySlides3 fade hidden">
-            <img src="img/personal1.png" alt="Algorithm visualizer image 1"
-              class="w-full h-90 object-cover rounded-md mb-4" />
-          </div>
-          <div class="mySlides3 fade hidden">
-            <img src="img/personal1.png" alt="Algorithm visualizer image 2"
-              class="w-full h-90 object-cover rounded-md mb-4" />
-          </div>
-          <!-- Navigation buttons -->
-          <button
-            class="prev absolute top-1/2 left-0 transform -translate-y-1/2 px-4 py-2 text-white font-bold bg-gray-900 bg-opacity-60 rounded-r hover:bg-gray-900 hidden"
-            onclick=" event.stopPropagation(); plusSlides(-1, 2)">
-            ❮
-          </button>
-          <button
-            class="next absolute top-1/2 right-0 transform -translate-y-1/2 px-4 py-2 text-white font-bold bg-gray-900 bg-opacity-60 rounded-l hover:bg-gray-900 hidden"
-            onclick=" event.stopPropagation(); plusSlides(1, 2)">
-            ❯
-          </button>
-        </div>
-
-        <p class="text-sm mb-4 text-justify">
-          This website. A personal portfolio website, showcasing my background
-          in computer science, my skills, and projects. Built with HTML, CSS,
-          JavaScript, and Tailwind CSS, the website features a clean and
-          responsive design, powered by Tailwind CSS, to provide a modern
-          browsing experience.
-        </p>
-        <a href="https://github.com/gawendler/gawendler.github.io" class="text-blue-400 hover:underline">GitHub
-          Repository</a>
-        <div class="mt-4 grid grid-cols-4 gap-2">
-          <span class="bg-gray-900 text-white py-1 px-2 rounded text-center">HTML</span><span
-            class="bg-gray-900 text-white py-1 px-2 rounded text-center">Tailwind CSS</span>
-          <span class="bg-gray-900 text-white py-1 px-2 rounded text-center">Javascript</span>
-
-          <span class="bg-gray-900 text-white py-1 px-2 rounded text-center">React.js</span>
-        </div>
-      </div>
-
-      <!-- Additional projects follow the same format as above -->
-      <div class="bg-gray-800 text-white rounded-lg shadow-lg p-2 cursor-pointer hover:bg-gray-900 transition relative"
-        onclick="location.href='';" onmouseover="showButtons(this)" onmouseout="hideButtons(this)">
-        <h3 class="text-xl font-bold mb-2 text-center">
-          Programming language [Cwedish]
-        </h3>
-        <div class="slideshow-container max-w-screen-md mx-auto relative mt-2">
-          <!-- Slide 1 -->
-          <div class="mySlides4 fade hidden">
-            <img src="img/Cwedish1.png" alt="Algorithm visualizer image 1"
-              class="w-full h-90 object-cover rounded-md mb-4" />
-          </div>
-          <div class="mySlides4 fade hidden">
-            <img src="img/Cwedish2.png" alt="Algorithm visualizer image 2"
-              class="w-full h-90 object-cover rounded-md mb-4" />
-          </div>
-          <div class="mySlides4 fade hidden">
-            <img src="img/Cwedish3.png" alt="Algorithm visualizer image 2"
-              class="w-full h-90 object-cover rounded-md mb-4" />
-          </div>
-          <!-- Navigation buttons -->
-          <button
-            class="prev absolute top-1/2 left-0 transform -translate-y-1/2 px-4 py-2 text-white font-bold bg-gray-900 bg-opacity-60 rounded-r hover:bg-gray-900 hidden"
-            onclick=" event.stopPropagation(); plusSlides(-1, 3)">
-            ❮
-          </button>
-          <button
-            class="next absolute top-1/2 right-0 transform -translate-y-1/2 px-4 py-2 text-white font-bold bg-gray-900 bg-opacity-60 rounded-l hover:bg-gray-900 hidden"
-            onclick=" event.stopPropagation(); plusSlides(1, 3)">
-            ❯
-          </button>
         </div>
 
-        <p class="text-sm mb-4 text-justify">
-          This project enables programmers to write code with a Swedish
-          syntax, which is then automatically translated into standard C
-          syntax for compilation and execution.
-        </p>
-        <a href="https://github.com/gawendler/Programming-language" class="text-blue-400 hover:underline">GitHub
-          Repository</a>
-        <div class="mt-4 grid grid-cols-4 gap-2">
-          <span class="bg-gray-900 text-white py-1 px-2 rounded text-center">C</span><span
-            class="bg-gray-900 text-white py-1 px-2 rounded text-center">Cwedish</span>
-        </div>
-      </div>
+        <!-- Algorithm Visualizer Project -->
+        <div
+          class="bg-gray-800 text-white rounded-lg shadow-lg p-2 cursor-pointer hover:bg-gray-900 transition relative"
+          onclick="location.href='/projects/Algorithm visualizer';"
+          onmouseover="showButtons(this)"
+          onmouseout="hideButtons(this)"
+        >
+          <h3 class="text-xl font-bold mb-2 text-center">
+            Algorithm visualizer
+          </h3>
+          <!-- Slideshow container -->
+          <div
+            class="slideshow-container max-w-screen-md mx-auto relative mt-2"
+          >
+            <!-- Slide 1 -->
+            <div class="mySlides2 fade hidden">
+              <img
+                src="img/algoritm1.png"
+                alt="Algorithm visualizer image 1"
+                class="w-full h-90 object-cover rounded-md mb-4"
+              />
+            </div>
+            <div class="mySlides2 fade hidden">
+              <img
+                src="img/algoritm2.png"
+                alt="Algorithm visualizer image 2"
+                class="w-full h-90 object-cover rounded-md mb-4"
+              />
+            </div>
+            <!-- Navigation buttons -->
+            <button
+              class="prev absolute top-1/2 left-0 transform -translate-y-1/2 px-4 py-2 text-white font-bold bg-gray-900 bg-opacity-60 rounded-r hover:bg-gray-900 hidden"
+              onclick=" event.stopPropagation(); plusSlides(-1, 1)"
+            >
+              ❮
+            </button>
+            <button
+              class="next absolute top-1/2 right-0 transform -translate-y-1/2 px-4 py-2 text-white font-bold bg-gray-900 bg-opacity-60 rounded-l hover:bg-gray-900 hidden"
+              onclick=" event.stopPropagation(); plusSlides(1, 1)"
+            >
+              ❯
+            </button>
+          </div>
 
-      <div class="bg-gray-800 text-white rounded-lg shadow-lg p-2 cursor-pointer hover:bg-gray-900 transition relative"
-        onclick="location.href='projects/Holochess';" onmouseover="showButtons(this)" onmouseout="hideButtons(this)">
-        <h3 class="text-xl font-bold mb-2 text-center">
-          Holochess online OBS INTE KLAR
-        </h3>
-        <div class="slideshow-container max-w-screen-md mx-auto relative mt-2">
-          <!-- Slide 1 -->
-          <div class="mySlides7 fade hidden">
-            <img src="img/holochess1.png" alt="Algorithm visualizer image 1"
-              class="w-full h-90 object-cover rounded-md mb-4" />
+          <p class="text-sm mb-4 text-justify">
+            Algorithm Visualizer is a web app for visualizing sorting and
+            pathfinding algorithms in an interactive, educational environment.
+            Users can observe popular algorithms as they sort data or navigate
+            mazes, making it a valuable for learning. It supports customizable
+            array sizes, sorting speeds and grid configurations.
+          </p>
+          <a
+            href="https://github.com/gawendler/Algorithm-visualizer"
+            class="text-blue-400 hover:underline"
+            >GitHub Repository</a
+          >
+          <div class="mt-4 grid grid-cols-4 gap-2">
+            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
+              >HTML</span
+            >
+            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
+              >CSS</span
+            >
+            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
+              >Javascript</span
+            >
           </div>
-          <div class="mySlides7 fade hidden">
-            <img src="img/holochess2.png" alt="Algorithm visualizer image 2"
-              class="w-full h-90 object-cover rounded-md mb-4" />
+        </div>
+        <div
+          class="bg-gray-800 text-white rounded-lg shadow-lg p-2 cursor-pointer hover:bg-gray-900 transition relative"
+          onclick="location.href='';"
+          onmouseover="showButtons(this)"
+          onmouseout="hideButtons(this)"
+        >
+          <h3 class="text-xl font-bold mb-2 text-center">AI Doodle Jump</h3>
+          <div
+            class="slideshow-container max-w-screen-md mx-auto relative mt-2"
+          >
+            <!-- Slide 1 -->
+            <div class="mySlides8 fade hidden">
+              <img
+                src="img/doodle1.png"
+                alt="Algorithm visualizer image 1"
+                class="w-full h-90 object-cover rounded-md mb-4"
+              />
+            </div>
+            <div class="mySlides8 fade hidden">
+              <img
+                src="img/doodle2.png"
+                alt="Algorithm visualizer image 2"
+                class="w-full h-90 object-cover rounded-md mb-4"
+              />
+            </div>
+            <div class="mySlides8 fade hidden">
+              <img
+                src="img/doodle3.png"
+                alt="Algorithm visualizer image 2"
+                class="w-full h-90 object-cover rounded-md mb-4"
+              />
+            </div>
+            <div class="mySlides8 fade hidden">
+              <img
+                src="img/doodle4.png"
+                alt="Algorithm visualizer image 2"
+                class="w-full h-90 object-cover rounded-md mb-4"
+              />
+            </div>
+            <!-- Navigation buttons -->
+            <button
+              class="prev absolute top-1/2 left-0 transform -translate-y-1/2 px-4 py-2 text-white font-bold bg-gray-900 bg-opacity-60 rounded-r hover:bg-gray-900 hidden"
+              onclick=" event.stopPropagation(); plusSlides(-1, 7)"
+            >
+              ❮
+            </button>
+            <button
+              class="next absolute top-1/2 right-0 transform -translate-y-1/2 px-4 py-2 text-white font-bold bg-gray-900 bg-opacity-60 rounded-l hover:bg-gray-900 hidden"
+              onclick=" event.stopPropagation(); plusSlides(1, 7)"
+            >
+              ❯
+            </button>
           </div>
-          <div class="mySlides7 fade hidden">
-            <img src="img/holochess1.png" alt="Algorithm visualizer image 2"
-              class="w-full h-90 object-cover rounded-md mb-4" />
+
+          <p class="text-sm mb-4 text-justify">
+            This project is an AI Doodle Jump game simulation using NEAT
+            (NeuroEvolution of Augmenting Topologies). The AI evolves over
+            multiple generations to optimize the movement of an agent (player)
+            that jumps on platforms to maximize its score.
+          </p>
+          <a
+            href="https://github.com/gawendler/AI-Doodle-Jump"
+            class="text-blue-400 hover:underline"
+            >GitHub Repository</a
+          >
+          <div class="mt-4 grid grid-cols-4 gap-2">
+            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
+              >Python</span
+            >
+            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
+              >Pygame</span
+            >
+            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
+              >Neat</span
+            >
+            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
+              >Matplotlib</span
+            >
+            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
+              >Numpy</span
+            >
           </div>
-          <!-- Navigation buttons -->
-          <button
-            class="prev absolute top-1/2 left-0 transform -translate-y-1/2 px-4 py-2 text-white font-bold bg-gray-900 bg-opacity-60 rounded-r hover:bg-gray-900 hidden"
-            onclick=" event.stopPropagation(); plusSlides(-1, 6)">
-            ❮
-          </button>
-          <button
-            class="next absolute top-1/2 right-0 transform -translate-y-1/2 px-4 py-2 text-white font-bold bg-gray-900 bg-opacity-60 rounded-l hover:bg-gray-900 hidden"
-            onclick=" event.stopPropagation(); plusSlides(1, 6)">
-            ❯
-          </button>
         </div>
 
-        <p class="text-sm mb-4 text-justify">
-          This website is online implementation of the chess game from Star
-          Wars known as Dejarik aka Holochess. Account implementation
-        </p>
-        <a href="https://github.com/gawendler/Online-holochess" class="text-blue-400 hover:underline">GitHub
-          Repository</a>
-        <div class="mt-4 grid grid-cols-4 gap-2">
-          <span class="bg-gray-900 text-white py-1 px-2 rounded text-center">HTML</span>
-          <span class="bg-gray-900 text-white py-1 px-2 rounded text-center">CSS</span>
-          <span class="bg-gray-900 text-white py-1 px-2 rounded text-center">Javascript</span>
-          <span class="bg-gray-900 text-white py-1 px-2 rounded text-center">Express.js</span>
-          <span class="bg-gray-900 text-white py-1 px-2 rounded text-center">node.js</span>
-          <span class="bg-gray-900 text-white py-1 px-2 rounded text-center">Socket.io</span>
-          <span class="bg-gray-900 text-white py-1 px-2 rounded text-center">Firebase</span>
-        </div>
-      </div>
-      <div class="bg-gray-800 text-white rounded-lg shadow-lg p-2 cursor-pointer hover:bg-gray-900 transition relative"
-        onclick="location.href='';" onmouseover="showButtons(this)" onmouseout="hideButtons(this)">
-        <h3 class="text-xl font-bold mb-2 text-center">Game unity</h3>
-        <div class="slideshow-container max-w-screen-md mx-auto relative mt-2">
-          <!-- Slide 1 -->
-          <div class="mySlides6 fade hidden">
-            <img src="img/unity1.png" alt="Algorithm visualizer image 1"
-              class="w-full h-90 object-cover rounded-md mb-4" />
+        <!-- Additional projects follow the same format as above -->
+        <div
+          class="bg-gray-800 text-white rounded-lg shadow-lg p-2 cursor-pointer hover:bg-gray-900 transition relative"
+          onclick="location.href='';"
+          onmouseover="showButtons(this)"
+          onmouseout="hideButtons(this)"
+        >
+          <h3 class="text-xl font-bold mb-2 text-center">
+            Programming language [Cwedish]
+          </h3>
+          <div
+            class="slideshow-container max-w-screen-md mx-auto relative mt-2"
+          >
+            <!-- Slide 1 -->
+            <div class="mySlides4 fade hidden">
+              <img
+                src="img/Cwedish1.png"
+                alt="Algorithm visualizer image 1"
+                class="w-full h-90 object-cover rounded-md mb-4"
+              />
+            </div>
+            <div class="mySlides4 fade hidden">
+              <img
+                src="img/Cwedish2.png"
+                alt="Algorithm visualizer image 2"
+                class="w-full h-90 object-cover rounded-md mb-4"
+              />
+            </div>
+            <div class="mySlides4 fade hidden">
+              <img
+                src="img/Cwedish3.png"
+                alt="Algorithm visualizer image 2"
+                class="w-full h-90 object-cover rounded-md mb-4"
+              />
+            </div>
+            <!-- Navigation buttons -->
+            <button
+              class="prev absolute top-1/2 left-0 transform -translate-y-1/2 px-4 py-2 text-white font-bold bg-gray-900 bg-opacity-60 rounded-r hover:bg-gray-900 hidden"
+              onclick=" event.stopPropagation(); plusSlides(-1, 3)"
+            >
+              ❮
+            </button>
+            <button
+              class="next absolute top-1/2 right-0 transform -translate-y-1/2 px-4 py-2 text-white font-bold bg-gray-900 bg-opacity-60 rounded-l hover:bg-gray-900 hidden"
+              onclick=" event.stopPropagation(); plusSlides(1, 3)"
+            >
+              ❯
+            </button>
           </div>
-          <div class="mySlides6 fade hidden">
-            <img src="img/unity2.png" alt="Algorithm visualizer image 2"
-              class="w-full h-90 object-cover rounded-md mb-4" />
+
+          <p class="text-sm mb-4 text-justify">
+            This project enables programmers to write code with a Swedish
+            syntax, which is then automatically translated into standard C
+            syntax for compilation and execution.
+          </p>
+          <a
+            href="https://github.com/gawendler/Programming-language"
+            class="text-blue-400 hover:underline"
+            >GitHub Repository</a
+          >
+          <div class="mt-4 grid grid-cols-4 gap-2">
+            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
+              >C</span
+            ><span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
+              >Cwedish</span
+            >
           </div>
-          <div class="mySlides6 fade hidden">
-            <img src="img/unity3.png" alt="Algorithm visualizer image 2"
-              class="w-full h-90 object-cover rounded-md mb-4" />
-          </div>
-          <!-- Navigation buttons -->
-          <button
-            class="prev absolute top-1/2 left-0 transform -translate-y-1/2 px-4 py-2 text-white font-bold bg-gray-900 bg-opacity-60 rounded-r hover:bg-gray-900 hidden"
-            onclick=" event.stopPropagation(); plusSlides(-1, 5)">
-            ❮
-          </button>
-          <button
-            class="next absolute top-1/2 right-0 transform -translate-y-1/2 px-4 py-2 text-white font-bold bg-gray-900 bg-opacity-60 rounded-l hover:bg-gray-900 hidden"
-            onclick=" event.stopPropagation(); plusSlides(1, 5)">
-            ❯
-          </button>
         </div>
 
-        <p class="text-sm mb-4 text-justify">
-          A game I made for a school project. All the graphics and props are
-          made by me as you can see
-        </p>
-        <a href="https://jggw.itch.io/titled-goose-game" class="text-blue-400 hover:underline">Itch.io Repository</a>
-        <div class="mt-4 grid grid-cols-4 gap-2">
-          <span class="bg-gray-900 text-white py-1 px-2 rounded text-center">Unity</span>
-          <span class="bg-gray-900 text-white py-1 px-2 rounded text-center">C#</span>
-          <span class="bg-gray-900 text-white py-1 px-2 rounded text-center">Modeling</span>
-          <span class="bg-gray-900 text-white py-1 px-2 rounded text-center">UI/UX design</span>
-          <span class="bg-gray-900 text-white py-1 px-2 rounded text-center">Testing</span>
+        <div
+          class="bg-gray-800 text-white rounded-lg shadow-lg p-2 cursor-pointer hover:bg-gray-900 transition relative"
+          onclick="location.href='projects/Holochess';"
+          onmouseover="showButtons(this)"
+          onmouseout="hideButtons(this)"
+        >
+          <h3 class="text-xl font-bold mb-2 text-center">
+            Holochess online OBS INTE KLAR
+          </h3>
+          <div
+            class="slideshow-container max-w-screen-md mx-auto relative mt-2"
+          >
+            <!-- Slide 1 -->
+            <div class="mySlides7 fade hidden">
+              <img
+                src="img/holochess1.png"
+                alt="Algorithm visualizer image 1"
+                class="w-full h-90 object-cover rounded-md mb-4"
+              />
+            </div>
+            <div class="mySlides7 fade hidden">
+              <img
+                src="img/holochess2.png"
+                alt="Algorithm visualizer image 2"
+                class="w-full h-90 object-cover rounded-md mb-4"
+              />
+            </div>
+            <div class="mySlides7 fade hidden">
+              <img
+                src="img/holochess1.png"
+                alt="Algorithm visualizer image 2"
+                class="w-full h-90 object-cover rounded-md mb-4"
+              />
+            </div>
+            <!-- Navigation buttons -->
+            <button
+              class="prev absolute top-1/2 left-0 transform -translate-y-1/2 px-4 py-2 text-white font-bold bg-gray-900 bg-opacity-60 rounded-r hover:bg-gray-900 hidden"
+              onclick=" event.stopPropagation(); plusSlides(-1, 6)"
+            >
+              ❮
+            </button>
+            <button
+              class="next absolute top-1/2 right-0 transform -translate-y-1/2 px-4 py-2 text-white font-bold bg-gray-900 bg-opacity-60 rounded-l hover:bg-gray-900 hidden"
+              onclick=" event.stopPropagation(); plusSlides(1, 6)"
+            >
+              ❯
+            </button>
+          </div>
+
+          <p class="text-sm mb-4 text-justify">
+            This website is online implementation of the chess game from Star
+            Wars known as Dejarik aka Holochess. Account implementation
+          </p>
+          <a
+            href="https://github.com/gawendler/Online-holochess"
+            class="text-blue-400 hover:underline"
+            >GitHub Repository</a
+          >
+          <div class="mt-4 grid grid-cols-4 gap-2">
+            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
+              >HTML</span
+            >
+            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
+              >CSS</span
+            >
+            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
+              >Javascript</span
+            >
+            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
+              >Express.js</span
+            >
+            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
+              >node.js</span
+            >
+            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
+              >Socket.io</span
+            >
+            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
+              >Firebase</span
+            >
+          </div>
+        </div>
+        <div
+          class="bg-gray-800 text-white rounded-lg shadow-lg p-2 cursor-pointer hover:bg-gray-900 transition relative"
+          onclick="location.href='';"
+          onmouseover="showButtons(this)"
+          onmouseout="hideButtons(this)"
+        >
+          <h3 class="text-xl font-bold mb-2 text-center">Game unity</h3>
+          <div
+            class="slideshow-container max-w-screen-md mx-auto relative mt-2"
+          >
+            <!-- Slide 1 -->
+            <div class="mySlides6 fade hidden">
+              <img
+                src="img/unity1.png"
+                alt="Algorithm visualizer image 1"
+                class="w-full h-90 object-cover rounded-md mb-4"
+              />
+            </div>
+            <div class="mySlides6 fade hidden">
+              <img
+                src="img/unity2.png"
+                alt="Algorithm visualizer image 2"
+                class="w-full h-90 object-cover rounded-md mb-4"
+              />
+            </div>
+            <div class="mySlides6 fade hidden">
+              <img
+                src="img/unity3.png"
+                alt="Algorithm visualizer image 2"
+                class="w-full h-90 object-cover rounded-md mb-4"
+              />
+            </div>
+            <!-- Navigation buttons -->
+            <button
+              class="prev absolute top-1/2 left-0 transform -translate-y-1/2 px-4 py-2 text-white font-bold bg-gray-900 bg-opacity-60 rounded-r hover:bg-gray-900 hidden"
+              onclick=" event.stopPropagation(); plusSlides(-1, 5)"
+            >
+              ❮
+            </button>
+            <button
+              class="next absolute top-1/2 right-0 transform -translate-y-1/2 px-4 py-2 text-white font-bold bg-gray-900 bg-opacity-60 rounded-l hover:bg-gray-900 hidden"
+              onclick=" event.stopPropagation(); plusSlides(1, 5)"
+            >
+              ❯
+            </button>
+          </div>
+
+          <p class="text-sm mb-4 text-justify">
+            A game I made for a school project. All the graphics and props are
+            made by me as you can see
+          </p>
+          <a
+            href="https://jggw.itch.io/titled-goose-game"
+            class="text-blue-400 hover:underline"
+            >Itch.io Repository</a
+          >
+          <div class="mt-4 grid grid-cols-4 gap-2">
+            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
+              >Unity</span
+            >
+            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
+              >C#</span
+            >
+            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
+              >Modeling</span
+            >
+            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
+              >UI/UX design</span
+            >
+            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
+              >Testing</span
+            >
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <script src="script.js"></script>
-</body>
-
+    <script src="script.js"></script>
+  </body>
 </html>
