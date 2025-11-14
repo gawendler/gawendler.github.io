@@ -1,35 +1,283 @@
+/* Modern Portfolio Styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
-html{    font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji"
+html {
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+  scroll-behavior: smooth;
 }
+
 body {
-    margin: 0;
-  padding: 15px 20px;
-  min-height: 99%;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
   width: 100%;
-  min-width: 550px;
   color: white;
-  background: #181614;
-  
   overflow-x: hidden;
-  }
-
-  p {
-    display: block;
-    line-height: 1.3em;
-    margin: 0;
-    overflow: hidden;
-    margin: 0;
-    letter-spacing: 0.05em;
-  }
-
-  .center {
-  margin: auto;
-  width: 50%;
-  padding: 10px;
-  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.rubrik{
-    padding-top: 2em;
-    font-size: 3em;
+/* Light Mode Styles */
+body.light-mode {
+  color: #111827 !important;
+  background: linear-gradient(to bottom right, #ffffff, #f9fafb, #f3f4f6) !important;
+}
+
+/* Ensure all text is visible in light mode */
+body.light-mode .text-white,
+body.light-mode h1,
+body.light-mode h2,
+body.light-mode h3 {
+  color: #111827 !important;
+}
+
+body.light-mode .text-gray-100,
+body.light-mode .text-gray-200 {
+  color: #374151 !important;
+}
+
+body.light-mode .text-gray-300 {
+  color: #4b5563 !important;
+}
+
+body.light-mode .text-gray-400 {
+  color: #6b7280 !important;
+}
+
+body.light-mode .text-gray-500 {
+  color: #6b7280 !important;
+}
+
+body.light-mode .bg-white\/5 {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border-color: rgba(209, 213, 219, 0.8) !important;
+}
+
+body.light-mode .border-white\/10 {
+  border-color: rgba(209, 213, 219, 0.8) !important;
+}
+
+/* Light mode project cards */
+body.light-mode .group.bg-gradient-to-br {
+  background: linear-gradient(to bottom right, #ffffff, #f9fafb) !important;
+  color: #111827 !important;
+}
+
+/* Light mode skill badges */
+body.light-mode .bg-gradient-to-r.from-purple-600\/20 {
+  background: rgba(147, 51, 234, 0.1) !important;
+  border-color: rgba(147, 51, 234, 0.3) !important;
+  color: #6b21a8 !important;
+}
+
+/* Dark Mode - Make it darker */
+body.dark-mode {
+  background: linear-gradient(to bottom right, #111827, #0f172a, #111827) !important;
+  color: #f3f4f6 !important;
+}
+
+body.dark-mode .bg-white\/5 {
+  background-color: rgba(17, 24, 39, 0.8) !important;
+  border-color: rgba(75, 85, 99, 0.3) !important;
+}
+
+body.dark-mode .group.bg-gradient-to-br {
+  background: linear-gradient(to bottom right, rgba(17, 24, 39, 0.9), rgba(15, 23, 42, 0.9)) !important;
+}
+
+/* Smooth fade-in animation */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-out;
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.5);
+}
+
+body.light-mode ::-webkit-scrollbar-track {
+  background: rgba(243, 244, 246, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #9333ea, #ec4899);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #a855f7, #f472b6);
+}
+
+body.light-mode ::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #7c3aed, #db2777);
+}
+
+/* Smooth image loading */
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Enhanced hover effects */
+.group:hover {
+  transform: translateY(-2px);
+}
+
+/* Glass morphism effect enhancement */
+.backdrop-blur-sm {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Gradient text animation */
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.text-transparent.bg-clip-text {
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+/* Section spacing */
+section {
+  scroll-margin-top: 80px;
+}
+
+/* Improved focus states for accessibility */
+a:focus,
+button:focus {
+  outline: 2px solid rgba(168, 85, 247, 0.5);
+  outline-offset: 2px;
+}
+
+body.light-mode a:focus,
+body.light-mode button:focus {
+  outline: 2px solid rgba(147, 51, 234, 0.5);
+}
+
+/* Smooth page transitions */
+body {
+  opacity: 0;
+  animation: fade-in 0.5s ease-in forwards;
+}
+
+/* Square aspect ratio for images */
+.aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
+/* Ensure project card text is visible in light mode */
+body.light-mode .text-white.dark\:text-white.light\:text-gray-800,
+body.light-mode h3.text-white {
+  color: #111827 !important;
+}
+
+/* Hero section text in light mode */
+body.light-mode h1.text-white.dark\:text-white.light\:text-gray-900 {
+  color: #111827 !important;
+}
+
+/* Section headers in light mode */
+body.light-mode h2.text-white {
+  color: #111827 !important;
+}
+
+/* LinkedIn and GitHub buttons - ensure white text in light mode */
+body.light-mode a.bg-gradient-to-r.from-blue-600,
+body.light-mode a.bg-gradient-to-r.from-gray-800,
+body.light-mode a.bg-gradient-to-r.from-gray-700 {
+  color: #ffffff !important;
+}
+
+body.light-mode a.bg-gradient-to-r svg {
+  color: #ffffff !important;
+}
+
+/* Project skill badges - darker text in light mode */
+body.light-mode span[class*="text-blue-200"],
+body.light-mode .text-blue-200 {
+  color: #1e40af !important;
+}
+
+body.light-mode span[class*="text-purple-200"],
+body.light-mode .text-purple-200 {
+  color: #6b21a8 !important;
+}
+
+body.light-mode span[class*="text-pink-200"],
+body.light-mode .text-pink-200 {
+  color: #9f1239 !important;
+}
+
+body.light-mode span[class*="text-cyan-200"],
+body.light-mode .text-cyan-200 {
+  color: #155e75 !important;
+}
+
+body.light-mode span[class*="text-emerald-200"],
+body.light-mode .text-emerald-200 {
+  color: #065f46 !important;
+}
+
+body.light-mode span[class*="text-amber-200"],
+body.light-mode .text-amber-200 {
+  color: #92400e !important;
+}
+
+body.light-mode span[class*="text-violet-200"],
+body.light-mode .text-violet-200 {
+  color: #5b21b6 !important;
+}
+
+body.light-mode span[class*="text-rose-200"],
+body.light-mode .text-rose-200 {
+  color: #9f1239 !important;
+}
+
+/* Light mode link colors */
+body.light-mode a.text-purple-400,
+body.light-mode a.text-blue-400,
+body.light-mode a.text-cyan-400,
+body.light-mode a.text-emerald-400,
+body.light-mode a.text-amber-400,
+body.light-mode a.text-violet-400,
+body.light-mode a.text-rose-400,
+body.light-mode a.text-pink-400 {
+  color: #7c3aed !important;
+}
+
+body.light-mode a:hover.text-purple-300,
+body.light-mode a:hover.text-blue-300,
+body.light-mode a:hover.text-cyan-300,
+body.light-mode a:hover.text-emerald-300,
+body.light-mode a:hover.text-amber-300,
+body.light-mode a:hover.text-violet-300,
+body.light-mode a:hover.text-rose-300,
+body.light-mode a:hover.text-pink-300 {
+  color: #9333ea !important;
 }

@@ -1,661 +1,668 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gabriel Wendler Portfolio</title>
-    <!-- Add Tailwind CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
-    <link rel="icon" type="image/x-icon" href="/img/babyyoda.gif" />
-  </head>
 
-  <body
-    class="bg-gray-200 text-gray-800 font-sans antialiased"
-    style="font-family: 'Roboto'"
-  >
-    <!-- About Section -->
-    <div class="max-w-2xl mx-auto text-center pt-8 pb-4" id="about">
-      <h1 class="text-3xl font-bold mb-2">Gabriel Wendler</h1>
-      <p class="text-mm">
-        I'm a computer science student passionate about software development.
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gabriel Wendler | Portfolio</title>
+  <!-- Add Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="/img/babyyoda.gif" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body
+  class="bg-gradient-to-br from-gray-900 via-slate-900 to-gray-900 text-gray-100 font-sans antialiased min-h-screen transition-colors duration-300"
+  id="body">
+  <!-- Dark Mode Toggle -->
+  <div class="fixed top-4 right-4 z-50">
+    <button id="theme-toggle"
+      class="p-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-300 shadow-lg">
+      <svg id="theme-icon-dark" class="w-6 h-6 text-yellow-300 hidden" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+      </svg>
+      <svg id="theme-icon-light" class="w-6 h-6 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd"
+          d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+  </div>
+  <!-- Hero Section -->
+  <div class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=" 60" height="60" viewBox="0 0 60 60"
+      xmlns="http://www.w3.org/2000/svg" %3E%3Cg fill="none" fill-rule="evenodd" %3E%3Cg fill="%239C92AC"
+      fill-opacity="0.05" %3E%3Cpath
+      d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"
+      /%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-2">
+      <div class="text-center">
+        <div class="inline-block mb-6">
+          <div class="relative">
+            <h1
+              class="text-5xl md:text-7xl font-extrabold mb-4 text-white dark:text-white light:text-gray-900 animate-fade-in">
+              Gabriel Wendler
+            </h1>
+          </div>
+        </div>
+        <p
+          class="text-xl md:text-2xl text-gray-300 dark:text-gray-300 light:text-gray-700 mb-8 max-w-2xl mx-auto leading-relaxed">
+          Computer Science Student | Software Developer
+        </p>
+        <p class="text-lg text-gray-400 dark:text-gray-400 light:text-gray-600 mb-12 max-w-xl mx-auto">
+          Passionate about creating innovative solutions and exploring the intersection of technology and creativity
+        </p>
+
+        <!-- Contact Links -->
+        <div class="flex flex-wrap justify-center gap-6 mb-6">
+          <a href="https://www.linkedin.com/in/gawendler/" target="_blank" rel="noopener noreferrer"
+            class="group relative px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full text-white dark:text-white light:text-white font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center gap-2">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg>
+            LinkedIn
+          </a>
+          <a href="https://github.com/gawendler" target="_blank" rel="noopener noreferrer"
+            class="group relative px-6 py-3 bg-gradient-to-r from-gray-800 to-gray-900 dark:from-gray-800 dark:to-gray-900 light:from-gray-700 light:to-gray-800 rounded-full text-white dark:text-white light:text-white font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center gap-2 border border-gray-700 dark:border-gray-700 light:border-gray-600">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path fill-rule="evenodd"
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                clip-rule="evenodd" />
+            </svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-6" id="about">
+    <div
+      class="bg-white/5 dark:bg-white/5 light:bg-gray-100/90 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/10 dark:border-white/10 light:border-gray-300 shadow-2xl">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white dark:text-white light:text-gray-800">
+        About Me
+      </h2>
+      <p class="text-base text-gray-300 dark:text-gray-300 light:text-gray-700 leading-relaxed">
+        I'm a computer science student passionate about software development, exploring innovative technologies, and
+        building projects that combine creativity with technical excellence.
       </p>
     </div>
-    <!-- Education Section -->
-    <div class="max-w-2xl mx-auto text-center p-0" id="education">
-      <h2 class="text-2xl font-semibold mb-1">Education</h2>
-      <p class="text-mm">
-        Stockholm university, DSV, Computer Science, Bachelor's degree
-        (2024-2027)
-      </p>
-    </div>
-    <!-- Skills Section -->
-    <div class="max-w-2xl mx-auto text-center p-4" id="skills">
-      <h2 class="text-2xl font-semibold mb-1">Skills</h2>
-      <p class="text-mm">
-        HTML, CSS, Tailwind CSS, Javascript, Python, C#, Java, Git, Unity,
-        Excel, Word, PowerPoint, Diagrams.net, Figma
-      </p>
-    </div>
-    <!-- Contact Section -->
-    <div class="max-w-2xl mx-auto text-center pt-0" id="contact">
-      <h2 class="text-2xl font-semibold mb-1">Contact</h2>
-      <p class="text-lg">
-        <a
-          href="https://www.linkedin.com/in/gawendler/"
-          class="text-blue-400 hover:underline"
-          >My Linkedin page</a
-        >
-      </p>
-      <p class="text-lg">
-        <a
-          href="https://github.com/gawendler"
-          class="text-blue-400 hover:underline"
-          >My GitHub page</a
-        >
-      </p>
-    </div>
-    <!-- Projects Section -->
-    <div class="max-w-5xl mx-auto p-4" id="projects">
-      <h2 class="text-2xl font-semibold mb-4 text-center">Projects</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
-        <!-- Fractal Generator Project -->
+  </section>
+
+  <!-- Education Section -->
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-4" id="education">
+    <div
+      class="bg-white/5 dark:bg-white/5 light:bg-gray-100/90 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/10 dark:border-white/10 light:border-gray-300 shadow-2xl">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white dark:text-white light:text-gray-800">
+        Education
+      </h2>
+      <div class="flex items-start gap-4">
         <div
-          class="bg-gray-800 text-white rounded-lg shadow-lg p-2 cursor-pointer hover:bg-gray-900 transition relative"
-          onclick="location.href='/projects/Fractal generator';"
-          onmouseover="showButtons(this)"
-          onmouseout="hideButtons(this)"
-        >
-          <h3 class="text-xl font-bold mb-2 text-center">Fractal generator</h3>
-          <div
-            class="slideshow-container max-w-screen-md mx-auto relative mt-2"
-          >
+          class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+          </svg>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold text-white dark:text-white light:text-gray-800 mb-2">Bachelor's Degree in
+            Computer Science</h3>
+          <p class="text-gray-400 dark:text-gray-400 light:text-gray-600 mb-1">Stockholm University, DSV</p>
+          <p class="text-sm text-gray-500 dark:text-gray-500 light:text-gray-500">2024 - 2027</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-4" id="skills">
+    <div
+      class="bg-white/5 dark:bg-white/5 light:bg-gray-100/90 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/10 dark:border-white/10 light:border-gray-300 shadow-2xl">
+      <h2 class="text-2xl md:text-3xl font-bold mb-6 text-white dark:text-white light:text-gray-800">
+        Skills
+      </h2>
+      <div class="flex flex-wrap gap-3">
+        <span
+          class="px-4 py-2 bg-gradient-to-r from-purple-600/20 to-pink-600/20 dark:from-purple-600/20 dark:to-pink-600/20 light:from-purple-100 light:to-pink-100 border border-purple-500/30 dark:border-purple-500/30 light:border-purple-300 rounded-full text-sm font-medium text-purple-200 dark:text-purple-200 light:text-purple-700 backdrop-blur-sm">HTML</span>
+        <span
+          class="px-4 py-2 bg-gradient-to-r from-purple-600/20 to-pink-600/20 dark:from-purple-600/20 dark:to-pink-600/20 light:from-purple-100 light:to-pink-100 border border-purple-500/30 dark:border-purple-500/30 light:border-purple-300 rounded-full text-sm font-medium text-purple-200 dark:text-purple-200 light:text-purple-700 backdrop-blur-sm">CSS</span>
+        <span
+          class="px-4 py-2 bg-gradient-to-r from-purple-600/20 to-pink-600/20 dark:from-purple-600/20 dark:to-pink-600/20 light:from-purple-100 light:to-pink-100 border border-purple-500/30 dark:border-purple-500/30 light:border-purple-300 rounded-full text-sm font-medium text-purple-200 dark:text-purple-200 light:text-purple-700 backdrop-blur-sm">Tailwind
+          CSS</span>
+        <span
+          class="px-4 py-2 bg-gradient-to-r from-purple-600/20 to-pink-600/20 dark:from-purple-600/20 dark:to-pink-600/20 light:from-purple-100 light:to-pink-100 border border-purple-500/30 dark:border-purple-500/30 light:border-purple-300 rounded-full text-sm font-medium text-purple-200 dark:text-purple-200 light:text-purple-700 backdrop-blur-sm">JavaScript</span>
+        <span
+          class="px-4 py-2 bg-gradient-to-r from-purple-600/20 to-pink-600/20 dark:from-purple-600/20 dark:to-pink-600/20 light:from-purple-100 light:to-pink-100 border border-purple-500/30 dark:border-purple-500/30 light:border-purple-300 rounded-full text-sm font-medium text-purple-200 dark:text-purple-200 light:text-purple-700 backdrop-blur-sm">Python</span>
+        <span
+          class="px-4 py-2 bg-gradient-to-r from-purple-600/20 to-pink-600/20 dark:from-purple-600/20 dark:to-pink-600/20 light:from-purple-100 light:to-pink-100 border border-purple-500/30 dark:border-purple-500/30 light:border-purple-300 rounded-full text-sm font-medium text-purple-200 dark:text-purple-200 light:text-purple-700 backdrop-blur-sm">C#</span>
+        <span
+          class="px-4 py-2 bg-gradient-to-r from-purple-600/20 to-pink-600/20 dark:from-purple-600/20 dark:to-pink-600/20 light:from-purple-100 light:to-pink-100 border border-purple-500/30 dark:border-purple-500/30 light:border-purple-300 rounded-full text-sm font-medium text-purple-200 dark:text-purple-200 light:text-purple-700 backdrop-blur-sm">Java</span>
+        <span
+          class="px-4 py-2 bg-gradient-to-r from-purple-600/20 to-pink-600/20 dark:from-purple-600/20 dark:to-pink-600/20 light:from-purple-100 light:to-pink-100 border border-purple-500/30 dark:border-purple-500/30 light:border-purple-300 rounded-full text-sm font-medium text-purple-200 dark:text-purple-200 light:text-purple-700 backdrop-blur-sm">Git</span>
+        <span
+          class="px-4 py-2 bg-gradient-to-r from-purple-600/20 to-pink-600/20 dark:from-purple-600/20 dark:to-pink-600/20 light:from-purple-100 light:to-pink-100 border border-purple-500/30 dark:border-purple-500/30 light:border-purple-300 rounded-full text-sm font-medium text-purple-200 dark:text-purple-200 light:text-purple-700 backdrop-blur-sm">Unity</span>
+        <span
+          class="px-4 py-2 bg-gradient-to-r from-purple-600/20 to-pink-600/20 dark:from-purple-600/20 dark:to-pink-600/20 light:from-purple-100 light:to-pink-100 border border-purple-500/30 dark:border-purple-500/30 light:border-purple-300 rounded-full text-sm font-medium text-purple-200 dark:text-purple-200 light:text-purple-700 backdrop-blur-sm">Express.js</span>
+        <span
+          class="px-4 py-2 bg-gradient-to-r from-purple-600/20 to-pink-600/20 dark:from-purple-600/20 dark:to-pink-600/20 light:from-purple-100 light:to-pink-100 border border-purple-500/30 dark:border-purple-500/30 light:border-purple-300 rounded-full text-sm font-medium text-purple-200 dark:text-purple-200 light:text-purple-700 backdrop-blur-sm">Node.js</span>
+        <span
+          class="px-4 py-2 bg-gradient-to-r from-purple-600/20 to-pink-600/20 dark:from-purple-600/20 dark:to-pink-600/20 light:from-purple-100 light:to-pink-100 border border-purple-500/30 dark:border-purple-500/30 light:border-purple-300 rounded-full text-sm font-medium text-purple-200 dark:text-purple-200 light:text-purple-700 backdrop-blur-sm">Figma</span>
+      </div>
+    </div>
+  </section>
+  <!-- Projects Section -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6" id="projects">
+    <div class="text-center mb-8">
+      <h2 class="text-3xl md:text-4xl font-extrabold mb-3 text-white dark:text-white light:text-gray-800">
+        Projects
+      </h2>
+      <p class="text-gray-400 dark:text-gray-400 light:text-gray-600 text-base">A collection of my work and creative
+        endeavors</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-5">
+      <!-- Fractal Generator Project -->
+      <div
+        class="group bg-gradient-to-br from-gray-800/50 to-gray-900/50 dark:from-gray-800/50 dark:to-gray-900/50 light:from-gray-50 light:to-white backdrop-blur-sm text-white dark:text-white light:text-gray-800 rounded-2xl shadow-xl p-5 cursor-pointer hover:shadow-2xl transition-all duration-300 relative border border-white/10 dark:border-white/10 light:border-gray-200 hover:border-purple-500/50 dark:hover:border-purple-500/50 light:hover:border-purple-300 hover:scale-[1.02] overflow-hidden"
+        onclick="location.href='/projects/Fractal generator';" onmouseover="showButtons(this)"
+        onmouseout="hideButtons(this)">
+        <div
+          class="absolute inset-0 bg-gradient-to-br from-purple-600/0 to-pink-600/0 group-hover:from-purple-600/10 group-hover:to-pink-600/10 transition-all duration-300">
+        </div>
+        <div class="relative z-10">
+          <h3 class="text-xl font-bold mb-2 text-white dark:text-white light:text-gray-800">
+            Fractal Generator</h3>
+          <div class="slideshow-container max-w-full mx-auto relative mt-2 mb-4 rounded-xl overflow-hidden">
             <!-- Slide 1 -->
             <div class="mySlides1 fade hidden">
-              <img
-                src="img/fractal4.png"
-                alt="Algorithm visualizer image 1"
-                class="w-full h-90 object-cover rounded-md mb-4"
-              />
+              <img src="img/fractal4.png" alt="Fractal generator image 1"
+                class="w-full aspect-square object-cover rounded-xl" />
             </div>
             <div class="mySlides1 fade hidden">
-              <img
-                src="img/fractal2.png"
-                alt="Algorithm visualizer image 2"
-                class="w-full h-90 object-cover rounded-md mb-4"
-              />
+              <img src="img/fractal2.png" alt="Fractal generator image 2"
+                class="w-full aspect-square object-cover rounded-xl" />
             </div>
             <div class="mySlides1 fade hidden">
-              <img
-                src="img/fractal3.png"
-                alt="Algorithm visualizer image 2"
-                class="w-full h-90 object-cover rounded-md mb-4"
-              />
+              <img src="img/fractal3.png" alt="Fractal generator image 3"
+                class="w-full aspect-square object-cover rounded-xl" />
             </div>
             <div class="mySlides1 fade hidden">
-              <img
-                src="img/fractal1.png"
-                alt="Algorithm visualizer image 2"
-                class="w-full h-90 object-cover rounded-md mb-4"
-              />
+              <img src="img/fractal1.png" alt="Fractal generator image 4"
+                class="w-full aspect-square object-cover rounded-xl" />
             </div>
             <!-- Navigation buttons -->
             <button
-              class="prev absolute top-1/2 left-0 transform -translate-y-1/2 px-4 py-2 text-white font-bold bg-gray-900 bg-opacity-60 rounded-r hover:bg-gray-900 hidden"
-              onclick=" event.stopPropagation(); plusSlides(-1, 0)"
-            >
+              class="prev absolute top-1/2 left-2 transform -translate-y-1/2 px-3 py-2 text-white font-bold bg-black/60 backdrop-blur-sm rounded-full hover:bg-black/80 transition-all hidden z-20"
+              onclick=" event.stopPropagation(); plusSlides(-1, 0)">
               ❮
             </button>
             <button
-              class="next absolute top-1/2 right-0 transform -translate-y-1/2 px-4 py-2 text-white font-bold bg-gray-900 bg-opacity-60 rounded-l hover:bg-gray-900 hidden"
-              onclick=" event.stopPropagation(); plusSlides(1, 0)"
-            >
+              class="next absolute top-1/2 right-2 transform -translate-y-1/2 px-3 py-2 text-white font-bold bg-black/60 backdrop-blur-sm rounded-full hover:bg-black/80 transition-all hidden z-20"
+              onclick=" event.stopPropagation(); plusSlides(1, 0)">
               ❯
             </button>
           </div>
-          <p class="text-sm mb-4 text-justify">
+          <p class="text-xs mb-3 text-gray-300 dark:text-gray-300 light:text-gray-700 leading-relaxed">
             Fraktal Generator is an interactive web app that generates beautiful
             fractals using L-systems. Users can explore and customize fractal
             patterns by adjusting the axiom, rules, angles, and recursion depth.
-            With a user-friendly interface powered by p5.js, it’s ideal for
+            With a user-friendly interface powered by p5.js, it's ideal for
             creative coding, math, and visual arts enthusiasts.
           </p>
-          <a
-            bg-
-            href="https://github.com/gawendler/Fraktalgenerator"
-            class="text-blue-400 hover:underline"
-            >GitHub Repository</a
-          >
-          <div class="mt-4 grid grid-cols-4 gap-2">
-            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
-              >HTML</span
-            >
-            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
-              >CSS</span
-            >
-            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
-              >Javascript</span
-            >
-            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
-              >P5.js</span
-            >
+          <a href="https://github.com/gawendler/Fraktalgenerator" target="_blank" rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 text-purple-400 dark:text-purple-400 light:text-purple-600 hover:text-purple-300 dark:hover:text-purple-300 light:hover:text-purple-700 font-medium transition-colors mb-4"
+            onclick="event.stopPropagation()">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path fill-rule="evenodd"
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                clip-rule="evenodd" />
+            </svg>
+            View on GitHub
+          </a>
+          <div class="flex flex-wrap gap-2 mt-4">
+            <span
+              class="px-3 py-1 bg-purple-600/20 border border-purple-500/30 rounded-full text-xs font-medium text-purple-200">HTML</span>
+            <span
+              class="px-3 py-1 bg-purple-600/20 border border-purple-500/30 rounded-full text-xs font-medium text-purple-200">CSS</span>
+            <span
+              class="px-3 py-1 bg-purple-600/20 border border-purple-500/30 rounded-full text-xs font-medium text-purple-200">JavaScript</span>
+            <span
+              class="px-3 py-1 bg-purple-600/20 border border-purple-500/30 rounded-full text-xs font-medium text-purple-200">P5.js</span>
           </div>
         </div>
+      </div>
+      <div
+        class="group bg-gradient-to-br from-gray-800/50 to-gray-900/50 dark:from-gray-800/50 dark:to-gray-900/50 light:from-gray-50 light:to-white backdrop-blur-sm text-white dark:text-white light:text-gray-800 rounded-2xl shadow-xl p-5 cursor-pointer hover:shadow-2xl transition-all duration-300 relative border border-white/10 dark:border-white/10 light:border-gray-200 hover:border-blue-500/50 dark:hover:border-blue-500/50 light:hover:border-blue-300 hover:scale-[1.02] overflow-hidden"
+        onclick="location.href='/projects/Yatzy';" onmouseover="showButtons(this)" onmouseout="hideButtons(this)">
         <div
-          class="bg-gray-800 text-white rounded-lg shadow-lg p-2 cursor-pointer hover:bg-gray-900 transition relative"
-          onclick="location.href='/projects/Yatzy';"
-          onmouseover="showButtons(this)"
-          onmouseout="hideButtons(this)"
-        >
-          <h3 class="text-xl font-bold mb-2 text-center">Yatzy</h3>
-
-          <div
-            class="slideshow-container max-w-screen-md mx-auto relative mt-2"
-          >
-            <!-- Slide 1 -->
+          class="absolute inset-0 bg-gradient-to-br from-blue-600/0 to-cyan-600/0 group-hover:from-blue-600/10 group-hover:to-cyan-600/10 transition-all duration-300">
+        </div>
+        <div class="relative z-10">
+          <h3 class="text-xl font-bold mb-2 text-white dark:text-white light:text-gray-800">
+            Yatzy</h3>
+          <div class="slideshow-container max-w-full mx-auto relative mt-2 mb-4 rounded-xl overflow-hidden">
             <div class="mySlides5 fade hidden">
-              <img
-                src="img/yatzy1.png"
-                alt="Algorithm visualizer image 1"
-                class="w-full h-90 object-cover rounded-md mb-4"
-              />
+              <img src="img/yatzy1.png" alt="Yatzy game image 1" class="w-full aspect-square object-cover rounded-xl" />
             </div>
             <div class="mySlides5 fade hidden">
-              <img
-                src="img/yatzy2.png"
-                alt="Algorithm visualizer image 2"
-                class="w-full h-90 object-cover rounded-md mb-4"
-              />
+              <img src="img/yatzy2.png" alt="Yatzy game image 2" class="w-full aspect-square object-cover rounded-xl" />
             </div>
-            <!-- Navigation buttons -->
             <button
-              class="prev absolute top-1/2 left-0 transform -translate-y-1/2 px-4 py-2 text-white font-bold bg-gray-900 bg-opacity-60 rounded-r hover:bg-gray-900 hidden"
-              onclick=" event.stopPropagation(); plusSlides(-1, 4)"
-            >
+              class="prev absolute top-1/2 left-2 transform -translate-y-1/2 px-3 py-2 text-white font-bold bg-black/60 backdrop-blur-sm rounded-full hover:bg-black/80 transition-all hidden z-20"
+              onclick=" event.stopPropagation(); plusSlides(-1, 4)">
               ❮
             </button>
             <button
-              class="next absolute top-1/2 right-0 transform -translate-y-1/2 px-4 py-2 text-white font-bold bg-gray-900 bg-opacity-60 rounded-l hover:bg-gray-900 hidden"
-              onclick=" event.stopPropagation(); plusSlides(1, 4)"
-            >
+              class="next absolute top-1/2 right-2 transform -translate-y-1/2 px-3 py-2 text-white font-bold bg-black/60 backdrop-blur-sm rounded-full hover:bg-black/80 transition-all hidden z-20"
+              onclick=" event.stopPropagation(); plusSlides(1, 4)">
               ❯
             </button>
           </div>
-
-          <p class="text-sm mb-4 text-justify">
+          <p class="text-xs mb-3 text-gray-300 dark:text-gray-300 light:text-gray-700 leading-relaxed">
             This Yatzy Game is an interactive, browser-based implementation of
             the classic dice game, Yatzy. Players roll dice and attempt to score
             points by creating specific dice combinations. The game is designed
             to be easy to use, with simple controls and visual feedback, making
             it a fun way to play Yatzy with friends or by yourself.
           </p>
-          <a
-            href="https://github.com/gawendler/Yatzy"
-            class="text-blue-400 hover:underline"
-            >GitHub Repository</a
-          >
-          <div class="mt-4 grid grid-cols-4 gap-2">
-            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
-              >HTML</span
-            ><span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
-              >CSS</span
-            >
-            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
-              >Javascript</span
-            >
+          <a href="https://github.com/gawendler/Yatzy" target="_blank" rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 text-blue-400 dark:text-blue-400 light:text-blue-600 hover:text-blue-300 dark:hover:text-blue-300 light:hover:text-blue-700 font-medium transition-colors mb-4"
+            onclick="event.stopPropagation()">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path fill-rule="evenodd"
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                clip-rule="evenodd" />
+            </svg>
+            View on GitHub
+          </a>
+          <div class="flex flex-wrap gap-2 mt-4">
+            <span
+              class="px-3 py-1 bg-blue-600/20 dark:bg-blue-600/20 light:bg-blue-100 border border-blue-500/30 dark:border-blue-500/30 light:border-blue-300 rounded-full text-xs font-medium text-blue-200 dark:text-blue-200 light:text-blue-700">HTML</span>
+            <span
+              class="px-3 py-1 bg-blue-600/20 dark:bg-blue-600/20 light:bg-blue-100 border border-blue-500/30 dark:border-blue-500/30 light:border-blue-300 rounded-full text-xs font-medium text-blue-200 dark:text-blue-200 light:text-blue-700">CSS</span>
+            <span
+              class="px-3 py-1 bg-blue-600/20 dark:bg-blue-600/20 light:bg-blue-100 border border-blue-500/30 dark:border-blue-500/30 light:border-blue-300 rounded-full text-xs font-medium text-blue-200 dark:text-blue-200 light:text-blue-700">JavaScript</span>
           </div>
         </div>
-        <!-- Personal Website Project -->
+      </div>
+      <!-- Personal Website Project -->
+      <div
+        class="group bg-gradient-to-br from-gray-800/50 to-gray-900/50 dark:from-gray-800/50 dark:to-gray-900/50 light:from-gray-50 light:to-white backdrop-blur-sm text-white dark:text-white light:text-gray-800 rounded-2xl shadow-xl p-5 cursor-pointer hover:shadow-2xl transition-all duration-300 relative border border-white/10 dark:border-white/10 light:border-gray-200 hover:border-pink-500/50 dark:hover:border-pink-500/50 light:hover:border-pink-300 hover:scale-[1.02] overflow-hidden"
+        onclick="location.href='';" onmouseover="showButtons(this)" onmouseout="hideButtons(this)">
         <div
-          class="bg-gray-800 text-white rounded-lg shadow-lg p-2 cursor-pointer hover:bg-gray-900 transition relative"
-          onclick="location.href='';"
-          onmouseover="showButtons(this)"
-          onmouseout="hideButtons(this)"
-        >
-          <h3 class="text-xl font-bold mb-2 text-center">Personal Website</h3>
-          <div
-            class="slideshow-container max-w-screen-md mx-auto relative mt-2"
-          >
-            <!-- Slide 1 -->
+          class="absolute inset-0 bg-gradient-to-br from-pink-600/0 to-rose-600/0 group-hover:from-pink-600/10 group-hover:to-rose-600/10 transition-all duration-300">
+        </div>
+        <div class="relative z-10">
+          <h3 class="text-xl font-bold mb-2 text-white dark:text-white light:text-gray-800">
+            Personal Website</h3>
+          <div class="slideshow-container max-w-full mx-auto relative mt-2 mb-4 rounded-xl overflow-hidden">
             <div class="mySlides3 fade hidden">
-              <img
-                src="img/personal1.png"
-                alt="Algorithm visualizer image 1"
-                class="w-full h-90 object-cover rounded-md mb-4"
-              />
+              <img src="img/personal1.png" alt="Personal website image 1"
+                class="w-full aspect-square object-cover rounded-xl" />
             </div>
             <div class="mySlides3 fade hidden">
-              <img
-                src="img/personal1.png"
-                alt="Algorithm visualizer image 2"
-                class="w-full h-90 object-cover rounded-md mb-4"
-              />
+              <img src="img/personal1.png" alt="Personal website image 2"
+                class="w-full aspect-square object-cover rounded-xl" />
             </div>
-            <!-- Navigation buttons -->
             <button
-              class="prev absolute top-1/2 left-0 transform -translate-y-1/2 px-4 py-2 text-white font-bold bg-gray-900 bg-opacity-60 rounded-r hover:bg-gray-900 hidden"
-              onclick=" event.stopPropagation(); plusSlides(-1, 2)"
-            >
+              class="prev absolute top-1/2 left-2 transform -translate-y-1/2 px-3 py-2 text-white font-bold bg-black/60 backdrop-blur-sm rounded-full hover:bg-black/80 transition-all hidden z-20"
+              onclick=" event.stopPropagation(); plusSlides(-1, 2)">
               ❮
             </button>
             <button
-              class="next absolute top-1/2 right-0 transform -translate-y-1/2 px-4 py-2 text-white font-bold bg-gray-900 bg-opacity-60 rounded-l hover:bg-gray-900 hidden"
-              onclick=" event.stopPropagation(); plusSlides(1, 2)"
-            >
+              class="next absolute top-1/2 right-2 transform -translate-y-1/2 px-3 py-2 text-white font-bold bg-black/60 backdrop-blur-sm rounded-full hover:bg-black/80 transition-all hidden z-20"
+              onclick=" event.stopPropagation(); plusSlides(1, 2)">
               ❯
             </button>
           </div>
-
-          <p class="text-sm mb-4 text-justify">
+          <p class="text-xs mb-3 text-gray-300 dark:text-gray-300 light:text-gray-700 leading-relaxed">
             This website. A personal portfolio website, showcasing my background
             in computer science, my skills, and projects. Built with HTML, CSS,
             JavaScript, and Tailwind CSS, the website features a clean and
             responsive design, powered by Tailwind CSS, to provide a modern
             browsing experience.
           </p>
-          <a
-            href="https://github.com/gawendler/gawendler.github.io"
-            class="text-blue-400 hover:underline"
-            >GitHub Repository</a
-          >
-          <div class="mt-4 grid grid-cols-4 gap-2">
-            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
-              >HTML</span
-            ><span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
-              >Tailwind CSS</span
-            >
-            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
-              >Javascript</span
-            >
-
-            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
-              >React.js</span
-            >
+          <a href="https://github.com/gawendler/gawendler.github.io" target="_blank" rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 text-pink-400 dark:text-pink-400 light:text-pink-600 hover:text-pink-300 dark:hover:text-pink-300 light:hover:text-pink-700 font-medium transition-colors mb-4"
+            onclick="event.stopPropagation()">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path fill-rule="evenodd"
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                clip-rule="evenodd" />
+            </svg>
+            View on GitHub
+          </a>
+          <div class="flex flex-wrap gap-2 mt-4">
+            <span
+              class="px-3 py-1 bg-pink-600/20 dark:bg-pink-600/20 light:bg-pink-100 border border-pink-500/30 dark:border-pink-500/30 light:border-pink-300 rounded-full text-xs font-medium text-pink-200 dark:text-pink-200 light:text-pink-700">HTML</span>
+            <span
+              class="px-3 py-1 bg-pink-600/20 dark:bg-pink-600/20 light:bg-pink-100 border border-pink-500/30 dark:border-pink-500/30 light:border-pink-300 rounded-full text-xs font-medium text-pink-200 dark:text-pink-200 light:text-pink-700">Tailwind
+              CSS</span>
+            <span
+              class="px-3 py-1 bg-pink-600/20 dark:bg-pink-600/20 light:bg-pink-100 border border-pink-500/30 dark:border-pink-500/30 light:border-pink-300 rounded-full text-xs font-medium text-pink-200 dark:text-pink-200 light:text-pink-700">JavaScript</span>
+            <span
+              class="px-3 py-1 bg-pink-600/20 dark:bg-pink-600/20 light:bg-pink-100 border border-pink-500/30 dark:border-pink-500/30 light:border-pink-300 rounded-full text-xs font-medium text-pink-200 dark:text-pink-200 light:text-pink-700">React.js</span>
           </div>
         </div>
+      </div>
 
-        <!-- Algorithm Visualizer Project -->
+      <!-- Algorithm Visualizer Project -->
+      <div
+        class="group bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm text-white rounded-2xl shadow-xl p-6 cursor-pointer hover:shadow-2xl transition-all duration-300 relative border border-white/10 hover:border-cyan-500/50 hover:scale-[1.02] overflow-hidden"
+        onclick="location.href='/projects/Algorithm visualizer';" onmouseover="showButtons(this)"
+        onmouseout="hideButtons(this)">
         <div
-          class="bg-gray-800 text-white rounded-lg shadow-lg p-2 cursor-pointer hover:bg-gray-900 transition relative"
-          onclick="location.href='/projects/Algorithm visualizer';"
-          onmouseover="showButtons(this)"
-          onmouseout="hideButtons(this)"
-        >
-          <h3 class="text-xl font-bold mb-2 text-center">
-            Algorithm visualizer
-          </h3>
-          <!-- Slideshow container -->
-          <div
-            class="slideshow-container max-w-screen-md mx-auto relative mt-2"
-          >
-            <!-- Slide 1 -->
+          class="absolute inset-0 bg-gradient-to-br from-cyan-600/0 to-teal-600/0 group-hover:from-cyan-600/10 group-hover:to-teal-600/10 transition-all duration-300">
+        </div>
+        <div class="relative z-10">
+          <h3 class="text-xl font-bold mb-2 text-white dark:text-white light:text-gray-800">
+            Algorithm Visualizer</h3>
+          <div class="slideshow-container max-w-full mx-auto relative mt-2 mb-4 rounded-xl overflow-hidden">
             <div class="mySlides2 fade hidden">
-              <img
-                src="img/algoritm1.png"
-                alt="Algorithm visualizer image 1"
-                class="w-full h-90 object-cover rounded-md mb-4"
-              />
+              <img src="img/algoritm1.png" alt="Algorithm visualizer image 1"
+                class="w-full aspect-square object-cover rounded-xl" />
             </div>
             <div class="mySlides2 fade hidden">
-              <img
-                src="img/algoritm2.png"
-                alt="Algorithm visualizer image 2"
-                class="w-full h-90 object-cover rounded-md mb-4"
-              />
+              <img src="img/algoritm2.png" alt="Algorithm visualizer image 2"
+                class="w-full aspect-square object-cover rounded-xl" />
             </div>
-            <!-- Navigation buttons -->
             <button
-              class="prev absolute top-1/2 left-0 transform -translate-y-1/2 px-4 py-2 text-white font-bold bg-gray-900 bg-opacity-60 rounded-r hover:bg-gray-900 hidden"
-              onclick=" event.stopPropagation(); plusSlides(-1, 1)"
-            >
+              class="prev absolute top-1/2 left-2 transform -translate-y-1/2 px-3 py-2 text-white font-bold bg-black/60 backdrop-blur-sm rounded-full hover:bg-black/80 transition-all hidden z-20"
+              onclick=" event.stopPropagation(); plusSlides(-1, 1)">
               ❮
             </button>
             <button
-              class="next absolute top-1/2 right-0 transform -translate-y-1/2 px-4 py-2 text-white font-bold bg-gray-900 bg-opacity-60 rounded-l hover:bg-gray-900 hidden"
-              onclick=" event.stopPropagation(); plusSlides(1, 1)"
-            >
+              class="next absolute top-1/2 right-2 transform -translate-y-1/2 px-3 py-2 text-white font-bold bg-black/60 backdrop-blur-sm rounded-full hover:bg-black/80 transition-all hidden z-20"
+              onclick=" event.stopPropagation(); plusSlides(1, 1)">
               ❯
             </button>
           </div>
-
-          <p class="text-sm mb-4 text-justify">
+          <p class="text-xs mb-3 text-gray-300 dark:text-gray-300 light:text-gray-700 leading-relaxed">
             Algorithm Visualizer is a web app for visualizing sorting and
             pathfinding algorithms in an interactive, educational environment.
             Users can observe popular algorithms as they sort data or navigate
             mazes, making it a valuable for learning. It supports customizable
             array sizes, sorting speeds and grid configurations.
           </p>
-          <a
-            href="https://github.com/gawendler/Algorithm-visualizer"
-            class="text-blue-400 hover:underline"
-            >GitHub Repository</a
-          >
-          <div class="mt-4 grid grid-cols-4 gap-2">
-            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
-              >HTML</span
-            >
-            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
-              >CSS</span
-            >
-            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
-              >Javascript</span
-            >
+          <a href="https://github.com/gawendler/Algorithm-visualizer" target="_blank" rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 text-cyan-400 dark:text-cyan-400 light:text-cyan-600 hover:text-cyan-300 dark:hover:text-cyan-300 light:hover:text-cyan-700 font-medium transition-colors mb-4"
+            onclick="event.stopPropagation()">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path fill-rule="evenodd"
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                clip-rule="evenodd" />
+            </svg>
+            View on GitHub
+          </a>
+          <div class="flex flex-wrap gap-2 mt-4">
+            <span
+              class="px-3 py-1 bg-cyan-600/20 dark:bg-cyan-600/20 light:bg-cyan-100 border border-cyan-500/30 dark:border-cyan-500/30 light:border-cyan-300 rounded-full text-xs font-medium text-cyan-200 dark:text-cyan-200 light:text-cyan-700">HTML</span>
+            <span
+              class="px-3 py-1 bg-cyan-600/20 dark:bg-cyan-600/20 light:bg-cyan-100 border border-cyan-500/30 dark:border-cyan-500/30 light:border-cyan-300 rounded-full text-xs font-medium text-cyan-200 dark:text-cyan-200 light:text-cyan-700">CSS</span>
+            <span
+              class="px-3 py-1 bg-cyan-600/20 dark:bg-cyan-600/20 light:bg-cyan-100 border border-cyan-500/30 dark:border-cyan-500/30 light:border-cyan-300 rounded-full text-xs font-medium text-cyan-200 dark:text-cyan-200 light:text-cyan-700">JavaScript</span>
           </div>
         </div>
+      </div>
+      <div
+        class="group bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm text-white rounded-2xl shadow-xl p-6 cursor-pointer hover:shadow-2xl transition-all duration-300 relative border border-white/10 hover:border-emerald-500/50 hover:scale-[1.02] overflow-hidden"
+        onclick="location.href='';" onmouseover="showButtons(this)" onmouseout="hideButtons(this)">
         <div
-          class="bg-gray-800 text-white rounded-lg shadow-lg p-2 cursor-pointer hover:bg-gray-900 transition relative"
-          onclick="location.href='';"
-          onmouseover="showButtons(this)"
-          onmouseout="hideButtons(this)"
-        >
-          <h3 class="text-xl font-bold mb-2 text-center">AI Doodle Jump</h3>
-          <div
-            class="slideshow-container max-w-screen-md mx-auto relative mt-2"
-          >
-            <!-- Slide 1 -->
+          class="absolute inset-0 bg-gradient-to-br from-emerald-600/0 to-green-600/0 group-hover:from-emerald-600/10 group-hover:to-green-600/10 transition-all duration-300">
+        </div>
+        <div class="relative z-10">
+          <h3 class="text-xl font-bold mb-2 text-white dark:text-white light:text-gray-800">
+            AI Doodle Jump</h3>
+          <div class="slideshow-container max-w-full mx-auto relative mt-2 mb-4 rounded-xl overflow-hidden">
             <div class="mySlides8 fade hidden">
-              <img
-                src="img/doodle1.png"
-                alt="Algorithm visualizer image 1"
-                class="w-full h-90 object-cover rounded-md mb-4"
-              />
+              <img src="img/doodle1.png" alt="AI Doodle Jump image 1"
+                class="w-full aspect-square object-cover rounded-xl" />
             </div>
             <div class="mySlides8 fade hidden">
-              <img
-                src="img/doodle2.png"
-                alt="Algorithm visualizer image 2"
-                class="w-full h-90 object-cover rounded-md mb-4"
-              />
+              <img src="img/doodle2.png" alt="AI Doodle Jump image 2"
+                class="w-full aspect-square object-cover rounded-xl" />
             </div>
             <div class="mySlides8 fade hidden">
-              <img
-                src="img/doodle3.png"
-                alt="Algorithm visualizer image 2"
-                class="w-full h-90 object-cover rounded-md mb-4"
-              />
+              <img src="img/doodle3.png" alt="AI Doodle Jump image 3"
+                class="w-full aspect-square object-cover rounded-xl" />
             </div>
             <div class="mySlides8 fade hidden">
-              <img
-                src="img/doodle4.png"
-                alt="Algorithm visualizer image 2"
-                class="w-full h-90 object-cover rounded-md mb-4"
-              />
+              <img src="img/doodle4.png" alt="AI Doodle Jump image 4"
+                class="w-full aspect-square object-cover rounded-xl" />
             </div>
-            <!-- Navigation buttons -->
             <button
-              class="prev absolute top-1/2 left-0 transform -translate-y-1/2 px-4 py-2 text-white font-bold bg-gray-900 bg-opacity-60 rounded-r hover:bg-gray-900 hidden"
-              onclick=" event.stopPropagation(); plusSlides(-1, 7)"
-            >
+              class="prev absolute top-1/2 left-2 transform -translate-y-1/2 px-3 py-2 text-white font-bold bg-black/60 backdrop-blur-sm rounded-full hover:bg-black/80 transition-all hidden z-20"
+              onclick=" event.stopPropagation(); plusSlides(-1, 7)">
               ❮
             </button>
             <button
-              class="next absolute top-1/2 right-0 transform -translate-y-1/2 px-4 py-2 text-white font-bold bg-gray-900 bg-opacity-60 rounded-l hover:bg-gray-900 hidden"
-              onclick=" event.stopPropagation(); plusSlides(1, 7)"
-            >
+              class="next absolute top-1/2 right-2 transform -translate-y-1/2 px-3 py-2 text-white font-bold bg-black/60 backdrop-blur-sm rounded-full hover:bg-black/80 transition-all hidden z-20"
+              onclick=" event.stopPropagation(); plusSlides(1, 7)">
               ❯
             </button>
           </div>
-
-          <p class="text-sm mb-4 text-justify">
+          <p class="text-xs mb-3 text-gray-300 dark:text-gray-300 light:text-gray-700 leading-relaxed">
             This project is an AI Doodle Jump game simulation using NEAT
             (NeuroEvolution of Augmenting Topologies). The AI evolves over
             multiple generations to optimize the movement of an agent (player)
             that jumps on platforms to maximize its score.
           </p>
-          <a
-            href="https://github.com/gawendler/AI-Doodle-Jump"
-            class="text-blue-400 hover:underline"
-            >GitHub Repository</a
-          >
-          <div class="mt-4 grid grid-cols-4 gap-2">
-            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
-              >Python</span
-            >
-            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
-              >Pygame</span
-            >
-            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
-              >Neat</span
-            >
-            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
-              >Matplotlib</span
-            >
-            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
-              >Numpy</span
-            >
+          <a href="https://github.com/gawendler/AI-Doodle-Jump" target="_blank" rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 text-emerald-400 dark:text-emerald-400 light:text-emerald-600 hover:text-emerald-300 dark:hover:text-emerald-300 light:hover:text-emerald-700 font-medium transition-colors mb-4"
+            onclick="event.stopPropagation()">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path fill-rule="evenodd"
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                clip-rule="evenodd" />
+            </svg>
+            View on GitHub
+          </a>
+          <div class="flex flex-wrap gap-2 mt-4">
+            <span
+              class="px-3 py-1 bg-emerald-600/20 dark:bg-emerald-600/20 light:bg-emerald-100 border border-emerald-500/30 dark:border-emerald-500/30 light:border-emerald-300 rounded-full text-xs font-medium text-emerald-200 dark:text-emerald-200 light:text-emerald-700">Python</span>
+            <span
+              class="px-3 py-1 bg-emerald-600/20 dark:bg-emerald-600/20 light:bg-emerald-100 border border-emerald-500/30 dark:border-emerald-500/30 light:border-emerald-300 rounded-full text-xs font-medium text-emerald-200 dark:text-emerald-200 light:text-emerald-700">Pygame</span>
+            <span
+              class="px-3 py-1 bg-emerald-600/20 dark:bg-emerald-600/20 light:bg-emerald-100 border border-emerald-500/30 dark:border-emerald-500/30 light:border-emerald-300 rounded-full text-xs font-medium text-emerald-200 dark:text-emerald-200 light:text-emerald-700">NEAT</span>
+            <span
+              class="px-3 py-1 bg-emerald-600/20 dark:bg-emerald-600/20 light:bg-emerald-100 border border-emerald-500/30 dark:border-emerald-500/30 light:border-emerald-300 rounded-full text-xs font-medium text-emerald-200 dark:text-emerald-200 light:text-emerald-700">Matplotlib</span>
+            <span
+              class="px-3 py-1 bg-emerald-600/20 dark:bg-emerald-600/20 light:bg-emerald-100 border border-emerald-500/30 dark:border-emerald-500/30 light:border-emerald-300 rounded-full text-xs font-medium text-emerald-200 dark:text-emerald-200 light:text-emerald-700">NumPy</span>
           </div>
         </div>
+      </div>
 
-        <!-- Additional projects follow the same format as above -->
+      <!-- Additional projects follow the same format as above -->
+      <div
+        class="group bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm text-white rounded-2xl shadow-xl p-6 cursor-pointer hover:shadow-2xl transition-all duration-300 relative border border-white/10 hover:border-amber-500/50 hover:scale-[1.02] overflow-hidden"
+        onclick="location.href='';" onmouseover="showButtons(this)" onmouseout="hideButtons(this)">
         <div
-          class="bg-gray-800 text-white rounded-lg shadow-lg p-2 cursor-pointer hover:bg-gray-900 transition relative"
-          onclick="location.href='';"
-          onmouseover="showButtons(this)"
-          onmouseout="hideButtons(this)"
-        >
-          <h3 class="text-xl font-bold mb-2 text-center">
-            Programming language [Cwedish]
-          </h3>
-          <div
-            class="slideshow-container max-w-screen-md mx-auto relative mt-2"
-          >
-            <!-- Slide 1 -->
+          class="absolute inset-0 bg-gradient-to-br from-amber-600/0 to-orange-600/0 group-hover:from-amber-600/10 group-hover:to-orange-600/10 transition-all duration-300">
+        </div>
+        <div class="relative z-10">
+          <h3 class="text-xl font-bold mb-2 text-white dark:text-white light:text-gray-800">
+            Programming Language [Cwedish]</h3>
+          <div class="slideshow-container max-w-full mx-auto relative mt-2 mb-4 rounded-xl overflow-hidden">
             <div class="mySlides4 fade hidden">
-              <img
-                src="img/Cwedish1.png"
-                alt="Algorithm visualizer image 1"
-                class="w-full h-90 object-cover rounded-md mb-4"
-              />
+              <img src="img/Cwedish1.png" alt="Cwedish programming language image 1"
+                class="w-full aspect-square object-cover rounded-xl" />
             </div>
             <div class="mySlides4 fade hidden">
-              <img
-                src="img/Cwedish2.png"
-                alt="Algorithm visualizer image 2"
-                class="w-full h-90 object-cover rounded-md mb-4"
-              />
+              <img src="img/Cwedish2.png" alt="Cwedish programming language image 2"
+                class="w-full aspect-square object-cover rounded-xl" />
             </div>
             <div class="mySlides4 fade hidden">
-              <img
-                src="img/Cwedish3.png"
-                alt="Algorithm visualizer image 2"
-                class="w-full h-90 object-cover rounded-md mb-4"
-              />
+              <img src="img/Cwedish3.png" alt="Cwedish programming language image 3"
+                class="w-full aspect-square object-cover rounded-xl" />
             </div>
-            <!-- Navigation buttons -->
             <button
-              class="prev absolute top-1/2 left-0 transform -translate-y-1/2 px-4 py-2 text-white font-bold bg-gray-900 bg-opacity-60 rounded-r hover:bg-gray-900 hidden"
-              onclick=" event.stopPropagation(); plusSlides(-1, 3)"
-            >
+              class="prev absolute top-1/2 left-2 transform -translate-y-1/2 px-3 py-2 text-white font-bold bg-black/60 backdrop-blur-sm rounded-full hover:bg-black/80 transition-all hidden z-20"
+              onclick=" event.stopPropagation(); plusSlides(-1, 3)">
               ❮
             </button>
             <button
-              class="next absolute top-1/2 right-0 transform -translate-y-1/2 px-4 py-2 text-white font-bold bg-gray-900 bg-opacity-60 rounded-l hover:bg-gray-900 hidden"
-              onclick=" event.stopPropagation(); plusSlides(1, 3)"
-            >
+              class="next absolute top-1/2 right-2 transform -translate-y-1/2 px-3 py-2 text-white font-bold bg-black/60 backdrop-blur-sm rounded-full hover:bg-black/80 transition-all hidden z-20"
+              onclick=" event.stopPropagation(); plusSlides(1, 3)">
               ❯
             </button>
           </div>
-
-          <p class="text-sm mb-4 text-justify">
+          <p class="text-xs mb-3 text-gray-300 dark:text-gray-300 light:text-gray-700 leading-relaxed">
             This project enables programmers to write code with a Swedish
             syntax, which is then automatically translated into standard C
             syntax for compilation and execution.
           </p>
-          <a
-            href="https://github.com/gawendler/Programming-language"
-            class="text-blue-400 hover:underline"
-            >GitHub Repository</a
-          >
-          <div class="mt-4 grid grid-cols-4 gap-2">
-            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
-              >C</span
-            ><span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
-              >Cwedish</span
-            >
+          <a href="https://github.com/gawendler/Programming-language" target="_blank" rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 text-amber-400 dark:text-amber-400 light:text-amber-600 hover:text-amber-300 dark:hover:text-amber-300 light:hover:text-amber-700 font-medium transition-colors mb-4"
+            onclick="event.stopPropagation()">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path fill-rule="evenodd"
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                clip-rule="evenodd" />
+            </svg>
+            View on GitHub
+          </a>
+          <div class="flex flex-wrap gap-2 mt-4">
+            <span
+              class="px-3 py-1 bg-amber-600/20 dark:bg-amber-600/20 light:bg-amber-100 border border-amber-500/30 dark:border-amber-500/30 light:border-amber-300 rounded-full text-xs font-medium text-amber-200 dark:text-amber-200 light:text-amber-700">C</span>
+            <span
+              class="px-3 py-1 bg-amber-600/20 dark:bg-amber-600/20 light:bg-amber-100 border border-amber-500/30 dark:border-amber-500/30 light:border-amber-300 rounded-full text-xs font-medium text-amber-200 dark:text-amber-200 light:text-amber-700">Cwedish</span>
           </div>
         </div>
+      </div>
 
+      <div
+        class="group bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm text-white rounded-2xl shadow-xl p-6 cursor-pointer hover:shadow-2xl transition-all duration-300 relative border border-white/10 hover:border-violet-500/50 hover:scale-[1.02] overflow-hidden"
+        onclick="location.href='projects/Holochess';" onmouseover="showButtons(this)" onmouseout="hideButtons(this)">
         <div
-          class="bg-gray-800 text-white rounded-lg shadow-lg p-2 cursor-pointer hover:bg-gray-900 transition relative"
-          onclick="location.href='projects/Holochess';"
-          onmouseover="showButtons(this)"
-          onmouseout="hideButtons(this)"
-        >
-          <h3 class="text-xl font-bold mb-2 text-center">
-            Holochess online OBS INTE KLAR
-          </h3>
-          <div
-            class="slideshow-container max-w-screen-md mx-auto relative mt-2"
-          >
-            <!-- Slide 1 -->
+          class="absolute inset-0 bg-gradient-to-br from-violet-600/0 to-indigo-600/0 group-hover:from-violet-600/10 group-hover:to-indigo-600/10 transition-all duration-300">
+        </div>
+        <div class="relative z-10">
+          <h3 class="text-xl font-bold mb-2 text-white dark:text-white light:text-gray-800">
+            Holochess Online <span class="text-xs text-gray-400">(In Progress)</span></h3>
+          <div class="slideshow-container max-w-full mx-auto relative mt-2 mb-4 rounded-xl overflow-hidden">
             <div class="mySlides7 fade hidden">
-              <img
-                src="img/holochess1.png"
-                alt="Algorithm visualizer image 1"
-                class="w-full h-90 object-cover rounded-md mb-4"
-              />
+              <img src="img/holochess1.png" alt="Holochess game image 1"
+                class="w-full aspect-square object-cover rounded-xl" />
             </div>
             <div class="mySlides7 fade hidden">
-              <img
-                src="img/holochess2.png"
-                alt="Algorithm visualizer image 2"
-                class="w-full h-90 object-cover rounded-md mb-4"
-              />
+              <img src="img/holochess2.png" alt="Holochess game image 2"
+                class="w-full aspect-square object-cover rounded-xl" />
             </div>
             <div class="mySlides7 fade hidden">
-              <img
-                src="img/holochess1.png"
-                alt="Algorithm visualizer image 2"
-                class="w-full h-90 object-cover rounded-md mb-4"
-              />
+              <img src="img/holochess1.png" alt="Holochess game image 3"
+                class="w-full aspect-square object-cover rounded-xl" />
             </div>
-            <!-- Navigation buttons -->
             <button
-              class="prev absolute top-1/2 left-0 transform -translate-y-1/2 px-4 py-2 text-white font-bold bg-gray-900 bg-opacity-60 rounded-r hover:bg-gray-900 hidden"
-              onclick=" event.stopPropagation(); plusSlides(-1, 6)"
-            >
+              class="prev absolute top-1/2 left-2 transform -translate-y-1/2 px-3 py-2 text-white font-bold bg-black/60 backdrop-blur-sm rounded-full hover:bg-black/80 transition-all hidden z-20"
+              onclick=" event.stopPropagation(); plusSlides(-1, 6)">
               ❮
             </button>
             <button
-              class="next absolute top-1/2 right-0 transform -translate-y-1/2 px-4 py-2 text-white font-bold bg-gray-900 bg-opacity-60 rounded-l hover:bg-gray-900 hidden"
-              onclick=" event.stopPropagation(); plusSlides(1, 6)"
-            >
+              class="next absolute top-1/2 right-2 transform -translate-y-1/2 px-3 py-2 text-white font-bold bg-black/60 backdrop-blur-sm rounded-full hover:bg-black/80 transition-all hidden z-20"
+              onclick=" event.stopPropagation(); plusSlides(1, 6)">
               ❯
             </button>
           </div>
-
-          <p class="text-sm mb-4 text-justify">
+          <p class="text-xs mb-3 text-gray-300 dark:text-gray-300 light:text-gray-700 leading-relaxed">
             This website is online implementation of the chess game from Star
             Wars known as Dejarik aka Holochess. Account implementation
           </p>
-          <a
-            href="https://github.com/gawendler/Online-holochess"
-            class="text-blue-400 hover:underline"
-            >GitHub Repository</a
-          >
-          <div class="mt-4 grid grid-cols-4 gap-2">
-            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
-              >HTML</span
-            >
-            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
-              >CSS</span
-            >
-            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
-              >Javascript</span
-            >
-            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
-              >Express.js</span
-            >
-            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
-              >node.js</span
-            >
-            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
-              >Socket.io</span
-            >
-            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
-              >Firebase</span
-            >
+          <a href="https://github.com/gawendler/Online-holochess" target="_blank" rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 text-violet-400 dark:text-violet-400 light:text-violet-600 hover:text-violet-300 dark:hover:text-violet-300 light:hover:text-violet-700 font-medium transition-colors mb-4"
+            onclick="event.stopPropagation()">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path fill-rule="evenodd"
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                clip-rule="evenodd" />
+            </svg>
+            View on GitHub
+          </a>
+          <div class="flex flex-wrap gap-2 mt-4">
+            <span
+              class="px-3 py-1 bg-violet-600/20 dark:bg-violet-600/20 light:bg-violet-100 border border-violet-500/30 dark:border-violet-500/30 light:border-violet-300 rounded-full text-xs font-medium text-violet-200 dark:text-violet-200 light:text-violet-700">HTML</span>
+            <span
+              class="px-3 py-1 bg-violet-600/20 dark:bg-violet-600/20 light:bg-violet-100 border border-violet-500/30 dark:border-violet-500/30 light:border-violet-300 rounded-full text-xs font-medium text-violet-200 dark:text-violet-200 light:text-violet-700">CSS</span>
+            <span
+              class="px-3 py-1 bg-violet-600/20 dark:bg-violet-600/20 light:bg-violet-100 border border-violet-500/30 dark:border-violet-500/30 light:border-violet-300 rounded-full text-xs font-medium text-violet-200 dark:text-violet-200 light:text-violet-700">JavaScript</span>
+            <span
+              class="px-3 py-1 bg-violet-600/20 dark:bg-violet-600/20 light:bg-violet-100 border border-violet-500/30 dark:border-violet-500/30 light:border-violet-300 rounded-full text-xs font-medium text-violet-200 dark:text-violet-200 light:text-violet-700">Express.js</span>
+            <span
+              class="px-3 py-1 bg-violet-600/20 dark:bg-violet-600/20 light:bg-violet-100 border border-violet-500/30 dark:border-violet-500/30 light:border-violet-300 rounded-full text-xs font-medium text-violet-200 dark:text-violet-200 light:text-violet-700">Node.js</span>
+            <span
+              class="px-3 py-1 bg-violet-600/20 dark:bg-violet-600/20 light:bg-violet-100 border border-violet-500/30 dark:border-violet-500/30 light:border-violet-300 rounded-full text-xs font-medium text-violet-200 dark:text-violet-200 light:text-violet-700">Socket.io</span>
+            <span
+              class="px-3 py-1 bg-violet-600/20 dark:bg-violet-600/20 light:bg-violet-100 border border-violet-500/30 dark:border-violet-500/30 light:border-violet-300 rounded-full text-xs font-medium text-violet-200 dark:text-violet-200 light:text-violet-700">Firebase</span>
           </div>
         </div>
+      </div>
+      <div
+        class="group bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm text-white rounded-2xl shadow-xl p-6 cursor-pointer hover:shadow-2xl transition-all duration-300 relative border border-white/10 hover:border-rose-500/50 hover:scale-[1.02] overflow-hidden"
+        onclick="location.href='';" onmouseover="showButtons(this)" onmouseout="hideButtons(this)">
         <div
-          class="bg-gray-800 text-white rounded-lg shadow-lg p-2 cursor-pointer hover:bg-gray-900 transition relative"
-          onclick="location.href='';"
-          onmouseover="showButtons(this)"
-          onmouseout="hideButtons(this)"
-        >
-          <h3 class="text-xl font-bold mb-2 text-center">Game unity</h3>
-          <div
-            class="slideshow-container max-w-screen-md mx-auto relative mt-2"
-          >
-            <!-- Slide 1 -->
+          class="absolute inset-0 bg-gradient-to-br from-rose-600/0 to-pink-600/0 group-hover:from-rose-600/10 group-hover:to-pink-600/10 transition-all duration-300">
+        </div>
+        <div class="relative z-10">
+          <h3
+            class="text-xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-pink-400 dark:text-transparent light:text-gray-800">
+            Unity Game</h3>
+          <div class="slideshow-container max-w-full mx-auto relative mt-2 mb-4 rounded-xl overflow-hidden">
             <div class="mySlides6 fade hidden">
-              <img
-                src="img/unity1.png"
-                alt="Algorithm visualizer image 1"
-                class="w-full h-90 object-cover rounded-md mb-4"
-              />
+              <img src="img/unity1.png" alt="Unity game image 1" class="w-full aspect-square object-cover rounded-xl" />
             </div>
             <div class="mySlides6 fade hidden">
-              <img
-                src="img/unity2.png"
-                alt="Algorithm visualizer image 2"
-                class="w-full h-90 object-cover rounded-md mb-4"
-              />
+              <img src="img/unity2.png" alt="Unity game image 2" class="w-full aspect-square object-cover rounded-xl" />
             </div>
             <div class="mySlides6 fade hidden">
-              <img
-                src="img/unity3.png"
-                alt="Algorithm visualizer image 2"
-                class="w-full h-90 object-cover rounded-md mb-4"
-              />
+              <img src="img/unity3.png" alt="Unity game image 3" class="w-full aspect-square object-cover rounded-xl" />
             </div>
-            <!-- Navigation buttons -->
             <button
-              class="prev absolute top-1/2 left-0 transform -translate-y-1/2 px-4 py-2 text-white font-bold bg-gray-900 bg-opacity-60 rounded-r hover:bg-gray-900 hidden"
-              onclick=" event.stopPropagation(); plusSlides(-1, 5)"
-            >
+              class="prev absolute top-1/2 left-2 transform -translate-y-1/2 px-3 py-2 text-white font-bold bg-black/60 backdrop-blur-sm rounded-full hover:bg-black/80 transition-all hidden z-20"
+              onclick=" event.stopPropagation(); plusSlides(-1, 5)">
               ❮
             </button>
             <button
-              class="next absolute top-1/2 right-0 transform -translate-y-1/2 px-4 py-2 text-white font-bold bg-gray-900 bg-opacity-60 rounded-l hover:bg-gray-900 hidden"
-              onclick=" event.stopPropagation(); plusSlides(1, 5)"
-            >
+              class="next absolute top-1/2 right-2 transform -translate-y-1/2 px-3 py-2 text-white font-bold bg-black/60 backdrop-blur-sm rounded-full hover:bg-black/80 transition-all hidden z-20"
+              onclick=" event.stopPropagation(); plusSlides(1, 5)">
               ❯
             </button>
           </div>
-
-          <p class="text-sm mb-4 text-justify">
+          <p class="text-xs mb-3 text-gray-300 dark:text-gray-300 light:text-gray-700 leading-relaxed">
             A game I made for a school project. All the graphics and props are
             made by me as you can see
           </p>
-          <a
-            href="https://jggw.itch.io/titled-goose-game"
-            class="text-blue-400 hover:underline"
-            >Itch.io Repository</a
-          >
-          <div class="mt-4 grid grid-cols-4 gap-2">
-            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
-              >Unity</span
-            >
-            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
-              >C#</span
-            >
-            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
-              >Modeling</span
-            >
-            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
-              >UI/UX design</span
-            >
-            <span class="bg-gray-900 text-white py-1 px-2 rounded text-center"
-              >Testing</span
-            >
+          <a href="https://jggw.itch.io/titled-goose-game" target="_blank" rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 text-rose-400 dark:text-rose-400 light:text-rose-600 hover:text-rose-300 dark:hover:text-rose-300 light:hover:text-rose-700 font-medium transition-colors mb-4"
+            onclick="event.stopPropagation()">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+            </svg>
+            View on Itch.io
+          </a>
+          <div class="flex flex-wrap gap-2 mt-4">
+            <span
+              class="px-3 py-1 bg-rose-600/20 dark:bg-rose-600/20 light:bg-rose-100 border border-rose-500/30 dark:border-rose-500/30 light:border-rose-300 rounded-full text-xs font-medium text-rose-200 dark:text-rose-200 light:text-rose-700">Unity</span>
+            <span
+              class="px-3 py-1 bg-rose-600/20 dark:bg-rose-600/20 light:bg-rose-100 border border-rose-500/30 dark:border-rose-500/30 light:border-rose-300 rounded-full text-xs font-medium text-rose-200 dark:text-rose-200 light:text-rose-700">C#</span>
+            <span
+              class="px-3 py-1 bg-rose-600/20 dark:bg-rose-600/20 light:bg-rose-100 border border-rose-500/30 dark:border-rose-500/30 light:border-rose-300 rounded-full text-xs font-medium text-rose-200 dark:text-rose-200 light:text-rose-700">Modeling</span>
+            <span
+              class="px-3 py-1 bg-rose-600/20 dark:bg-rose-600/20 light:bg-rose-100 border border-rose-500/30 dark:border-rose-500/30 light:border-rose-300 rounded-full text-xs font-medium text-rose-200 dark:text-rose-200 light:text-rose-700">UI/UX</span>
+            <span
+              class="px-3 py-1 bg-rose-600/20 dark:bg-rose-600/20 light:bg-rose-100 border border-rose-500/30 dark:border-rose-500/30 light:border-rose-300 rounded-full text-xs font-medium text-rose-200 dark:text-rose-200 light:text-rose-700">Testing</span>
           </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <script src="script.js"></script>
-  </body>
+  <script src="script.js"></script>
+</body>
+
 </html>
