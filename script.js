@@ -1,5 +1,5 @@
 // Array to keep track of the current slide for each slideshow
-let slideIndex = [1, 1, 1, 1, 1, 1, 1];
+let slideIndex = [1, 1, 1, 1, 1, 1, 1, 1, 1];
 let slideId = [
   "mySlides1",
   "mySlides2",
@@ -8,6 +8,8 @@ let slideId = [
   "mySlides6",
   "mySlides8",
   "mySlides9",
+  "mySlides10",
+  "mySlides11",
 ];
 
 // Initialize slideshows only after DOM is loaded
@@ -120,14 +122,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Apply theme on page load
   if (currentTheme === 'light') {
-    body.classList.remove('bg-gradient-to-br', 'from-gray-900', 'via-slate-900', 'to-gray-900', 'text-gray-100');
-    body.classList.add('bg-gradient-to-br', 'from-white', 'via-gray-50', 'to-gray-100', 'text-gray-900');
+    body.classList.remove('dark-mode');
     body.classList.add('light-mode');
     if (themeIconDark) themeIconDark.classList.remove('hidden');
     if (themeIconLight) themeIconLight.classList.add('hidden');
   } else {
-    body.classList.remove('bg-gradient-to-br', 'from-white', 'via-gray-50', 'to-gray-100', 'text-gray-900');
-    body.classList.add('bg-gradient-to-br', 'from-gray-900', 'via-slate-900', 'to-gray-900', 'text-gray-100');
+    body.classList.remove('light-mode');
     body.classList.add('dark-mode');
     if (themeIconDark) themeIconDark.classList.add('hidden');
     if (themeIconLight) themeIconLight.classList.remove('hidden');
@@ -138,16 +138,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const isDark = body.classList.contains('dark-mode') || !body.classList.contains('light-mode');
 
     if (isDark) {
-      body.classList.remove('bg-gradient-to-br', 'from-gray-900', 'via-slate-900', 'to-gray-900', 'text-gray-100');
-      body.classList.add('bg-gradient-to-br', 'from-white', 'via-gray-50', 'to-gray-100', 'text-gray-900');
       body.classList.remove('dark-mode');
       body.classList.add('light-mode');
       if (themeIconDark) themeIconDark.classList.remove('hidden');
       if (themeIconLight) themeIconLight.classList.add('hidden');
       localStorage.setItem('theme', 'light');
     } else {
-      body.classList.remove('bg-gradient-to-br', 'from-white', 'via-gray-50', 'to-gray-100', 'text-gray-900');
-      body.classList.add('bg-gradient-to-br', 'from-gray-900', 'via-slate-900', 'to-gray-900', 'text-gray-100');
       body.classList.remove('light-mode');
       body.classList.add('dark-mode');
       if (themeIconDark) themeIconDark.classList.add('hidden');
@@ -176,6 +172,26 @@ const translations = {
     "skills-network": "N\u00e4tverk",
     "projects-title": "Projekt",
     "projects-desc": "En samling av mina arbeten och kreativa projekt",
+    "proj-snus-title": "Snus Smart Valet",
+    "proj-snus-desc": "Fullstack-webbapp som skrapar, bearbetar och visualiserar den svenska snusmarknaden. Utforska 200+ produkter med avancerade filter, sortering, AI-rekommendationer och statistik.",
+    "proj-jobb-title": "Jobbmatcharen",
+    "proj-jobb-desc": "Matcha ditt CV mot 50 000+ aktiva jobbannonser fr\u00e5n Arbetsf\u00f6rmedlingen. Intelligent CV-analys med po\u00e4ngs\u00e4ttning baserad p\u00e5 kompetenser, erfarenhet, utbildning och spr\u00e5k. Daglig uppdatering via GitHub Actions.",
+    "proj-fractal-title": "Fraktal Generator",
+    "proj-fractal-desc": "Interaktiv webbapp som genererar fraktaler med L-system. Anv\u00e4ndare kan utforska och anpassa fraktalm\u00f6nster genom att justera axiom, regler, vinklar och rekursionsdjup. Gr\u00e4nssnittet drivs av p5.js.",
+    "proj-yatzy-desc": "Interaktivt, webbl\u00e4sarbaserat Yatzy-spel. Spelaren kastar t\u00e4rningar och f\u00f6rs\u00f6ker samla po\u00e4ng genom specifika kombinationer. Spelet har enkla kontroller och visuell feedback.",
+    "proj-website-title": "Personlig Webbsida",
+    "proj-website-desc": "Denna webbsida. En personlig portf\u00f6ljsida som visar min bakgrund inom systemvetenskap, mina f\u00e4rdigheter och projekt. Byggd med HTML, CSS, JavaScript och Tailwind CSS.",
+    "proj-algo-title": "Algoritmvisualiserare",
+    "proj-algo-desc": "Webbapp f\u00f6r visualisering av sorterings- och s\u00f6kalgoritmer i en interaktiv milj\u00f6. Anv\u00e4ndare kan observera popul\u00e4ra algoritmer i realtid med anpassningsbar arraystorlek, hastighet och rutf\u00e4ltskonfiguration.",
+    "proj-doodle-desc": "AI Doodle Jump-simulering med NEAT (NeuroEvolution of Augmenting Topologies). AI:n utvecklas \u00f6ver generationer f\u00f6r att optimera r\u00f6relser och maximera po\u00e4ng genom att hoppa p\u00e5 plattformar.",
+    "proj-unity-title": "Unity-spel",
+    "proj-unity-desc": "Ett spel jag skapade som skolprojekt i Unity. All grafik och rekvisita \u00e4r gjord av mig.",
+    "view-github": "Visa p\u00e5 GitHub",
+    "view-live": "Bes\u00f6k sidan",
+    "view-itchio": "Visa p\u00e5 Itch.io",
+    "footer-title": "Kontakt",
+    "footer-text": "Har du en fr\u00e5ga eller vill samarbeta? H\u00f6r g\u00e4rna av dig!",
+    "footer-copy": "\u00a9 2025 Gabriel Wendler",
   },
   en: {
     "hero-subtitle": "Computer Science Student | Fullstack Developer",
@@ -194,6 +210,26 @@ const translations = {
     "skills-network": "Networking",
     "projects-title": "Projects",
     "projects-desc": "A collection of my work and creative projects",
+    "proj-snus-title": "Snus Smart Valet",
+    "proj-snus-desc": "Full-stack web app that scrapes, processes, and visualises the Swedish snus market. Explore 200+ products with advanced filters, sorting, AI recommendations, and statistics.",
+    "proj-jobb-title": "Jobbmatcharen",
+    "proj-jobb-desc": "Match your CV against 50,000+ active job listings from Arbetsf\u00f6rmedlingen. Intelligent CV analysis with scoring based on skills, experience, education, and languages. Daily updates via GitHub Actions.",
+    "proj-fractal-title": "Fractal Generator",
+    "proj-fractal-desc": "Interactive web app that generates beautiful fractals using L-systems. Users can explore and customize fractal patterns by adjusting the axiom, rules, angles, and recursion depth. Powered by p5.js.",
+    "proj-yatzy-desc": "Interactive, browser-based Yatzy game. Players roll dice and attempt to score points by creating specific dice combinations. Features simple controls and visual feedback.",
+    "proj-website-title": "Personal Website",
+    "proj-website-desc": "This website. A personal portfolio site showcasing my background in computer science, skills, and projects. Built with HTML, CSS, JavaScript, and Tailwind CSS.",
+    "proj-algo-title": "Algorithm Visualizer",
+    "proj-algo-desc": "Web app for visualizing sorting and pathfinding algorithms in an interactive environment. Users can observe popular algorithms in real-time with customizable array sizes, speeds, and grid configurations.",
+    "proj-doodle-desc": "AI Doodle Jump simulation using NEAT (NeuroEvolution of Augmenting Topologies). The AI evolves over generations to optimize movement and maximize score by jumping on platforms.",
+    "proj-unity-title": "Unity Game",
+    "proj-unity-desc": "A game I made for a school project in Unity. All graphics and props are made by me.",
+    "view-github": "View on GitHub",
+    "view-live": "Visit site",
+    "view-itchio": "View on Itch.io",
+    "footer-title": "Contact",
+    "footer-text": "Have a question or want to collaborate? Feel free to reach out!",
+    "footer-copy": "\u00a9 2025 Gabriel Wendler",
   },
 };
 

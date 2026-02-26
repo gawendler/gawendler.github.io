@@ -5,27 +5,33 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gabriel Wendler | Portfolio</title>
-  <!-- Add Tailwind CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <!-- Preload critical resources -->
+  <link rel="preload" href="style.css" as="style" />
+  <link rel="preload" href="script.js" as="script" />
+  <!-- Tailwind CSS - non-render-blocking -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" media="print"
+    onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+  </noscript>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="/img/babyyoda.gif" />
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<body
-  class="bg-gradient-to-br from-gray-900 via-slate-900 to-gray-900 text-gray-100 font-sans antialiased min-h-screen transition-colors duration-300"
-  id="body">
+<body class="  from-gray-900 via-slate-900 to-gray-900 text-gray-100 font-sans antialiased min-h-screen" id="body"
+  style="transition: background-color 0.3s ease, color 0.3s ease;">
   <!-- Dark Mode Toggle + Language Toggle -->
-  <div class="fixed top-4 right-4 z-50 flex gap-2">
+  <div class="flex gap-2" style="position: fixed; top: 1rem; right: 1rem; z-index: 9999;">
     <button id="lang-toggle"
-      class="w-12 h-12 flex items-center justify-center rounded-full bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-300 shadow-lg text-sm font-semibold text-white">
+      class="w-12 h-12 flex items-center justify-center rounded-full shadow-lg text-sm font-semibold text-white"
+      style="background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25);">
       EN
     </button>
-    <button id="theme-toggle"
-      class="p-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-300 shadow-lg">
+    <button id="theme-toggle" class="p-3 rounded-full shadow-lg"
+      style="background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25);">
       <svg id="theme-icon-dark" class="w-6 h-6 text-yellow-300 hidden" fill="currentColor" viewBox="0 0 20 20">
         <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
       </svg>
@@ -44,12 +50,12 @@
       d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"
       /%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
 
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-2">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20 md:pt-36 md:pb-2">
       <div class="text-center">
         <div class="inline-block mb-6">
           <div class="relative">
             <h1
-              class="text-5xl md:text-7xl font-extrabold mb-4 text-white dark:text-white light:text-gray-900 animate-fade-in">
+              class="text-4xl md:text-5xl font-extrabold mb-4 text-white dark:text-white light:text-gray-900 animate-fade-in">
               Gabriel Wendler
             </h1>
           </div>
@@ -67,7 +73,7 @@
         <!-- Contact Links -->
         <div class="flex flex-wrap justify-center gap-6 mb-6">
           <a href="https://www.linkedin.com/in/gawendler/" target="_blank" rel="noopener noreferrer"
-            class="group relative px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full text-white dark:text-white light:text-white font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center gap-2">
+            class="group relative px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-full text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
               <path
                 d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
@@ -75,7 +81,7 @@
             LinkedIn
           </a>
           <a href="https://github.com/gawendler" target="_blank" rel="noopener noreferrer"
-            class="group relative px-6 py-3 bg-gray-800 rounded-full text-white light:text-white font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center gap-2 border border-gray-700">
+            class="group relative px-6 py-3 bg-gray-800 hover:bg-gray-700 rounded-full text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2  border-gray-700">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
               <path fill-rule="evenodd"
                 d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
@@ -91,7 +97,7 @@
   <!-- About Section -->
   <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-6" id="about">
     <div
-      class="bg-white/5 dark:bg-white/5 light:bg-gray-100/90 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/10 dark:border-white/10 light:border-gray-300 shadow-2xl">
+      class="bg-white/5 dark:bg-white/5 light:bg-gray-100/90   rounded-2xl p-6 md:p-8  border-white/10 dark:border-white/10 light:border-gray-300 shadow-2xl">
       <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white dark:text-white light:text-gray-800"
         data-i18n="about-title">
         Om mig
@@ -107,7 +113,7 @@
   <!-- Education Section -->
   <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-4" id="education">
     <div
-      class="bg-white/5 dark:bg-white/5 light:bg-gray-100/90 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/10 dark:border-white/10 light:border-gray-300 shadow-2xl">
+      class="bg-white/5 dark:bg-white/5 light:bg-gray-100/90   rounded-2xl p-6 md:p-8  border-white/10 dark:border-white/10 light:border-gray-300 shadow-2xl">
       <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white dark:text-white light:text-gray-800"
         data-i18n="edu-title">
         Utbildning
@@ -137,7 +143,7 @@
   <!-- Skills Section -->
   <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-4" id="skills">
     <div
-      class="bg-white/5 dark:bg-white/5 light:bg-gray-100/90 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/10 dark:border-white/10 light:border-gray-300 shadow-2xl">
+      class="bg-white/5 dark:bg-white/5 light:bg-gray-100/90   rounded-2xl p-6 md:p-8  border-white/10 dark:border-white/10 light:border-gray-300 shadow-2xl">
       <h2 class="text-2xl md:text-3xl font-bold mb-6 text-white dark:text-white light:text-gray-800"
         data-i18n="skills-title">
         Tekniska färdigheter
@@ -150,19 +156,21 @@
             Språk</h3>
           <div class="flex flex-wrap gap-2">
             <span
-              class="skill-badge px-4 py-2 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-gray-200 backdrop-blur-sm">C#</span>
+              class="skill-badge px-4 py-2    rounded-full text-sm font-medium    ">C#</span>
             <span
-              class="skill-badge px-4 py-2 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-gray-200 backdrop-blur-sm">JavaScript</span>
+              class="skill-badge px-4 py-2    rounded-full text-sm font-medium    ">JavaScript</span>
             <span
-              class="skill-badge px-4 py-2 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-gray-200 backdrop-blur-sm">Python</span>
+              class="skill-badge px-4 py-2    rounded-full text-sm font-medium    ">TypeScript</span>
             <span
-              class="skill-badge px-4 py-2 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-gray-200 backdrop-blur-sm">Java</span>
+              class="skill-badge px-4 py-2    rounded-full text-sm font-medium    ">Python</span>
             <span
-              class="skill-badge px-4 py-2 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-gray-200 backdrop-blur-sm">C</span>
+              class="skill-badge px-4 py-2    rounded-full text-sm font-medium    ">Java</span>
             <span
-              class="skill-badge px-4 py-2 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-gray-200 backdrop-blur-sm">HTML</span>
+              class="skill-badge px-4 py-2    rounded-full text-sm font-medium    ">C</span>
             <span
-              class="skill-badge px-4 py-2 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-gray-200 backdrop-blur-sm">CSS</span>
+              class="skill-badge px-4 py-2    rounded-full text-sm font-medium    ">HTML</span>
+            <span
+              class="skill-badge px-4 py-2    rounded-full text-sm font-medium    ">CSS</span>
           </div>
         </div>
         <div>
@@ -171,13 +179,15 @@
             Backend</h3>
           <div class="flex flex-wrap gap-2">
             <span
-              class="skill-badge px-4 py-2 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-gray-200 backdrop-blur-sm">ASP.NET
+              class="skill-badge px-4 py-2    rounded-full text-sm font-medium    ">ASP.NET
               Core MVC/Web API</span>
             <span
-              class="skill-badge px-4 py-2 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-gray-200 backdrop-blur-sm">EF
+              class="skill-badge px-4 py-2    rounded-full text-sm font-medium    ">EF
               Core</span>
             <span
-              class="skill-badge px-4 py-2 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-gray-200 backdrop-blur-sm">Node.js</span>
+              class="skill-badge px-4 py-2    rounded-full text-sm font-medium    ">Flask</span>
+            <span
+              class="skill-badge px-4 py-2    rounded-full text-sm font-medium    ">Node.js</span>
           </div>
         </div>
         <div>
@@ -186,9 +196,12 @@
             Frontend</h3>
           <div class="flex flex-wrap gap-2">
             <span
-              class="skill-badge px-4 py-2 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-gray-200 backdrop-blur-sm">React</span>
+              class="skill-badge px-4 py-2    rounded-full text-sm font-medium    ">React</span>
             <span
-              class="skill-badge px-4 py-2 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-gray-200 backdrop-blur-sm">Razor</span>
+              class="skill-badge px-4 py-2    rounded-full text-sm font-medium    ">Tailwind
+              CSS</span>
+            <span
+              class="skill-badge px-4 py-2    rounded-full text-sm font-medium    ">Razor</span>
           </div>
         </div>
         <div>
@@ -198,16 +211,23 @@
             Verktyg</h3>
           <div class="flex flex-wrap gap-2">
             <span
-              class="skill-badge px-4 py-2 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-gray-200 backdrop-blur-sm">Git</span>
+              class="skill-badge px-4 py-2    rounded-full text-sm font-medium    ">Git</span>
             <span
-              class="skill-badge px-4 py-2 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-gray-200 backdrop-blur-sm">Azure
+              class="skill-badge px-4 py-2    rounded-full text-sm font-medium    ">Azure
               DevOps</span>
             <span
-              class="skill-badge px-4 py-2 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-gray-200 backdrop-blur-sm">Figma</span>
+              class="skill-badge px-4 py-2    rounded-full text-sm font-medium    ">GitHub
+              Actions</span>
             <span
-              class="skill-badge px-4 py-2 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-gray-200 backdrop-blur-sm">Diagrams.net</span>
+              class="skill-badge px-4 py-2    rounded-full text-sm font-medium    ">Selenium</span>
             <span
-              class="skill-badge px-4 py-2 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-gray-200 backdrop-blur-sm">Unity</span>
+              class="skill-badge px-4 py-2    rounded-full text-sm font-medium    ">Figma</span>
+            <span
+              class="skill-badge px-4 py-2    rounded-full text-sm font-medium    ">Vite</span>
+            <span
+              class="skill-badge px-4 py-2    rounded-full text-sm font-medium    ">Diagrams.net</span>
+            <span
+              class="skill-badge px-4 py-2    rounded-full text-sm font-medium    ">Unity</span>
           </div>
         </div>
         <div>
@@ -217,9 +237,11 @@
             Databas &amp; Moln</h3>
           <div class="flex flex-wrap gap-2">
             <span
-              class="skill-badge px-4 py-2 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-gray-200 backdrop-blur-sm">Firebase</span>
+              class="skill-badge px-4 py-2    rounded-full text-sm font-medium    ">Firebase</span>
             <span
-              class="skill-badge px-4 py-2 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-gray-200 backdrop-blur-sm">Azure</span>
+              class="skill-badge px-4 py-2    rounded-full text-sm font-medium    ">Azure</span>
+            <span
+              class="skill-badge px-4 py-2    rounded-full text-sm font-medium    ">Vercel</span>
           </div>
         </div>
         <div>
@@ -229,7 +251,7 @@
             Nätverk</h3>
           <div class="flex flex-wrap gap-2">
             <span
-              class="skill-badge px-4 py-2 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-gray-200 backdrop-blur-sm">Cisco
+              class="skill-badge px-4 py-2    rounded-full text-sm font-medium    ">Cisco
               IT Essentials 7.0</span>
           </div>
         </div>
@@ -238,389 +260,582 @@
   </section>
 
   <!-- Projects Section -->
-  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6" id="projects">
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6" id="projects">
     <div class="text-center mb-8">
       <h2 class="text-3xl md:text-4xl font-extrabold mb-3 text-white dark:text-white light:text-gray-800"
         data-i18n="projects-title">
         Projekt
       </h2>
-      <p class="text-gray-400 dark:text-gray-400 light:text-gray-600 text-base" data-i18n="projects-desc">En samling av
-        mina arbeten och kreativa projekt</p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-5">
+      <!-- Snus Smart Valet Project -->
+      <div
+        class="group project-card       dark:  dark:        text-white dark:text-white light:text-gray-800 rounded-2xl shadow-xl p-5 cursor-pointer   transition-all duration-300 relative  border-white/10 dark:border-white/10 light:border-gray-200     overflow-hidden"
+        onclick="window.open('https://snusperkrona.vercel.app/', '_blank');" onmouseover="showButtons(this)"
+        onmouseout="hideButtons(this)">
+        <div
+          class="absolute inset-0   from-amber-600/0 to-orange-600/0 group-hover:from-amber-600/10 group-hover:to-orange-600/10 transition-all duration-300">
+        </div>
+        <div class="relative z-10">
+          <h3 class="text-xl font-bold mb-2 text-white dark:text-white light:text-gray-800" data-i18n="proj-snus-title">
+            Snus Smart Valet</h3>
+          <div class="slideshow-container max-w-full mx-auto relative mt-2 mb-4 rounded-xl overflow-hidden">
+            <div class="mySlides10 fade hidden">
+              <img loading="lazy" decoding="async" src="img/snus1.png" alt="Snus Smart Valet image 1"
+                class="w-full aspect-square object-cover rounded-xl" />
+            </div>
+            <div class="mySlides10 fade hidden">
+              <img loading="lazy" decoding="async" src="img/snus2.png" alt="Snus Smart Valet image 2"
+                class="w-full aspect-square object-cover rounded-xl" />
+            </div>
+            <div class="mySlides10 fade hidden">
+              <img loading="lazy" decoding="async" src="img/snus3.png" alt="Snus Smart Valet image 3"
+                class="w-full aspect-square object-cover rounded-xl" />
+            </div>
+            <div class="mySlides10 fade hidden">
+              <img loading="lazy" decoding="async" src="img/snus4.png" alt="Snus Smart Valet image 4"
+                class="w-full aspect-square object-cover rounded-xl" />
+            </div>
+            <button
+              class="slideshow-btn prev absolute top-1/2 left-2 transform -translate-y-1/2 px-3 py-2 text-white font-bold bg-black/50 backdrop-blur-md rounded-lg hover:bg-black/70 transition-all hidden z-20  border-white/20"
+              onclick=" event.stopPropagation(); plusSlides(-1, 7)">
+              ❮
+            </button>
+            <button
+              class="slideshow-btn next absolute top-1/2 right-2 transform -translate-y-1/2 px-3 py-2 text-white font-bold bg-black/50 backdrop-blur-md rounded-lg hover:bg-black/70 transition-all hidden z-20  border-white/20"
+              onclick=" event.stopPropagation(); plusSlides(1, 7)">
+              ❯
+            </button>
+          </div>
+          <p class="text-sm mb-3 text-gray-300 dark:text-gray-300 light:text-gray-700 leading-relaxed"
+            data-i18n="proj-snus-desc">
+            Fullstack-webbapp som skrapar, bearbetar och visualiserar den svenska snusmarknaden. Utforska 200+ produkter
+            med avancerade filter, sortering, rekommendationer och statistik.
+          </p>
+          <div class="flex items-center gap-4 mb-4">
+            <a href="https://snusperkrona.vercel.app/" target="_blank" rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 text-gray-400 hover:text-white font-medium transition-colors"
+              onclick="event.stopPropagation()">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+              <span data-i18n="view-live">Besök sidan</span>
+            </a>
+            <a href="https://github.com/gawendler/SPK" target="_blank" rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 text-gray-400 hover:text-white font-medium transition-colors"
+              onclick="event.stopPropagation()">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path fill-rule="evenodd"
+                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                  clip-rule="evenodd" />
+              </svg>
+              <span data-i18n="view-github">Visa på GitHub</span>
+            </a>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-4">
+            <span
+              class="skill-badge px-3 py-1    rounded-full text-sm font-medium  ">React</span>
+            <span
+              class="skill-badge px-3 py-1    rounded-full text-sm font-medium  ">TypeScript</span>
+            <span
+              class="skill-badge px-3 py-1    rounded-full text-sm font-medium  ">Vite</span>
+            <span
+              class="skill-badge px-3 py-1    rounded-full text-sm font-medium  ">Tailwind
+              CSS</span>
+            <span
+              class="skill-badge px-3 py-1    rounded-full text-sm font-medium  ">Python</span>
+            <span
+              class="skill-badge px-3 py-1    rounded-full text-sm font-medium  ">Selenium</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Jobbmatcharen Project -->
+      <div
+        class="group project-card       dark:  dark:        text-white dark:text-white light:text-gray-800 rounded-2xl shadow-xl p-5 cursor-pointer   transition-all duration-300 relative  border-white/10 dark:border-white/10 light:border-gray-200     overflow-hidden"
+        onclick="window.open('https://jobbmatcharen.vercel.app/', '_blank');" onmouseover="showButtons(this)"
+        onmouseout="hideButtons(this)">
+        <div
+          class="absolute inset-0   from-green-600/0 to-teal-600/0 group-hover:from-green-600/10 group-hover:to-teal-600/10 transition-all duration-300">
+        </div>
+        <div class="relative z-10">
+          <h3 class="text-xl font-bold mb-2 text-white dark:text-white light:text-gray-800" data-i18n="proj-jobb-title">
+            Jobbmatcharen</h3>
+          <div class="slideshow-container max-w-full mx-auto relative mt-2 mb-4 rounded-xl overflow-hidden">
+            <div class="mySlides11 fade hidden">
+              <img loading="lazy" decoding="async" src="img/jobb1.png" alt="Jobbmatcharen image 1"
+                class="w-full aspect-square object-cover rounded-xl" />
+            </div>
+            <div class="mySlides11 fade hidden">
+              <img loading="lazy" decoding="async" src="img/jobb2.png" alt="Jobbmatcharen image 2"
+                class="w-full aspect-square object-cover rounded-xl" />
+            </div>
+            <button
+              class="slideshow-btn prev absolute top-1/2 left-2 transform -translate-y-1/2 px-3 py-2 text-white font-bold bg-black/50 backdrop-blur-md rounded-lg hover:bg-black/70 transition-all hidden z-20  border-white/20"
+              onclick=" event.stopPropagation(); plusSlides(-1, 8)">
+              ❮
+            </button>
+            <button
+              class="slideshow-btn next absolute top-1/2 right-2 transform -translate-y-1/2 px-3 py-2 text-white font-bold bg-black/50 backdrop-blur-md rounded-lg hover:bg-black/70 transition-all hidden z-20  border-white/20"
+              onclick=" event.stopPropagation(); plusSlides(1, 8)">
+              ❯
+            </button>
+          </div>
+          <p class="text-sm mb-3 text-gray-300 dark:text-gray-300 light:text-gray-700 leading-relaxed"
+            data-i18n="proj-jobb-desc">
+            Matcha ditt CV mot 50 000+ aktiva jobbannonser från Arbetsförmedlingen. CV-analys med
+            poängsättning baserad på kompetenser, erfarenhet, utbildning och språk. Daglig uppdatering via GitHub
+            Actions.
+          </p>
+          <div class="flex items-center gap-4 mb-4">
+            <a href="https://jobbmatcharen.vercel.app/" target="_blank" rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 text-gray-400 hover:text-white font-medium transition-colors"
+              onclick="event.stopPropagation()">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+              <span data-i18n="view-live">Besök sidan</span>
+            </a>
+            <a href="https://github.com/gawendler/Jobbmatcharen" target="_blank" rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 text-gray-400 hover:text-white font-medium transition-colors"
+              onclick="event.stopPropagation()">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path fill-rule="evenodd"
+                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                  clip-rule="evenodd" />
+              </svg>
+              <span data-i18n="view-github">Visa på GitHub</span>
+            </a>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-4">
+            <span
+              class="skill-badge px-3 py-1    rounded-full text-sm font-medium  ">Python</span>
+            <span
+              class="skill-badge px-3 py-1    rounded-full text-sm font-medium  ">Flask</span>
+            <span
+              class="skill-badge px-3 py-1    rounded-full text-sm font-medium  ">JobStream
+              API</span>
+            <span
+              class="skill-badge px-3 py-1    rounded-full text-sm font-medium  ">GitHub
+              Actions</span>
+            <span
+              class="skill-badge px-3 py-1    rounded-full text-sm font-medium  ">Vercel</span>
+          </div>
+        </div>
+      </div>
+
       <!-- Fractal Generator Project -->
       <div
-        class="group project-card bg-gradient-to-br from-gray-800/50 to-gray-900/50 dark:from-gray-800/50 dark:to-gray-900/50 light:from-gray-50 light:to-white backdrop-blur-sm text-white dark:text-white light:text-gray-800 rounded-2xl shadow-xl p-5 cursor-pointer hover:shadow-2xl transition-all duration-300 relative border border-white/10 dark:border-white/10 light:border-gray-200 hover:border-purple-500/50 dark:hover:border-purple-500/50 light:hover:border-purple-300 hover:scale-[1.02] overflow-hidden"
+        class="group project-card       dark:  dark:        text-white dark:text-white light:text-gray-800 rounded-2xl shadow-xl p-5 cursor-pointer   transition-all duration-300 relative  border-white/10 dark:border-white/10 light:border-gray-200     overflow-hidden"
         onclick="location.href='/projects/Fractal generator';" onmouseover="showButtons(this)"
         onmouseout="hideButtons(this)">
         <div
-          class="absolute inset-0 bg-gradient-to-br from-purple-600/0 to-pink-600/0 group-hover:from-purple-600/10 group-hover:to-pink-600/10 transition-all duration-300">
+          class="absolute inset-0   from-purple-600/0 to-pink-600/0 group-hover:from-purple-600/10 group-hover:to-pink-600/10 transition-all duration-300">
         </div>
         <div class="relative z-10">
-          <h3 class="text-xl font-bold mb-2 text-white dark:text-white light:text-gray-800">
-            Fractal Generator</h3>
+          <h3 class="text-xl font-bold mb-2 text-white dark:text-white light:text-gray-800"
+            data-i18n="proj-fractal-title">
+            Fraktal Generator</h3>
           <div class="slideshow-container max-w-full mx-auto relative mt-2 mb-4 rounded-xl overflow-hidden">
             <!-- Slide 1 -->
             <div class="mySlides1 fade hidden">
-              <img src="img/fractal4.png" alt="Fractal generator image 1"
+              <img loading="lazy" decoding="async" src="img/fractal4.png" alt="Fractal generator image 1"
                 class="w-full aspect-square object-cover rounded-xl" />
             </div>
             <div class="mySlides1 fade hidden">
-              <img src="img/fractal2.png" alt="Fractal generator image 2"
+              <img loading="lazy" decoding="async" src="img/fractal2.png" alt="Fractal generator image 2"
                 class="w-full aspect-square object-cover rounded-xl" />
             </div>
             <div class="mySlides1 fade hidden">
-              <img src="img/fractal3.png" alt="Fractal generator image 3"
+              <img loading="lazy" decoding="async" src="img/fractal3.png" alt="Fractal generator image 3"
                 class="w-full aspect-square object-cover rounded-xl" />
             </div>
             <div class="mySlides1 fade hidden">
-              <img src="img/fractal1.png" alt="Fractal generator image 4"
+              <img loading="lazy" decoding="async" src="img/fractal1.png" alt="Fractal generator image 4"
                 class="w-full aspect-square object-cover rounded-xl" />
             </div>
             <!-- Navigation buttons -->
             <button
-              class="slideshow-btn prev absolute top-1/2 left-2 transform -translate-y-1/2 px-3 py-2 text-white font-bold bg-black/50 backdrop-blur-md rounded-lg hover:bg-black/70 transition-all hidden z-20 border border-white/20"
+              class="slideshow-btn prev absolute top-1/2 left-2 transform -translate-y-1/2 px-3 py-2 text-white font-bold bg-black/50 backdrop-blur-md rounded-lg hover:bg-black/70 transition-all hidden z-20  border-white/20"
               onclick=" event.stopPropagation(); plusSlides(-1, 0)">
               ❮
             </button>
             <button
-              class="slideshow-btn next absolute top-1/2 right-2 transform -translate-y-1/2 px-3 py-2 text-white font-bold bg-black/50 backdrop-blur-md rounded-lg hover:bg-black/70 transition-all hidden z-20 border border-white/20"
+              class="slideshow-btn next absolute top-1/2 right-2 transform -translate-y-1/2 px-3 py-2 text-white font-bold bg-black/50 backdrop-blur-md rounded-lg hover:bg-black/70 transition-all hidden z-20  border-white/20"
               onclick=" event.stopPropagation(); plusSlides(1, 0)">
               ❯
             </button>
           </div>
-          <p class="text-xs mb-3 text-gray-300 dark:text-gray-300 light:text-gray-700 leading-relaxed">
-            Fraktal Generator is an interactive web app that generates beautiful
-            fractals using L-systems. Users can explore and customize fractal
-            patterns by adjusting the axiom, rules, angles, and recursion depth.
-            With a user-friendly interface powered by p5.js, it's ideal for
-            creative coding, math, and visual arts enthusiasts.
+          <p class="text-sm mb-3 text-gray-300 dark:text-gray-300 light:text-gray-700 leading-relaxed"
+            data-i18n="proj-fractal-desc">
+            Interaktiv webbapp som genererar fraktaler med L-system. Användare kan utforska och anpassa fraktalmönster
+            genom att justera axiom, regler, vinklar och rekursionsdjup. Gränssnittet drivs av p5.js.
           </p>
           <a href="https://github.com/gawendler/Fraktalgenerator" target="_blank" rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 text-purple-400 dark:text-purple-400 light:text-purple-600 hover:text-purple-300 dark:hover:text-purple-300 light:hover:text-purple-700 font-medium transition-colors mb-4"
+            class="inline-flex items-center gap-2 text-gray-400 hover:text-white font-medium transition-colors mb-4"
             onclick="event.stopPropagation()">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
               <path fill-rule="evenodd"
                 d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
                 clip-rule="evenodd" />
             </svg>
-            View on GitHub
+            <span data-i18n="view-github">Visa på GitHub</span>
           </a>
           <div class="flex flex-wrap gap-2 mt-4">
             <span
-              class="px-3 py-1 bg-purple-600/20 border border-purple-500/30 rounded-full text-xs font-medium text-purple-200">HTML</span>
+              class="skill-badge px-3 py-1    rounded-full text-sm font-medium  ">HTML</span>
             <span
-              class="px-3 py-1 bg-purple-600/20 border border-purple-500/30 rounded-full text-xs font-medium text-purple-200">CSS</span>
+              class="skill-badge px-3 py-1    rounded-full text-sm font-medium  ">CSS</span>
             <span
-              class="px-3 py-1 bg-purple-600/20 border border-purple-500/30 rounded-full text-xs font-medium text-purple-200">JavaScript</span>
+              class="skill-badge px-3 py-1    rounded-full text-sm font-medium  ">JavaScript</span>
             <span
-              class="px-3 py-1 bg-purple-600/20 border border-purple-500/30 rounded-full text-xs font-medium text-purple-200">P5.js</span>
+              class="skill-badge px-3 py-1    rounded-full text-sm font-medium  ">P5.js</span>
           </div>
         </div>
       </div>
       <div
-        class="group project-card bg-gradient-to-br from-gray-800/50 to-gray-900/50 dark:from-gray-800/50 dark:to-gray-900/50 light:from-gray-50 light:to-white backdrop-blur-sm text-white dark:text-white light:text-gray-800 rounded-2xl shadow-xl p-5 cursor-pointer hover:shadow-2xl transition-all duration-300 relative border border-white/10 dark:border-white/10 light:border-gray-200 hover:border-blue-500/50 dark:hover:border-blue-500/50 light:hover:border-blue-300 hover:scale-[1.02] overflow-hidden"
+        class="group project-card       dark:  dark:        text-white dark:text-white light:text-gray-800 rounded-2xl shadow-xl p-5 cursor-pointer   transition-all duration-300 relative  border-white/10 dark:border-white/10 light:border-gray-200     overflow-hidden"
         onclick="location.href='/projects/Yatzy';" onmouseover="showButtons(this)" onmouseout="hideButtons(this)">
         <div
-          class="absolute inset-0 bg-gradient-to-br from-blue-600/0 to-cyan-600/0 group-hover:from-blue-600/10 group-hover:to-cyan-600/10 transition-all duration-300">
+          class="absolute inset-0   from-blue-600/0 to-cyan-600/0 group-hover:from-blue-600/10 group-hover:to-cyan-600/10 transition-all duration-300">
         </div>
         <div class="relative z-10">
           <h3 class="text-xl font-bold mb-2 text-white dark:text-white light:text-gray-800">
             Yatzy</h3>
           <div class="slideshow-container max-w-full mx-auto relative mt-2 mb-4 rounded-xl overflow-hidden">
             <div class="mySlides5 fade hidden">
-              <img src="img/yatzy1.png" alt="Yatzy game image 1" class="w-full aspect-square object-cover rounded-xl" />
+              <img loading="lazy" decoding="async" src="img/yatzy1.png" alt="Yatzy game image 1" class="w-full aspect-square object-cover rounded-xl" />
             </div>
             <div class="mySlides5 fade hidden">
-              <img src="img/yatzy2.png" alt="Yatzy game image 2" class="w-full aspect-square object-cover rounded-xl" />
+              <img loading="lazy" decoding="async" src="img/yatzy2.png" alt="Yatzy game image 2" class="w-full aspect-square object-cover rounded-xl" />
             </div>
             <button
-              class="slideshow-btn prev absolute top-1/2 left-2 transform -translate-y-1/2 px-3 py-2 text-white font-bold bg-black/50 backdrop-blur-md rounded-lg hover:bg-black/70 transition-all hidden z-20 border border-white/20"
+              class="slideshow-btn prev absolute top-1/2 left-2 transform -translate-y-1/2 px-3 py-2 text-white font-bold bg-black/50 backdrop-blur-md rounded-lg hover:bg-black/70 transition-all hidden z-20  border-white/20"
               onclick=" event.stopPropagation(); plusSlides(-1, 3)">
               ❮
             </button>
             <button
-              class="slideshow-btn next absolute top-1/2 right-2 transform -translate-y-1/2 px-3 py-2 text-white font-bold bg-black/50 backdrop-blur-md rounded-lg hover:bg-black/70 transition-all hidden z-20 border border-white/20"
+              class="slideshow-btn next absolute top-1/2 right-2 transform -translate-y-1/2 px-3 py-2 text-white font-bold bg-black/50 backdrop-blur-md rounded-lg hover:bg-black/70 transition-all hidden z-20  border-white/20"
               onclick=" event.stopPropagation(); plusSlides(1, 3)">
               ❯
             </button>
           </div>
-          <p class="text-xs mb-3 text-gray-300 dark:text-gray-300 light:text-gray-700 leading-relaxed">
-            This Yatzy Game is an interactive, browser-based implementation of
-            the classic dice game, Yatzy. Players roll dice and attempt to score
-            points by creating specific dice combinations. The game is designed
-            to be easy to use, with simple controls and visual feedback, making
-            it a fun way to play Yatzy with friends or by yourself.
+          <p class="text-sm mb-3 text-gray-300 dark:text-gray-300 light:text-gray-700 leading-relaxed"
+            data-i18n="proj-yatzy-desc">
+            Interaktivt, webbläsarbaserat Yatzy-spel. Spelaren kastar tärningar och försöker samla poäng genom specifika
+            kombinationer. Spelet har enkla kontroller och visuell feedback.
           </p>
           <a href="https://github.com/gawendler/Yatzy" target="_blank" rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 text-blue-400 dark:text-blue-400 light:text-blue-600 hover:text-blue-300 dark:hover:text-blue-300 light:hover:text-blue-700 font-medium transition-colors mb-4"
+            class="inline-flex items-center gap-2 text-gray-400 hover:text-white font-medium transition-colors mb-4"
             onclick="event.stopPropagation()">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
               <path fill-rule="evenodd"
                 d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
                 clip-rule="evenodd" />
             </svg>
-            View on GitHub
+            <span data-i18n="view-github">Visa på GitHub</span>
           </a>
           <div class="flex flex-wrap gap-2 mt-4">
             <span
-              class="px-3 py-1 bg-blue-600/20 dark:bg-blue-600/20 light:bg-blue-100 border border-blue-500/30 dark:border-blue-500/30 light:border-blue-300 rounded-full text-xs font-medium text-blue-200 dark:text-blue-200 light:text-blue-700">HTML</span>
+              class="skill-badge px-3 py-1    rounded-full text-sm font-medium  ">HTML</span>
             <span
-              class="px-3 py-1 bg-blue-600/20 dark:bg-blue-600/20 light:bg-blue-100 border border-blue-500/30 dark:border-blue-500/30 light:border-blue-300 rounded-full text-xs font-medium text-blue-200 dark:text-blue-200 light:text-blue-700">CSS</span>
+              class="skill-badge px-3 py-1    rounded-full text-sm font-medium  ">CSS</span>
             <span
-              class="px-3 py-1 bg-blue-600/20 dark:bg-blue-600/20 light:bg-blue-100 border border-blue-500/30 dark:border-blue-500/30 light:border-blue-300 rounded-full text-xs font-medium text-blue-200 dark:text-blue-200 light:text-blue-700">JavaScript</span>
+              class="skill-badge px-3 py-1    rounded-full text-sm font-medium  ">JavaScript</span>
           </div>
         </div>
       </div>
       <!-- Personal Website Project -->
       <div
-        class="group project-card bg-gradient-to-br from-gray-800/50 to-gray-900/50 dark:from-gray-800/50 dark:to-gray-900/50 light:from-gray-50 light:to-white backdrop-blur-sm text-white dark:text-white light:text-gray-800 rounded-2xl shadow-xl p-5 cursor-pointer hover:shadow-2xl transition-all duration-300 relative border border-white/10 dark:border-white/10 light:border-gray-200 hover:border-pink-500/50 dark:hover:border-pink-500/50 light:hover:border-pink-300 hover:scale-[1.02] overflow-hidden"
+        class="group project-card       dark:  dark:        text-white dark:text-white light:text-gray-800 rounded-2xl shadow-xl p-5 cursor-pointer   transition-all duration-300 relative  border-white/10 dark:border-white/10 light:border-gray-200     overflow-hidden"
         onclick="location.href='';" onmouseover="showButtons(this)" onmouseout="hideButtons(this)">
         <div
-          class="absolute inset-0 bg-gradient-to-br from-pink-600/0 to-rose-600/0 group-hover:from-pink-600/10 group-hover:to-rose-600/10 transition-all duration-300">
+          class="absolute inset-0   from-pink-600/0 to-rose-600/0 group-hover:from-pink-600/10 group-hover:to-rose-600/10 transition-all duration-300">
         </div>
         <div class="relative z-10">
-          <h3 class="text-xl font-bold mb-2 text-white dark:text-white light:text-gray-800">
-            Personal Website</h3>
+          <h3 class="text-xl font-bold mb-2 text-white dark:text-white light:text-gray-800"
+            data-i18n="proj-website-title">
+            Personlig Webbsida</h3>
           <div class="slideshow-container max-w-full mx-auto relative mt-2 mb-4 rounded-xl overflow-hidden">
             <div class="mySlides3 fade hidden">
-              <img src="img/personal1.png" alt="Personal website image 1"
+              <img loading="lazy" decoding="async" src="img/personal1.png" alt="Personal website image 1"
                 class="w-full aspect-square object-cover rounded-xl" />
             </div>
             <div class="mySlides3 fade hidden">
-              <img src="img/personal1.png" alt="Personal website image 2"
+              <img loading="lazy" decoding="async" src="img/personal1.png" alt="Personal website image 2"
                 class="w-full aspect-square object-cover rounded-xl" />
             </div>
             <button
-              class="slideshow-btn prev absolute top-1/2 left-2 transform -translate-y-1/2 px-3 py-2 text-white font-bold bg-black/50 backdrop-blur-md rounded-lg hover:bg-black/70 transition-all hidden z-20 border border-white/20"
+              class="slideshow-btn prev absolute top-1/2 left-2 transform -translate-y-1/2 px-3 py-2 text-white font-bold bg-black/50 backdrop-blur-md rounded-lg hover:bg-black/70 transition-all hidden z-20  border-white/20"
               onclick=" event.stopPropagation(); plusSlides(-1, 2)">
               ❮
             </button>
             <button
-              class="slideshow-btn next absolute top-1/2 right-2 transform -translate-y-1/2 px-3 py-2 text-white font-bold bg-black/50 backdrop-blur-md rounded-lg hover:bg-black/70 transition-all hidden z-20 border border-white/20"
+              class="slideshow-btn next absolute top-1/2 right-2 transform -translate-y-1/2 px-3 py-2 text-white font-bold bg-black/50 backdrop-blur-md rounded-lg hover:bg-black/70 transition-all hidden z-20  border-white/20"
               onclick=" event.stopPropagation(); plusSlides(1, 2)">
               ❯
             </button>
           </div>
-          <p class="text-xs mb-3 text-gray-300 dark:text-gray-300 light:text-gray-700 leading-relaxed">
-            This website. A personal portfolio website, showcasing my background
-            in computer science, my skills, and projects. Built with HTML, CSS,
-            JavaScript, and Tailwind CSS, the website features a clean and
-            responsive design, powered by Tailwind CSS, to provide a modern
-            browsing experience.
+          <p class="text-sm mb-3 text-gray-300 dark:text-gray-300 light:text-gray-700 leading-relaxed"
+            data-i18n="proj-website-desc">
+            Denna webbsida. En personlig portföljsida som visar min bakgrund inom systemvetenskap, mina färdigheter och
+            projekt. Byggd med HTML, CSS, JavaScript och Tailwind CSS.
           </p>
           <a href="https://github.com/gawendler/gawendler.github.io" target="_blank" rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 text-pink-400 dark:text-pink-400 light:text-pink-600 hover:text-pink-300 dark:hover:text-pink-300 light:hover:text-pink-700 font-medium transition-colors mb-4"
+            class="inline-flex items-center gap-2 text-gray-400 hover:text-white font-medium transition-colors mb-4"
             onclick="event.stopPropagation()">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
               <path fill-rule="evenodd"
                 d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
                 clip-rule="evenodd" />
             </svg>
-            View on GitHub
+            <span data-i18n="view-github">Visa på GitHub</span>
           </a>
           <div class="flex flex-wrap gap-2 mt-4">
             <span
-              class="px-3 py-1 bg-pink-600/20 dark:bg-pink-600/20 light:bg-pink-100 border border-pink-500/30 dark:border-pink-500/30 light:border-pink-300 rounded-full text-xs font-medium text-pink-200 dark:text-pink-200 light:text-pink-700">HTML</span>
+              class="skill-badge px-3 py-1    rounded-full text-sm font-medium  ">HTML</span>
             <span
-              class="px-3 py-1 bg-pink-600/20 dark:bg-pink-600/20 light:bg-pink-100 border border-pink-500/30 dark:border-pink-500/30 light:border-pink-300 rounded-full text-xs font-medium text-pink-200 dark:text-pink-200 light:text-pink-700">Tailwind
+              class="skill-badge px-3 py-1    rounded-full text-sm font-medium  ">Tailwind
               CSS</span>
             <span
-              class="px-3 py-1 bg-pink-600/20 dark:bg-pink-600/20 light:bg-pink-100 border border-pink-500/30 dark:border-pink-500/30 light:border-pink-300 rounded-full text-xs font-medium text-pink-200 dark:text-pink-200 light:text-pink-700">JavaScript</span>
+              class="skill-badge px-3 py-1    rounded-full text-sm font-medium  ">JavaScript</span>
             <span
-              class="px-3 py-1 bg-pink-600/20 dark:bg-pink-600/20 light:bg-pink-100 border border-pink-500/30 dark:border-pink-500/30 light:border-pink-300 rounded-full text-xs font-medium text-pink-200 dark:text-pink-200 light:text-pink-700">React.js</span>
+              class="skill-badge px-3 py-1    rounded-full text-sm font-medium  ">React.js</span>
           </div>
         </div>
       </div>
 
       <!-- Algorithm Visualizer Project -->
       <div
-        class="group project-card bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm text-white rounded-2xl shadow-xl p-6 cursor-pointer hover:shadow-2xl transition-all duration-300 relative border border-white/10 hover:border-cyan-500/50 hover:scale-[1.02] overflow-hidden"
+        class="group project-card         text-white rounded-2xl shadow-xl p-6 cursor-pointer   transition-all duration-300 relative  border-white/10   overflow-hidden"
         onclick="location.href='/projects/Algorithm visualizer';" onmouseover="showButtons(this)"
         onmouseout="hideButtons(this)">
         <div
-          class="absolute inset-0 bg-gradient-to-br from-cyan-600/0 to-teal-600/0 group-hover:from-cyan-600/10 group-hover:to-teal-600/10 transition-all duration-300">
+          class="absolute inset-0   from-cyan-600/0 to-teal-600/0 group-hover:from-cyan-600/10 group-hover:to-teal-600/10 transition-all duration-300">
         </div>
         <div class="relative z-10">
-          <h3 class="text-xl font-bold mb-2 text-white dark:text-white light:text-gray-800">
-            Algorithm Visualizer</h3>
+          <h3 class="text-xl font-bold mb-2 text-white dark:text-white light:text-gray-800" data-i18n="proj-algo-title">
+            Algoritmvisualiserare</h3>
           <div class="slideshow-container max-w-full mx-auto relative mt-2 mb-4 rounded-xl overflow-hidden">
             <div class="mySlides2 fade hidden">
-              <img src="img/algoritm1.png" alt="Algorithm visualizer image 1"
+              <img loading="lazy" decoding="async" src="img/algoritm1.png" alt="Algorithm visualizer image 1"
                 class="w-full aspect-square object-cover rounded-xl" />
             </div>
             <div class="mySlides2 fade hidden">
-              <img src="img/algoritm2.png" alt="Algorithm visualizer image 2"
+              <img loading="lazy" decoding="async" src="img/algoritm2.png" alt="Algorithm visualizer image 2"
                 class="w-full aspect-square object-cover rounded-xl" />
             </div>
             <button
-              class="slideshow-btn prev absolute top-1/2 left-2 transform -translate-y-1/2 px-3 py-2 text-white font-bold bg-black/50 backdrop-blur-md rounded-lg hover:bg-black/70 transition-all hidden z-20 border border-white/20"
+              class="slideshow-btn prev absolute top-1/2 left-2 transform -translate-y-1/2 px-3 py-2 text-white font-bold bg-black/50 backdrop-blur-md rounded-lg hover:bg-black/70 transition-all hidden z-20  border-white/20"
               onclick=" event.stopPropagation(); plusSlides(-1, 1)">
               ❮
             </button>
             <button
-              class="slideshow-btn next absolute top-1/2 right-2 transform -translate-y-1/2 px-3 py-2 text-white font-bold bg-black/50 backdrop-blur-md rounded-lg hover:bg-black/70 transition-all hidden z-20 border border-white/20"
+              class="slideshow-btn next absolute top-1/2 right-2 transform -translate-y-1/2 px-3 py-2 text-white font-bold bg-black/50 backdrop-blur-md rounded-lg hover:bg-black/70 transition-all hidden z-20  border-white/20"
               onclick=" event.stopPropagation(); plusSlides(1, 1)">
               ❯
             </button>
           </div>
-          <p class="text-xs mb-3 text-gray-300 dark:text-gray-300 light:text-gray-700 leading-relaxed">
-            Algorithm Visualizer is a web app for visualizing sorting and
-            pathfinding algorithms in an interactive, educational environment.
-            Users can observe popular algorithms as they sort data or navigate
-            mazes, making it a valuable for learning. It supports customizable
-            array sizes, sorting speeds and grid configurations.
+          <p class="text-sm mb-3 text-gray-300 dark:text-gray-300 light:text-gray-700 leading-relaxed"
+            data-i18n="proj-algo-desc">
+            Webbapp för visualisering av sorterings- och sökalgoritmer i en interaktiv miljö. Användare kan observera
+            populära algoritmer i realtid med anpassningsbar arraystorlek, hastighet och rutfältskonfiguration.
           </p>
           <a href="https://github.com/gawendler/Algorithm-visualizer" target="_blank" rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 text-cyan-400 dark:text-cyan-400 light:text-cyan-600 hover:text-cyan-300 dark:hover:text-cyan-300 light:hover:text-cyan-700 font-medium transition-colors mb-4"
+            class="inline-flex items-center gap-2 text-gray-400 hover:text-white font-medium transition-colors mb-4"
             onclick="event.stopPropagation()">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
               <path fill-rule="evenodd"
                 d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
                 clip-rule="evenodd" />
             </svg>
-            View on GitHub
+            <span data-i18n="view-github">Visa på GitHub</span>
           </a>
           <div class="flex flex-wrap gap-2 mt-4">
             <span
-              class="px-3 py-1 bg-cyan-600/20 dark:bg-cyan-600/20 light:bg-cyan-100 border border-cyan-500/30 dark:border-cyan-500/30 light:border-cyan-300 rounded-full text-xs font-medium text-cyan-200 dark:text-cyan-200 light:text-cyan-700">HTML</span>
+              class="skill-badge px-3 py-1    rounded-full text-sm font-medium  ">HTML</span>
             <span
-              class="px-3 py-1 bg-cyan-600/20 dark:bg-cyan-600/20 light:bg-cyan-100 border border-cyan-500/30 dark:border-cyan-500/30 light:border-cyan-300 rounded-full text-xs font-medium text-cyan-200 dark:text-cyan-200 light:text-cyan-700">CSS</span>
+              class="skill-badge px-3 py-1    rounded-full text-sm font-medium  ">CSS</span>
             <span
-              class="px-3 py-1 bg-cyan-600/20 dark:bg-cyan-600/20 light:bg-cyan-100 border border-cyan-500/30 dark:border-cyan-500/30 light:border-cyan-300 rounded-full text-xs font-medium text-cyan-200 dark:text-cyan-200 light:text-cyan-700">JavaScript</span>
+              class="skill-badge px-3 py-1    rounded-full text-sm font-medium  ">JavaScript</span>
           </div>
         </div>
       </div>
       <div
-        class="group project-card bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm text-white rounded-2xl shadow-xl p-6 cursor-pointer hover:shadow-2xl transition-all duration-300 relative border border-white/10 hover:border-emerald-500/50 hover:scale-[1.02] overflow-hidden"
+        class="group project-card         text-white rounded-2xl shadow-xl p-6 cursor-pointer   transition-all duration-300 relative  border-white/10   overflow-hidden"
         onclick="location.href='';" onmouseover="showButtons(this)" onmouseout="hideButtons(this)">
         <div
-          class="absolute inset-0 bg-gradient-to-br from-emerald-600/0 to-green-600/0 group-hover:from-emerald-600/10 group-hover:to-green-600/10 transition-all duration-300">
+          class="absolute inset-0   from-emerald-600/0 to-green-600/0 group-hover:from-emerald-600/10 group-hover:to-green-600/10 transition-all duration-300">
         </div>
         <div class="relative z-10">
           <h3 class="text-xl font-bold mb-2 text-white dark:text-white light:text-gray-800">
             AI Doodle Jump</h3>
           <div class="slideshow-container max-w-full mx-auto relative mt-2 mb-4 rounded-xl overflow-hidden">
             <div class="mySlides8 fade hidden">
-              <img src="img/doodle1.png" alt="AI Doodle Jump image 1"
+              <img loading="lazy" decoding="async" src="img/doodle1.png" alt="AI Doodle Jump image 1"
                 class="w-full aspect-square object-cover rounded-xl" />
             </div>
             <div class="mySlides8 fade hidden">
-              <img src="img/doodle2.png" alt="AI Doodle Jump image 2"
+              <img loading="lazy" decoding="async" src="img/doodle2.png" alt="AI Doodle Jump image 2"
                 class="w-full aspect-square object-cover rounded-xl" />
             </div>
             <div class="mySlides8 fade hidden">
-              <img src="img/doodle3.png" alt="AI Doodle Jump image 3"
+              <img loading="lazy" decoding="async" src="img/doodle3.png" alt="AI Doodle Jump image 3"
                 class="w-full aspect-square object-cover rounded-xl" />
             </div>
             <div class="mySlides8 fade hidden">
-              <img src="img/doodle4.png" alt="AI Doodle Jump image 4"
+              <img loading="lazy" decoding="async" src="img/doodle4.png" alt="AI Doodle Jump image 4"
                 class="w-full aspect-square object-cover rounded-xl" />
             </div>
             <button
-              class="slideshow-btn prev absolute top-1/2 left-2 transform -translate-y-1/2 px-3 py-2 text-white font-bold bg-black/50 backdrop-blur-md rounded-lg hover:bg-black/70 transition-all hidden z-20 border border-white/20"
+              class="slideshow-btn prev absolute top-1/2 left-2 transform -translate-y-1/2 px-3 py-2 text-white font-bold bg-black/50 backdrop-blur-md rounded-lg hover:bg-black/70 transition-all hidden z-20  border-white/20"
               onclick=" event.stopPropagation(); plusSlides(-1, 5)">
               ❮
             </button>
             <button
-              class="slideshow-btn next absolute top-1/2 right-2 transform -translate-y-1/2 px-3 py-2 text-white font-bold bg-black/50 backdrop-blur-md rounded-lg hover:bg-black/70 transition-all hidden z-20 border border-white/20"
+              class="slideshow-btn next absolute top-1/2 right-2 transform -translate-y-1/2 px-3 py-2 text-white font-bold bg-black/50 backdrop-blur-md rounded-lg hover:bg-black/70 transition-all hidden z-20  border-white/20"
               onclick=" event.stopPropagation(); plusSlides(1, 5)">
               ❯
             </button>
           </div>
-          <p class="text-xs mb-3 text-gray-300 dark:text-gray-300 light:text-gray-700 leading-relaxed">
-            This project is an AI Doodle Jump game simulation using NEAT
-            (NeuroEvolution of Augmenting Topologies). The AI evolves over
-            multiple generations to optimize the movement of an agent (player)
-            that jumps on platforms to maximize its score.
+          <p class="text-sm mb-3 text-gray-300 dark:text-gray-300 light:text-gray-700 leading-relaxed"
+            data-i18n="proj-doodle-desc">
+            AI Doodle Jump-simulering med NEAT (NeuroEvolution of Augmenting Topologies). AI:n utvecklas över
+            generationer för att optimera rörelser och maximera poäng genom att hoppa på plattformar.
           </p>
           <a href="https://github.com/gawendler/AI-Doodle-Jump" target="_blank" rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 text-emerald-400 dark:text-emerald-400 light:text-emerald-600 hover:text-emerald-300 dark:hover:text-emerald-300 light:hover:text-emerald-700 font-medium transition-colors mb-4"
+            class="inline-flex items-center gap-2 text-gray-400 hover:text-white font-medium transition-colors mb-4"
             onclick="event.stopPropagation()">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
               <path fill-rule="evenodd"
                 d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
                 clip-rule="evenodd" />
             </svg>
-            View on GitHub
+            <span data-i18n="view-github">Visa på GitHub</span>
           </a>
           <div class="flex flex-wrap gap-2 mt-4">
             <span
-              class="px-3 py-1 bg-emerald-600/20 dark:bg-emerald-600/20 light:bg-emerald-100 border border-emerald-500/30 dark:border-emerald-500/30 light:border-emerald-300 rounded-full text-xs font-medium text-emerald-200 dark:text-emerald-200 light:text-emerald-700">Python</span>
+              class="skill-badge px-3 py-1    rounded-full text-sm font-medium  ">Python</span>
             <span
-              class="px-3 py-1 bg-emerald-600/20 dark:bg-emerald-600/20 light:bg-emerald-100 border border-emerald-500/30 dark:border-emerald-500/30 light:border-emerald-300 rounded-full text-xs font-medium text-emerald-200 dark:text-emerald-200 light:text-emerald-700">Pygame</span>
+              class="skill-badge px-3 py-1    rounded-full text-sm font-medium  ">Pygame</span>
             <span
-              class="px-3 py-1 bg-emerald-600/20 dark:bg-emerald-600/20 light:bg-emerald-100 border border-emerald-500/30 dark:border-emerald-500/30 light:border-emerald-300 rounded-full text-xs font-medium text-emerald-200 dark:text-emerald-200 light:text-emerald-700">NEAT</span>
+              class="skill-badge px-3 py-1    rounded-full text-sm font-medium  ">NEAT</span>
             <span
-              class="px-3 py-1 bg-emerald-600/20 dark:bg-emerald-600/20 light:bg-emerald-100 border border-emerald-500/30 dark:border-emerald-500/30 light:border-emerald-300 rounded-full text-xs font-medium text-emerald-200 dark:text-emerald-200 light:text-emerald-700">Matplotlib</span>
+              class="skill-badge px-3 py-1    rounded-full text-sm font-medium  ">Matplotlib</span>
             <span
-              class="px-3 py-1 bg-emerald-600/20 dark:bg-emerald-600/20 light:bg-emerald-100 border border-emerald-500/30 dark:border-emerald-500/30 light:border-emerald-300 rounded-full text-xs font-medium text-emerald-200 dark:text-emerald-200 light:text-emerald-700">NumPy</span>
+              class="skill-badge px-3 py-1    rounded-full text-sm font-medium  ">NumPy</span>
           </div>
         </div>
       </div>
 
       <div
-        class="group project-card bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm text-white rounded-2xl shadow-xl p-6 cursor-pointer hover:shadow-2xl transition-all duration-300 relative border border-white/10 hover:border-rose-500/50 hover:scale-[1.02] overflow-hidden"
+        class="group project-card         text-white rounded-2xl shadow-xl p-6 cursor-pointer   transition-all duration-300 relative  border-white/10   overflow-hidden"
         onclick="location.href='';" onmouseover="showButtons(this)" onmouseout="hideButtons(this)">
         <div
-          class="absolute inset-0 bg-gradient-to-br from-rose-600/0 to-pink-600/0 group-hover:from-rose-600/10 group-hover:to-pink-600/10 transition-all duration-300">
+          class="absolute inset-0   from-rose-600/0 to-pink-600/0 group-hover:from-rose-600/10 group-hover:to-pink-600/10 transition-all duration-300">
         </div>
         <div class="relative z-10">
           <h3
-            class="text-xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-pink-400 dark:text-transparent light:text-gray-800">
-            Unity Game</h3>
+            class="text-xl font-bold mb-2 text-transparent bg-clip-text from-rose-400 to-pink-400 dark:text-transparent light:text-gray-800"
+            data-i18n="proj-unity-title">
+            Unity-spel</h3>
           <div class="slideshow-container max-w-full mx-auto relative mt-2 mb-4 rounded-xl overflow-hidden">
             <div class="mySlides6 fade hidden">
-              <img src="img/unity1.png" alt="Unity game image 1" class="w-full aspect-square object-cover rounded-xl" />
+              <img loading="lazy" decoding="async" src="img/unity1.png" alt="Unity game image 1" class="w-full aspect-square object-cover rounded-xl" />
             </div>
             <div class="mySlides6 fade hidden">
-              <img src="img/unity2.png" alt="Unity game image 2" class="w-full aspect-square object-cover rounded-xl" />
+              <img loading="lazy" decoding="async" src="img/unity2.png" alt="Unity game image 2" class="w-full aspect-square object-cover rounded-xl" />
             </div>
             <div class="mySlides6 fade hidden">
-              <img src="img/unity3.png" alt="Unity game image 3" class="w-full aspect-square object-cover rounded-xl" />
+              <img loading="lazy" decoding="async" src="img/unity3.png" alt="Unity game image 3" class="w-full aspect-square object-cover rounded-xl" />
             </div>
             <button
-              class="slideshow-btn prev absolute top-1/2 left-2 transform -translate-y-1/2 px-3 py-2 text-white font-bold bg-black/50 backdrop-blur-md rounded-lg hover:bg-black/70 transition-all hidden z-20 border border-white/20"
+              class="slideshow-btn prev absolute top-1/2 left-2 transform -translate-y-1/2 px-3 py-2 text-white font-bold bg-black/50 backdrop-blur-md rounded-lg hover:bg-black/70 transition-all hidden z-20  border-white/20"
               onclick=" event.stopPropagation(); plusSlides(-1, 4)">
               ❮
             </button>
             <button
-              class="slideshow-btn next absolute top-1/2 right-2 transform -translate-y-1/2 px-3 py-2 text-white font-bold bg-black/50 backdrop-blur-md rounded-lg hover:bg-black/70 transition-all hidden z-20 border border-white/20"
+              class="slideshow-btn next absolute top-1/2 right-2 transform -translate-y-1/2 px-3 py-2 text-white font-bold bg-black/50 backdrop-blur-md rounded-lg hover:bg-black/70 transition-all hidden z-20  border-white/20"
               onclick=" event.stopPropagation(); plusSlides(1, 4)">
               ❯
             </button>
           </div>
-          <p class="text-xs mb-3 text-gray-300 dark:text-gray-300 light:text-gray-700 leading-relaxed">
-            A game I made for a school project. All the graphics and props are
-            made by me as you can see
+          <p class="text-sm mb-3 text-gray-300 dark:text-gray-300 light:text-gray-700 leading-relaxed"
+            data-i18n="proj-unity-desc">
+            Ett spel jag skapade som skolprojekt i Unity. All grafik och rekvisita är gjord av mig.
           </p>
           <a href="https://jggw.itch.io/titled-goose-game" target="_blank" rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 text-rose-400 dark:text-rose-400 light:text-rose-600 hover:text-rose-300 dark:hover:text-rose-300 light:hover:text-rose-700 font-medium transition-colors mb-4"
+            class="inline-flex items-center gap-2 text-gray-400 hover:text-white font-medium transition-colors mb-4"
             onclick="event.stopPropagation()">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
               <path
                 d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
             </svg>
-            View on Itch.io
+            <span data-i18n="view-itchio">Visa på Itch.io</span>
           </a>
           <div class="flex flex-wrap gap-2 mt-4">
             <span
-              class="px-3 py-1 bg-rose-600/20 dark:bg-rose-600/20 light:bg-rose-100 border border-rose-500/30 dark:border-rose-500/30 light:border-rose-300 rounded-full text-xs font-medium text-rose-200 dark:text-rose-200 light:text-rose-700">Unity</span>
+              class="skill-badge px-3 py-1    rounded-full text-sm font-medium  ">Unity</span>
             <span
-              class="px-3 py-1 bg-rose-600/20 dark:bg-rose-600/20 light:bg-rose-100 border border-rose-500/30 dark:border-rose-500/30 light:border-rose-300 rounded-full text-xs font-medium text-rose-200 dark:text-rose-200 light:text-rose-700">C#</span>
+              class="skill-badge px-3 py-1    rounded-full text-sm font-medium  ">C#</span>
             <span
-              class="px-3 py-1 bg-rose-600/20 dark:bg-rose-600/20 light:bg-rose-100 border border-rose-500/30 dark:border-rose-500/30 light:border-rose-300 rounded-full text-xs font-medium text-rose-200 dark:text-rose-200 light:text-rose-700">Modeling</span>
+              class="skill-badge px-3 py-1    rounded-full text-sm font-medium  ">Modellering</span>
             <span
-              class="px-3 py-1 bg-rose-600/20 dark:bg-rose-600/20 light:bg-rose-100 border border-rose-500/30 dark:border-rose-500/30 light:border-rose-300 rounded-full text-xs font-medium text-rose-200 dark:text-rose-200 light:text-rose-700">UI/UX</span>
+              class="skill-badge px-3 py-1    rounded-full text-sm font-medium  ">UI/UX</span>
             <span
-              class="px-3 py-1 bg-rose-600/20 dark:bg-rose-600/20 light:bg-rose-100 border border-rose-500/30 dark:border-rose-500/30 light:border-rose-300 rounded-full text-xs font-medium text-rose-200 dark:text-rose-200 light:text-rose-700">Testing</span>
+              class="skill-badge px-3 py-1    rounded-full text-sm font-medium  ">Testning</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <script src="script.js"></script>
+  <!-- Contact Footer -->
+  <footer class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 mt-8">
+    <div class="text-center">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white dark:text-white light:text-gray-800"
+        data-i18n="footer-title">
+        Kontakt
+      </h2>
+      <p class="text-gray-400 dark:text-gray-400 light:text-gray-600 mb-6" data-i18n="footer-text">
+        Har du en fråga eller vill samarbeta? Hör gärna av dig!
+      </p>
+      <div class="flex flex-wrap justify-center gap-4 mb-8">
+        <a href="mailto:gawendler@gmail.com"
+          class="inline-flex items-center gap-2 px-5 py-2.5    rounded-full   hover:bg-white/20 transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          gawendler@gmail.com
+        </a>
+        <a href="https://www.linkedin.com/in/gawendler/" target="_blank" rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-5 py-2.5    rounded-full   hover:bg-white/20 transition-all">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+          </svg>
+          LinkedIn
+        </a>
+        <a href="https://github.com/gawendler" target="_blank" rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-5 py-2.5    rounded-full   hover:bg-white/20 transition-all">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path fill-rule="evenodd"
+              d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+              clip-rule="evenodd" />
+          </svg>
+          GitHub
+        </a>
+      </div>
+      <div class="border-t border-white/10 dark:border-white/10 light:border-gray-200 pt-6">
+        <p class="text-sm text-gray-500" data-i18n="footer-copy">© 2026 Gabriel Wendler</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
 </body>
 
 </html>
