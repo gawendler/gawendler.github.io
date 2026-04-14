@@ -117,8 +117,8 @@ document.addEventListener('DOMContentLoaded', function () {
     return;
   }
 
-  // Check for saved theme preference or default to dark mode
-  const currentTheme = localStorage.getItem('theme') || 'dark';
+  // Check for saved theme preference or default to light mode
+  const currentTheme = localStorage.getItem('theme') || 'light';
 
   // Apply theme on page load
   if (currentTheme === 'light') {
@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Toggle theme on button click
   themeToggle.addEventListener('click', function () {
-    const isDark = body.classList.contains('dark-mode') || !body.classList.contains('light-mode');
+    const isDark = body.classList.contains('dark-mode');
 
     if (isDark) {
       body.classList.remove('dark-mode');
